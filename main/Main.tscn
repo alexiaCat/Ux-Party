@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://main/button_pressed.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://main/environment.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/buttons/CONFIG.png" type="Texture" id=6]
 [ext_resource path="res://assets/buttons/config_press.png" type="Texture" id=7]
+[ext_resource path="res://assets/audio/background.ogg" type="AudioStream" id=8]
 [ext_resource path="res://main/Main.gd" type="Script" id=9]
 
 [sub_resource type="GDScript" id=4]
@@ -105,4 +106,9 @@ texture_hover = ExtResource( 6 )
 
 [node name="environment" parent="." instance=ExtResource( 5 )]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
 [connection signal="pressed" from="HUD/Control/Play_button" to="." method="_on_Play_button_pressed"]
+[connection signal="pressed" from="HUD/Control/Config_button" to="." method="_on_Config_button_pressed"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/btn_quitpressed.png-bb489c43fd0f6f37eb235d30df81e1f7.stex"
+path="res://.import/btn_tutorial.png-992e42746058b0067119eeef7eace439.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://top_bar_minigames/btn_quitpressed.png"
-dest_files=[ "res://.import/btn_quitpressed.png-bb489c43fd0f6f37eb235d30df81e1f7.stex" ]
+source_file="res://top_bar_hanged_game/btn_tutorial.png"
+dest_files=[ "res://.import/btn_tutorial.png-992e42746058b0067119eeef7eace439.stex" ]
 
 [params]
 

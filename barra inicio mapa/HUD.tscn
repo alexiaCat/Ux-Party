@@ -49,7 +49,6 @@ margin_bottom = 39.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "5"
 
 [node name="TextureButton" type="TextureButton" parent="Control/MarginContainer/HBoxContainer"]
 margin_left = 185.0
