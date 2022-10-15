@@ -76,9 +76,6 @@ margin_bottom = 187.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="label_play" type="Label" parent="HUD/Control/Play_button"]
 anchor_left = 0.5

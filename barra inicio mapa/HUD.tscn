@@ -16,9 +16,16 @@ font_data = ExtResource( 6 )
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 12.0
+margin_right = -26.0
+margin_bottom = -621.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
-anchor_right = 1.0
+margin_left = -9.0
+margin_right = 434.0
+margin_bottom = 95.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
@@ -27,44 +34,46 @@ custom_constants/margin_bottom = 10
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 428.0
+margin_right = 423.0
 margin_bottom = 85.0
+custom_constants/separation = 133
 
-[node name="LifeBox" type="HBoxContainer" parent="Control/MarginContainer/HBoxContainer"]
+[node name="Life" type="TextureButton" parent="Control/MarginContainer/HBoxContainer"]
+margin_top = 12.0
 margin_right = 40.0
-margin_bottom = 40.0
-size_flags_horizontal = 2
-size_flags_vertical = 0
+margin_bottom = 52.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource( 5 )
 
-[node name="Heart" type="TextureRect" parent="Control/MarginContainer/HBoxContainer/LifeBox"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 5 )
-
-[node name="Life" type="Label" parent="Control/MarginContainer/HBoxContainer/LifeBox/Heart"]
-margin_left = 13.0
-margin_top = 4.0
-margin_right = 27.0
-margin_bottom = 39.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+[node name="vidas_jugador" type="Label" parent="Control/MarginContainer/HBoxContainer/Life" groups=["vidasjugador"]]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -17.0
+margin_right = 20.0
+margin_bottom = 13.0
 custom_fonts/font = SubResource( 1 )
+text = "1"
+align = 1
+valign = 1
 
-[node name="TextureButton" type="TextureButton" parent="Control/MarginContainer/HBoxContainer"]
-margin_left = 185.0
-margin_right = 244.0
+[node name="Myprofile" type="TextureButton" parent="Control/MarginContainer/HBoxContainer"]
+margin_left = 173.0
+margin_right = 232.0
 margin_bottom = 65.0
-size_flags_horizontal = 2
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 4 )
 
-[node name="TextureButton2" type="TextureButton" parent="Control/MarginContainer/HBoxContainer"]
-margin_left = 370.0
-margin_right = 408.0
-margin_bottom = 38.0
+[node name="Config" type="TextureButton" parent="Control/MarginContainer/HBoxContainer"]
+margin_left = 365.0
+margin_top = 13.0
+margin_right = 403.0
+margin_bottom = 51.0
 size_flags_horizontal = 0
-size_flags_vertical = 0
+size_flags_vertical = 4
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 1 )
