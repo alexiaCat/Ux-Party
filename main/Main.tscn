@@ -101,6 +101,14 @@ texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 6 )
 
+[node name="MenuButton" type="MenuButton" parent="HUD/Control"]
+margin_left = 306.0
+margin_top = 27.0
+margin_right = 356.0
+margin_bottom = 71.0
+icon = ExtResource( 6 )
+items = [ "musica", ExtResource( 7 ), 1, true, true, 0, 0, null, "", true, "sonido", null, 0, false, false, 1, 0, null, "", false, "tutorial", null, 0, false, false, 2, 0, null, "", false ]
+
 [node name="environment" parent="." instance=ExtResource( 5 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

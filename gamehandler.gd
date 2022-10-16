@@ -1,5 +1,6 @@
 extends Node
 
+var counterhangedgame
 var vidas_jugador = 5
 var time_left = 60
 var puntajeglobal = 0

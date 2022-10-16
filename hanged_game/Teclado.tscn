@@ -1,0 +1,219 @@
+[gd_scene format=2]
+
+[node name="Teclado" type="HBoxContainer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 19.0
+margin_top = -117.0
+margin_right = -22.0
+margin_bottom = -23.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Columna1" type="VBoxContainer" parent="."]
+margin_right = 41.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+
+[node name="Letra_a" type="Button" parent="Columna1"]
+margin_right = 41.0
+margin_bottom = 20.0
+text = "A"
+
+[node name="Letra_j" type="Button" parent="Columna1"]
+margin_top = 24.0
+margin_right = 41.0
+margin_bottom = 44.0
+text = "J"
+
+[node name="Letra_r" type="Button" parent="Columna1"]
+margin_top = 48.0
+margin_right = 41.0
+margin_bottom = 68.0
+text = "R"
+
+[node name="Columna2" type="VBoxContainer" parent="."]
+margin_left = 45.0
+margin_right = 87.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+
+[node name="Letra_b" type="Button" parent="Columna2"]
+margin_right = 42.0
+margin_bottom = 20.0
+text = "B"
+
+[node name="Letra_k" type="Button" parent="Columna2"]
+margin_top = 24.0
+margin_right = 42.0
+margin_bottom = 44.0
+text = "K"
+
+[node name="Letra_s" type="Button" parent="Columna2"]
+margin_top = 48.0
+margin_right = 42.0
+margin_bottom = 68.0
+text = "S"
+
+[node name="Columna3" type="VBoxContainer" parent="."]
+margin_left = 91.0
+margin_right = 133.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+
+[node name="Letra_c" type="Button" parent="Columna3"]
+margin_right = 42.0
+margin_bottom = 20.0
+text = "C"
+
+[node name="Letra_l" type="Button" parent="Columna3"]
+margin_top = 24.0
+margin_right = 42.0
+margin_bottom = 44.0
+text = "L"
+
+[node name="Letra_t" type="Button" parent="Columna3"]
+margin_top = 48.0
+margin_right = 42.0
+margin_bottom = 68.0
+text = "T"
+
+[node name="Columna4" type="VBoxContainer" parent="."]
+margin_left = 137.0
+margin_right = 178.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+
+[node name="Letra_d" type="Button" parent="Columna4"]
+margin_right = 41.0
+margin_bottom = 20.0
+text = "D"
+
+[node name="Letra_m" type="Button" parent="Columna4"]
+margin_top = 24.0
+margin_right = 41.0
+margin_bottom = 44.0
+text = "M"
+
+[node name="Letra u" type="Button" parent="Columna4"]
+margin_top = 48.0
+margin_right = 41.0
+margin_bottom = 68.0
+text = "U"
+
+[node name="Columna5" type="VBoxContainer" parent="."]
+margin_left = 182.0
+margin_right = 224.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+
+[node name="Letra_e" type="Button" parent="Columna5"]
+margin_right = 42.0
+margin_bottom = 20.0
+text = "E"
+
+[node name="Letra_n" type="Button" parent="Columna5"]
+margin_top = 24.0
+margin_right = 42.0
+margin_bottom = 44.0
+text = "N"
+
+[node name="Letra_v" type="Button" parent="Columna5"]
+margin_top = 48.0
+margin_right = 42.0
+margin_bottom = 68.0
+text = "V"
+
+[node name="Columna6" type="VBoxContainer" parent="."]
+margin_left = 228.0
+margin_right = 270.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+
+[node name="Letra_f" type="Button" parent="Columna6"]
+margin_right = 42.0
+margin_bottom = 20.0
+text = "F"
+
+[node name="Letra_ñ" type="Button" parent="Columna6"]
+margin_top = 24.0
+margin_right = 42.0
+margin_bottom = 44.0
+text = "Ñ"
+
+[node name="Letra_w" type="Button" parent="Columna6"]
+margin_top = 48.0
+margin_right = 42.0
+margin_bottom = 68.0
+text = "W"
+
+[node name="Columna7" type="VBoxContainer" parent="."]
+margin_left = 274.0
+margin_right = 315.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+
+[node name="Letra_g" type="Button" parent="Columna7"]
+margin_right = 41.0
+margin_bottom = 20.0
+text = "G"
+
+[node name="Letra_o" type="Button" parent="Columna7"]
+margin_top = 24.0
+margin_right = 41.0
+margin_bottom = 44.0
+text = "O"
+
+[node name="Letra_x" type="Button" parent="Columna7"]
+margin_top = 48.0
+margin_right = 41.0
+margin_bottom = 68.0
+text = "X"
+
+[node name="Columna8" type="VBoxContainer" parent="."]
+margin_left = 319.0
+margin_right = 361.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+
+[node name="Letra_h" type="Button" parent="Columna8"]
+margin_right = 42.0
+margin_bottom = 20.0
+text = "H"
+
+[node name="Letra_p" type="Button" parent="Columna8"]
+margin_top = 24.0
+margin_right = 42.0
+margin_bottom = 44.0
+text = "P"
+
+[node name="Letra_y" type="Button" parent="Columna8"]
+margin_top = 48.0
+margin_right = 42.0
+margin_bottom = 68.0
+text = "Y"
+
+[node name="Columna9" type="VBoxContainer" parent="."]
+margin_left = 365.0
+margin_right = 407.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+
+[node name="Letra_i" type="Button" parent="Columna9"]
+margin_right = 42.0
+margin_bottom = 20.0
+text = "I"
+
+[node name="Letra_q" type="Button" parent="Columna9"]
+margin_top = 24.0
+margin_right = 42.0
+margin_bottom = 44.0
+text = "Q"
+
+[node name="Letra_z" type="Button" parent="Columna9"]
+margin_top = 48.0
+margin_right = 42.0
+margin_bottom = 68.0
+text = "Z"
