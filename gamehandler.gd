@@ -2,11 +2,10 @@ extends Node
 
 var counterhangedgame
 #cantidad maxima de vidas, comparar con vidas jugador ya que no puede exceder las 5
-const max_vidas = 5
-var vidas_jugador
+var vidas_jugador = 5
 var time_left = 60
 # Luego de pasados 4 minutos desde la pérdida de una vida se repondrá la vida perdida.
-var life_recharge = 240
+var life_recharge = 20
 var puntajeglobal = 0
 var turno = true
 var pnivel1 
@@ -18,6 +17,7 @@ var pnivel6
 var pnivel7 
 var pnivel8
 var pnivel9
+var puntos = 0
 #puntaje inicial de los minijuegos
 const puntajeahorcado = 500
 const puntajequiz = 0
@@ -33,16 +33,22 @@ var level8 = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 	
-func comparar_vidas():
-	if (vidas_jugador > max_vidas):
-		vidas_jugador = vidas_jugador
-	else:
-		vidas_jugador = 5
+func recharge_life():
+	if(vidas_jugador < 5):
+		print(vidas_jugador)
+		relojderecargarvidas()
+
 	
 func update_vidas():
 	get_tree().get_nodes_in_group("vidasjugador")[0].text = String(vidas_jugador)
 
+func relojderecargarvidas():
+	get_tree().get_nodes_in_group("vida_maxima")[0].text = String(life_recharge)
+
 func update_time():
 	get_tree().get_nodes_in_group("tiempo")[0].text = String(time_left/60) + ":" + String(time_left%60)
+
+func update_puntos():
+	get_tree().get_nodes_in_group("puntos")[0].text = String(puntos)

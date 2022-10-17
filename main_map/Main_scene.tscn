@@ -221,8 +221,15 @@ text = "9"
 align = 1
 valign = 1
 
-[node name="timer_lifes" type="Timer" parent="."]
-autostart = true
+[node name="temporizador" type="Label" parent="." groups=["vida_maxima"]]
+margin_left = 242.0
+margin_top = 109.0
+margin_right = 282.0
+margin_bottom = 123.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "11"
+
+[node name="Timer_2" type="Timer" parent="."]
 
 [connection signal="pressed" from="Level1" to="." method="_on_Level1_pressed"]
 [connection signal="pressed" from="Level2" to="." method="_on_Level2_pressed"]
@@ -233,3 +240,4 @@ autostart = true
 [connection signal="pressed" from="Level7" to="." method="_on_Level7_pressed"]
 [connection signal="pressed" from="Level8" to="." method="_on_Level8_pressed"]
 [connection signal="pressed" from="Level9" to="." method="_on_Level9_pressed"]
+[connection signal="timeout" from="Timer_2" to="." method="_on_tiempo_vidas_timeout"]

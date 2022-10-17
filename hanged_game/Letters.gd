@@ -63,6 +63,7 @@ func not_there():
 func handle_string(s):
 	apretarletra_s.play()
 	var pos = temp.find(s)
+	apretarletra_s.stop()
 	if pos != -1:
 		for i in range(pos, length):
 			if temp.substr(i, 1) == s:
