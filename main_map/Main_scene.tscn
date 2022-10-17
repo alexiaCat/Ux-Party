@@ -221,6 +221,9 @@ text = "9"
 align = 1
 valign = 1
 
+[node name="timer_lifes" type="Timer" parent="."]
+autostart = true
+
 [connection signal="pressed" from="Level1" to="." method="_on_Level1_pressed"]
 [connection signal="pressed" from="Level2" to="." method="_on_Level2_pressed"]
 [connection signal="pressed" from="Level3" to="." method="_on_Level3_pressed"]

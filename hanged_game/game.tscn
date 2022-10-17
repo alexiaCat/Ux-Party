@@ -1,0 +1,175 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://hanged_game/Teclado.tscn" type="PackedScene" id=1]
+[ext_resource path="res://hanged_game/hangman.tscn" type="PackedScene" id=2]
+[ext_resource path="res://hanged_game/Letters.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/audio/click.mp3" type="AudioStream" id=4]
+[ext_resource path="res://hanged_game/game.gd" type="Script" id=5]
+[ext_resource path="res://hanged_game/Letters.gd" type="Script" id=6]
+
+[node name="game" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Letters" parent="." instance=ExtResource( 3 )]
+script = ExtResource( 6 )
+
+[node name="start" type="Position2D" parent="Letters"]
+position = Vector2( 29, 557 )
+
+[node name="click_letter" type="AudioStreamPlayer" parent="Letters"]
+stream = ExtResource( 4 )
+
+[node name="Teclado" parent="." instance=ExtResource( 1 )]
+margin_left = 113.0
+margin_top = 600.0
+margin_right = 346.0
+margin_bottom = 694.0
+
+[node name="Columna1" parent="Teclado" index="0"]
+margin_right = 21.0
+
+[node name="Letra_a" parent="Teclado/Columna1" index="0"]
+margin_right = 21.0
+
+[node name="Letra_j" parent="Teclado/Columna1" index="1"]
+margin_right = 21.0
+
+[node name="Letra_r" parent="Teclado/Columna1" index="2"]
+margin_right = 21.0
+
+[node name="Columna2" parent="Teclado" index="1"]
+margin_left = 25.0
+margin_right = 46.0
+
+[node name="Letra_b" parent="Teclado/Columna2" index="0"]
+margin_right = 21.0
+
+[node name="Letra_k" parent="Teclado/Columna2" index="1"]
+margin_right = 21.0
+
+[node name="Letra_s" parent="Teclado/Columna2" index="2"]
+margin_right = 21.0
+
+[node name="Columna3" parent="Teclado" index="2"]
+margin_left = 50.0
+margin_right = 70.0
+
+[node name="Letra_c" parent="Teclado/Columna3" index="0"]
+margin_right = 20.0
+
+[node name="Letra_l" parent="Teclado/Columna3" index="1"]
+margin_right = 20.0
+
+[node name="Letra_t" parent="Teclado/Columna3" index="2"]
+margin_right = 20.0
+
+[node name="Columna4" parent="Teclado" index="3"]
+margin_left = 74.0
+margin_right = 98.0
+
+[node name="Letra_d" parent="Teclado/Columna4" index="0"]
+margin_right = 24.0
+
+[node name="Letra_m" parent="Teclado/Columna4" index="1"]
+margin_right = 24.0
+
+[node name="Letra u" parent="Teclado/Columna4" index="2"]
+margin_right = 24.0
+
+[node name="Columna5" parent="Teclado" index="4"]
+margin_left = 102.0
+margin_right = 124.0
+
+[node name="Letra_e" parent="Teclado/Columna5" index="0"]
+margin_right = 22.0
+
+[node name="Letra_n" parent="Teclado/Columna5" index="1"]
+margin_right = 22.0
+
+[node name="Letra_v" parent="Teclado/Columna5" index="2"]
+margin_right = 22.0
+
+[node name="Columna6" parent="Teclado" index="5"]
+margin_left = 128.0
+margin_right = 153.0
+
+[node name="Letra_f" parent="Teclado/Columna6" index="0"]
+margin_right = 25.0
+
+[node name="Letra_ñ" parent="Teclado/Columna6" index="1"]
+margin_right = 25.0
+
+[node name="Letra_w" parent="Teclado/Columna6" index="2"]
+margin_right = 25.0
+
+[node name="Columna7" parent="Teclado" index="6"]
+margin_left = 157.0
+margin_right = 180.0
+
+[node name="Letra_g" parent="Teclado/Columna7" index="0"]
+margin_right = 23.0
+
+[node name="Letra_o" parent="Teclado/Columna7" index="1"]
+margin_right = 23.0
+
+[node name="Letra_x" parent="Teclado/Columna7" index="2"]
+margin_right = 23.0
+
+[node name="Columna8" parent="Teclado" index="7"]
+margin_left = 184.0
+margin_right = 206.0
+
+[node name="Letra_h" parent="Teclado/Columna8" index="0"]
+margin_right = 22.0
+
+[node name="Letra_p" parent="Teclado/Columna8" index="1"]
+margin_right = 22.0
+
+[node name="Letra_y" parent="Teclado/Columna8" index="2"]
+margin_right = 22.0
+
+[node name="Columna9" parent="Teclado" index="8"]
+margin_left = 210.0
+margin_right = 233.0
+
+[node name="Letra_i" parent="Teclado/Columna9" index="0"]
+margin_right = 23.0
+
+[node name="Letra_q" parent="Teclado/Columna9" index="1"]
+margin_right = 23.0
+
+[node name="Letra_z" parent="Teclado/Columna9" index="2"]
+margin_right = 23.0
+
+[node name="hangman" parent="." instance=ExtResource( 2 )]
+
+[connection signal="notthere" from="Letters" to="." method="_on_Letters_notthere"]
+[connection signal="pressed" from="Teclado/Columna1/Letra_a" to="Letters" method="handle_string" binds= [ "A" ]]
+[connection signal="pressed" from="Teclado/Columna1/Letra_j" to="Letters" method="handle_string" binds= [ "J" ]]
+[connection signal="pressed" from="Teclado/Columna1/Letra_r" to="Letters" method="handle_string" binds= [ "R" ]]
+[connection signal="pressed" from="Teclado/Columna2/Letra_b" to="Letters" method="handle_string" binds= [ "B" ]]
+[connection signal="pressed" from="Teclado/Columna2/Letra_k" to="Letters" method="handle_string" binds= [ "K" ]]
+[connection signal="pressed" from="Teclado/Columna2/Letra_s" to="Letters" method="handle_string" binds= [ "S" ]]
+[connection signal="pressed" from="Teclado/Columna3/Letra_c" to="Letters" method="handle_string" binds= [ "C" ]]
+[connection signal="pressed" from="Teclado/Columna3/Letra_l" to="Letters" method="handle_string" binds= [ "L" ]]
+[connection signal="pressed" from="Teclado/Columna3/Letra_t" to="Letters" method="handle_string" binds= [ "T" ]]
+[connection signal="pressed" from="Teclado/Columna4/Letra_d" to="Letters" method="handle_string" binds= [ "D" ]]
+[connection signal="pressed" from="Teclado/Columna4/Letra_m" to="Letters" method="handle_string" binds= [ "M" ]]
+[connection signal="pressed" from="Teclado/Columna4/Letra u" to="Letters" method="handle_string" binds= [ "U" ]]
+[connection signal="pressed" from="Teclado/Columna5/Letra_e" to="Letters" method="handle_string" binds= [ "E" ]]
+[connection signal="pressed" from="Teclado/Columna5/Letra_n" to="Letters" method="handle_string" binds= [ "N" ]]
+[connection signal="pressed" from="Teclado/Columna5/Letra_v" to="Letters" method="handle_string" binds= [ "V" ]]
+[connection signal="pressed" from="Teclado/Columna6/Letra_f" to="Letters" method="handle_string" binds= [ "F" ]]
+[connection signal="pressed" from="Teclado/Columna6/Letra_ñ" to="Letters" method="handle_string" binds= [ "Ñ" ]]
+[connection signal="pressed" from="Teclado/Columna6/Letra_w" to="Letters" method="handle_string" binds= [ "W" ]]
+[connection signal="pressed" from="Teclado/Columna7/Letra_g" to="Letters" method="handle_string" binds= [ "G" ]]
+[connection signal="pressed" from="Teclado/Columna7/Letra_o" to="Letters" method="handle_string" binds= [ "O" ]]
+[connection signal="pressed" from="Teclado/Columna7/Letra_x" to="Letters" method="handle_string" binds= [ "X" ]]
+[connection signal="pressed" from="Teclado/Columna8/Letra_h" to="Letters" method="handle_string" binds= [ "H" ]]
+[connection signal="pressed" from="Teclado/Columna8/Letra_p" to="Letters" method="handle_string" binds= [ "P" ]]
+[connection signal="pressed" from="Teclado/Columna8/Letra_y" to="Letters" method="handle_string" binds= [ "Y" ]]
+[connection signal="pressed" from="Teclado/Columna9/Letra_i" to="Letters" method="handle_string" binds= [ "I" ]]
+[connection signal="pressed" from="Teclado/Columna9/Letra_q" to="Letters" method="handle_string" binds= [ "Q" ]]
+[connection signal="pressed" from="Teclado/Columna9/Letra_z" to="Letters" method="handle_string" binds= [ "Z" ]]
+
+[editable path="Teclado"]

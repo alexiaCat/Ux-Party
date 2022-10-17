@@ -1,0 +1,20 @@
+[gd_scene format=2]
+
+[node name="Letters" type="Node2D"]
+
+[node name="line" type="Line2D" parent="."]
+position = Vector2( 268, -252 )
+points = PoolVector2Array( -270, 251, -248, 251 )
+width = 3.0
+default_color = Color( 0, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="letter" type="Label" parent="."]
+margin_left = 2.0
+margin_top = -22.0
+margin_right = 16.0
+margin_bottom = -2.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
