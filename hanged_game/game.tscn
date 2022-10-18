@@ -21,126 +21,106 @@ position = Vector2( 29, 557 )
 stream = ExtResource( 4 )
 
 [node name="Teclado" parent="." instance=ExtResource( 1 )]
-margin_left = 113.0
-margin_top = 600.0
-margin_right = 346.0
+margin_left = 26.0
+margin_top = 605.0
+margin_right = 427.0
 margin_bottom = 694.0
 
 [node name="Columna1" parent="Teclado" index="0"]
-margin_right = 21.0
-
-[node name="Letra_a" parent="Teclado/Columna1" index="0"]
-margin_right = 21.0
-
-[node name="Letra_j" parent="Teclado/Columna1" index="1"]
-margin_right = 21.0
-
-[node name="Letra_r" parent="Teclado/Columna1" index="2"]
-margin_right = 21.0
+margin_bottom = 89.0
 
 [node name="Columna2" parent="Teclado" index="1"]
-margin_left = 25.0
-margin_right = 46.0
+margin_right = 86.0
+margin_bottom = 89.0
 
 [node name="Letra_b" parent="Teclado/Columna2" index="0"]
-margin_right = 21.0
+margin_right = 41.0
 
 [node name="Letra_k" parent="Teclado/Columna2" index="1"]
-margin_right = 21.0
+margin_right = 41.0
 
 [node name="Letra_s" parent="Teclado/Columna2" index="2"]
-margin_right = 21.0
+margin_right = 41.0
 
 [node name="Columna3" parent="Teclado" index="2"]
-margin_left = 50.0
-margin_right = 70.0
+margin_left = 90.0
+margin_right = 131.0
+margin_bottom = 89.0
 
 [node name="Letra_c" parent="Teclado/Columna3" index="0"]
-margin_right = 20.0
+margin_right = 41.0
 
 [node name="Letra_l" parent="Teclado/Columna3" index="1"]
-margin_right = 20.0
+margin_right = 41.0
 
 [node name="Letra_t" parent="Teclado/Columna3" index="2"]
-margin_right = 20.0
+margin_right = 41.0
 
 [node name="Columna4" parent="Teclado" index="3"]
-margin_left = 74.0
-margin_right = 98.0
-
-[node name="Letra_d" parent="Teclado/Columna4" index="0"]
-margin_right = 24.0
-
-[node name="Letra_m" parent="Teclado/Columna4" index="1"]
-margin_right = 24.0
-
-[node name="Letra u" parent="Teclado/Columna4" index="2"]
-margin_right = 24.0
+margin_left = 135.0
+margin_right = 176.0
+margin_bottom = 89.0
 
 [node name="Columna5" parent="Teclado" index="4"]
-margin_left = 102.0
-margin_right = 124.0
+margin_left = 180.0
+margin_right = 221.0
+margin_bottom = 89.0
 
 [node name="Letra_e" parent="Teclado/Columna5" index="0"]
-margin_right = 22.0
+margin_right = 41.0
 
 [node name="Letra_n" parent="Teclado/Columna5" index="1"]
-margin_right = 22.0
+margin_right = 41.0
 
 [node name="Letra_v" parent="Teclado/Columna5" index="2"]
-margin_right = 22.0
+margin_right = 41.0
 
 [node name="Columna6" parent="Teclado" index="5"]
-margin_left = 128.0
-margin_right = 153.0
+margin_left = 225.0
+margin_right = 266.0
+margin_bottom = 89.0
 
 [node name="Letra_f" parent="Teclado/Columna6" index="0"]
-margin_right = 25.0
+margin_right = 41.0
 
 [node name="Letra_ñ" parent="Teclado/Columna6" index="1"]
-margin_right = 25.0
+margin_right = 41.0
 
 [node name="Letra_w" parent="Teclado/Columna6" index="2"]
-margin_right = 25.0
+margin_right = 41.0
 
 [node name="Columna7" parent="Teclado" index="6"]
-margin_left = 157.0
-margin_right = 180.0
-
-[node name="Letra_g" parent="Teclado/Columna7" index="0"]
-margin_right = 23.0
-
-[node name="Letra_o" parent="Teclado/Columna7" index="1"]
-margin_right = 23.0
-
-[node name="Letra_x" parent="Teclado/Columna7" index="2"]
-margin_right = 23.0
+margin_left = 270.0
+margin_right = 311.0
+margin_bottom = 89.0
 
 [node name="Columna8" parent="Teclado" index="7"]
-margin_left = 184.0
-margin_right = 206.0
+margin_left = 315.0
+margin_right = 356.0
+margin_bottom = 89.0
 
 [node name="Letra_h" parent="Teclado/Columna8" index="0"]
-margin_right = 22.0
+margin_right = 41.0
 
 [node name="Letra_p" parent="Teclado/Columna8" index="1"]
-margin_right = 22.0
+margin_right = 41.0
 
 [node name="Letra_y" parent="Teclado/Columna8" index="2"]
-margin_right = 22.0
+margin_right = 41.0
 
 [node name="Columna9" parent="Teclado" index="8"]
-margin_left = 210.0
-margin_right = 233.0
+margin_left = 360.0
+margin_right = 401.0
+margin_bottom = 89.0
 
 [node name="Letra_i" parent="Teclado/Columna9" index="0"]
-margin_right = 23.0
+margin_right = 41.0
 
 [node name="Letra_q" parent="Teclado/Columna9" index="1"]
-margin_right = 23.0
+margin_right = 41.0
 
 [node name="Letra_z" parent="Teclado/Columna9" index="2"]
-margin_right = 23.0
+margin_right = 41.0
 
 [node name="hangman" parent="." instance=ExtResource( 2 )]
 
