@@ -9,15 +9,15 @@ var life_recharge = 20
 var puntajeglobal = 0
 var turno = true
 # para probar que funcionan las estrellas
-var pnivel1 = 200
-var pnivel2 = 500
-var pnivel3 = 390
-var pnivel4 
-var pnivel5
-var pnivel6 
-var pnivel7 
-var pnivel8
-var pnivel9
+var pnivel1 = 0
+var pnivel2 = 0
+var pnivel3 = 0
+var pnivel4 = 0
+var pnivel5 = 0
+var pnivel6 = 0
+var pnivel7 = 0
+var pnivel8 = 0
+var pnivel9 = 0
 var puntos = 0
 #puntaje inicial de los minijuegos
 const puntajeahorcado = 500
