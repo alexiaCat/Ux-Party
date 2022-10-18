@@ -6,7 +6,23 @@ extends Node2D
 func _ready():
 	Gamehandler.update_vidas()
 	Gamehandler.recharge_life()
+	paint_stars()
 
+func paint_stars():
+	if (Gamehandler.pnivel1 >= 200):
+		print("pinta 1 sola estrella")
+		$mapa_star/estrellas/uno/star1.show()
+	elif(Gamehandler.pnivel1 >= 300):
+		print("pinta 2 estrellas")
+		$mapa_star/estrellas/uno/star1.show()
+		$mapa_star/estrellas/dos/star2.show()
+	elif(Gamehandler.pnivel1 >= 500):
+		print("pinta 3 estrellas")
+		$mapa_star/estrellas/uno/star1.show()
+		$mapa_star/estrellas/dos/star2.show()
+		$mapa_star/estrellas/dos/star3.show()
+	else:
+		print("nada")
 
 func _on_Level1_pressed():
 	if(Gamehandler.vidas_jugador > 0):

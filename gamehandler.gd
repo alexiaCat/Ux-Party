@@ -8,9 +8,10 @@ var time_left = 60
 var life_recharge = 20
 var puntajeglobal = 0
 var turno = true
-var pnivel1 
-var pnivel2 
-var pnivel3 
+# para probar que funcionan las estrellas
+var pnivel1 = 200
+var pnivel2 = 500
+var pnivel3 = 390
 var pnivel4 
 var pnivel5
 var pnivel6 
@@ -30,7 +31,14 @@ var level5 = false
 var level6 = false
 var level7 = false
 var level8 = false
-
+#puntajes para tener estrellas por nivel trivia y decisiones
+var onestar = 200
+var twostars = 300
+var threestars = 500
+#puntajes para tener estrellas por nivel ahorcado
+var hgonestar = 225
+var hgtwostars = 390
+var hgthreestars = 500
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -40,7 +48,6 @@ func recharge_life():
 		print(vidas_jugador)
 		relojderecargarvidas()
 
-	
 func update_vidas():
 	get_tree().get_nodes_in_group("vidasjugador")[0].text = String(vidas_jugador)
 
