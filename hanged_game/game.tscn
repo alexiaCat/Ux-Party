@@ -147,6 +147,7 @@ margin_right = 23.0
 [node name="top_bar_minigames" parent="." instance=ExtResource( 7 )]
 
 [connection signal="notthere" from="Letters" to="." method="_on_Letters_notthere"]
+[connection signal="youwin" from="Letters" to="." method="_on_Letters_youwin"]
 [connection signal="pressed" from="Teclado/Columna1/Letra_a" to="Letters" method="handle_string" binds= [ "A" ]]
 [connection signal="pressed" from="Teclado/Columna1/Letra_j" to="Letters" method="handle_string" binds= [ "J" ]]
 [connection signal="pressed" from="Teclado/Columna1/Letra_r" to="Letters" method="handle_string" binds= [ "R" ]]

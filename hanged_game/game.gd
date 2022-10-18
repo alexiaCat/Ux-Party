@@ -1,8 +1,8 @@
 extends Node2D
 
-
 var counter
 
+signal game_over
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	counter = 0
@@ -32,5 +32,14 @@ func _on_Letters_notthere():
 		perder_vida()
 		#probar si funciona contador de vidas
 		get_tree().change_scene("res://main_map/Main_scene.tscn")
+		emit_signal("game_over")
 		print("perdiste")
 
+
+
+func _on_Letters_youwin():
+	get_tree().change_scene("res://main_map/Main_scene.tscn")
+	print("ganaste")
+	if(Gamehandler.puntos > Gamehandler.pnivel1):
+		Gamehandler.pnivel1 = Gamehandler.puntos
+		

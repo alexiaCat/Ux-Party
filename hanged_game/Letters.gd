@@ -15,8 +15,9 @@ var temp
 
 signal notthere
 signal youwin
-signal mayoi
-# Called when the node enters the scene tree for the first time.
+
+
+
 func _ready():
 	randomize()
 	input = words[randi() % words.size()]
@@ -85,5 +86,4 @@ func win():
 	if slash_counter == length:
 		print("ganaste oezi")
 		emit_signal("youwin")
-
 
