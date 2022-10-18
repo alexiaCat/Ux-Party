@@ -175,5 +175,7 @@ margin_right = 23.0
 [connection signal="pressed" from="Teclado/Columna9/Letra_i" to="Letters" method="handle_string" binds= [ "I" ]]
 [connection signal="pressed" from="Teclado/Columna9/Letra_q" to="Letters" method="handle_string" binds= [ "Q" ]]
 [connection signal="pressed" from="Teclado/Columna9/Letra_z" to="Letters" method="handle_string" binds= [ "Z" ]]
+[connection signal="seacaboeltiempo" from="top_bar_minigames" to="." method="_on_top_bar_minigames_seacaboeltiempo"]
 
 [editable path="Teclado"]
+[editable path="top_bar_minigames"]

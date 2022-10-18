@@ -43,3 +43,10 @@ func _on_Letters_youwin():
 	if(Gamehandler.puntos > Gamehandler.pnivel1):
 		Gamehandler.pnivel1 = Gamehandler.puntos
 		
+
+
+func _on_top_bar_minigames_seacaboeltiempo():
+	perder_vida()
+	get_tree().change_scene("res://main_map/Main_scene.tscn")
+	emit_signal("game_over")
+	print("se te acabo el tiempo")
