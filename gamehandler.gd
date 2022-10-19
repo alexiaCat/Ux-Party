@@ -4,10 +4,12 @@ var counterhangedgame
 #cantidad maxima de vidas, comparar con vidas jugador ya que no puede exceder las 5
 var vidas_jugador = 5
 var time_left = 60
-# Luego de pasados 4 minutos desde la pérdida de una vida se repondrá la vida perdida.
+# Luego de pasados 4 minutos desde la pérdida de una vida se repondrá la vida perdida 240.
 var life_recharge = 20
-var puntajeglobal = 0
-var turno = true
+var puntajeglobal = 100
+var music = true
+var sounds = true
+var nameplayer = "juanita"
 # para probar que funcionan las estrellas
 var pnivel1 = 0
 var pnivel2 = 0

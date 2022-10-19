@@ -40,6 +40,7 @@ func _on_Letters_notthere():
 func _on_Letters_youwin():
 	get_tree().change_scene("res://main_map/Main_scene.tscn")
 	print("ganaste")
+	Gamehandler.time_left = 60
 	if(Gamehandler.puntos > Gamehandler.pnivel1):
 		Gamehandler.pnivel1 = Gamehandler.puntos
 		

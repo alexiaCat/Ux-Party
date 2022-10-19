@@ -7,8 +7,8 @@
 [ext_resource path="res://main/environment.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/buttons/CONFIG.png" type="Texture" id=6]
 [ext_resource path="res://assets/buttons/config_press.png" type="Texture" id=7]
-[ext_resource path="res://assets/audio/background.ogg" type="AudioStream" id=8]
 [ext_resource path="res://main/Main.gd" type="Script" id=9]
+[ext_resource path="res://menus/menu_config.tscn" type="PackedScene" id=10]
 
 [sub_resource type="GDScript" id=4]
 
@@ -30,13 +30,13 @@ script = ExtResource( 9 )
 [node name="HUD" type="CanvasLayer" parent="."]
 script = SubResource( 4 )
 
-[node name="Control" type="Control" parent="HUD"]
+[node name="Escena" type="Control" parent="HUD" groups=["escena"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
 margin_right = 2.0
 
-[node name="Tittle" type="Label" parent="HUD/Control"]
+[node name="Tittle" type="Label" parent="HUD/Escena"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -50,7 +50,7 @@ custom_fonts/font = SubResource( 2 )
 text = "  UX
 Party"
 
-[node name="Tittle2" type="Label" parent="HUD/Control"]
+[node name="Tittle2" type="Label" parent="HUD/Escena"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -64,7 +64,7 @@ custom_fonts/font = SubResource( 1 )
 text = "  UX
 Party"
 
-[node name="Play_button" type="TextureButton" parent="HUD/Control"]
+[node name="Play_button" type="TextureButton" parent="HUD/Escena"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -77,7 +77,7 @@ texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 4 )
 
-[node name="label_play" type="Label" parent="HUD/Control/Play_button"]
+[node name="label_play" type="Label" parent="HUD/Escena/Play_button"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -90,7 +90,7 @@ custom_colors/font_color = Color( 0.933333, 0.94902, 0.47451, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "¡Jugar!"
 
-[node name="Config_button" type="TextureButton" parent="HUD/Control"]
+[node name="Config_button" type="TextureButton" parent="HUD/Escena"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -61.0
@@ -101,19 +101,17 @@ texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 6 )
 
-[node name="MenuButton" type="MenuButton" parent="HUD/Control"]
-margin_left = 306.0
-margin_top = 27.0
-margin_right = 356.0
-margin_bottom = 71.0
-icon = ExtResource( 6 )
-items = [ "musica", ExtResource( 7 ), 1, true, true, 0, 0, null, "", true, "sonido", null, 0, false, false, 1, 0, null, "", false, "tutorial", null, 0, false, false, 2, 0, null, "", false ]
-
 [node name="environment" parent="." instance=ExtResource( 5 )]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-autoplay = true
+[node name="Menu" parent="." instance=ExtResource( 10 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 27.0
+margin_top = 264.0
+margin_right = 27.0
+margin_bottom = 264.0
 
-[connection signal="pressed" from="HUD/Control/Play_button" to="." method="_on_Play_button_pressed"]
-[connection signal="pressed" from="HUD/Control/Config_button" to="." method="_on_Config_button_pressed"]
+[connection signal="pressed" from="HUD/Escena/Play_button" to="." method="_on_Play_button_pressed"]
+[connection signal="button_up" from="HUD/Escena/Config_button" to="Menu" method="_on_Config_button_button_up"]
+
+[editable path="Menu"]
