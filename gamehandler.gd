@@ -40,7 +40,13 @@ func recharge_life():
 	if(vidas_jugador < 5):
 		print(vidas_jugador)
 		relojderecargarvidas()
-
+		
+func update_puntajeacumulado():
+	get_tree().get_nodes_in_group("points_player")[0].text = String(puntajeglobal)
+	
+func update_nombrejugador():
+	get_tree().get_nodes_in_group("name_player")[0].text = nameplayer
+	
 func update_vidas():
 	get_tree().get_nodes_in_group("vidasjugador")[0].text = String(vidas_jugador)
 

@@ -7,6 +7,8 @@ func _ready():
 	Gamehandler.update_vidas()
 	Gamehandler.recharge_life()
 	pintarestrellasmapa()
+	Gamehandler.update_puntajeacumulado()
+	Gamehandler.update_nombrejugador()
 	
 	
 func pintarestrellasmapa():

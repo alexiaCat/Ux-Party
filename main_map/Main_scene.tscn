@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://main_map/main_background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://barra inicio mapa/HUD.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://stars/mapa_star.tscn" type="PackedScene" id=7]
 [ext_resource path="res://menus/menu_mapaprincipal.tscn" type="PackedScene" id=8]
 [ext_resource path="res://menus/menuprincipal.gd" type="Script" id=9]
+[ext_resource path="res://profile/Profile.tscn" type="PackedScene" id=10]
 
 [node name="Main_scene" type="Node2D"]
 script = ExtResource( 3 )
@@ -237,8 +238,12 @@ text = "11"
 [node name="Timer_2" type="Timer" parent="."]
 
 [node name="Menu" parent="." instance=ExtResource( 8 )]
+visible = false
 script = ExtResource( 9 )
 
+[node name="Profile" parent="." instance=ExtResource( 10 )]
+
+[connection signal="button_up" from="HUD/Control/MarginContainer/HBoxContainer/Myprofile" to="Profile" method="_on_Myprofile_button_up"]
 [connection signal="button_up" from="HUD/Control/MarginContainer/HBoxContainer/Config" to="Menu" method="_on_Config_button_up"]
 [connection signal="pressed" from="Level1" to="." method="_on_Level1_pressed"]
 [connection signal="pressed" from="Level2" to="." method="_on_Level2_pressed"]
@@ -250,6 +255,7 @@ script = ExtResource( 9 )
 [connection signal="pressed" from="Level8" to="." method="_on_Level8_pressed"]
 [connection signal="pressed" from="Level9" to="." method="_on_Level9_pressed"]
 [connection signal="timeout" from="Timer_2" to="." method="_on_tiempo_vidas_timeout"]
+[connection signal="button_up" from="Profile/Modal_profile/btn_exit" to="Profile" method="_on_btn_exit_button_up"]
 
 [editable path="HUD"]
 [editable path="mapa_star"]
@@ -263,3 +269,4 @@ script = ExtResource( 9 )
 [editable path="mapa_star/estrellas8"]
 [editable path="mapa_star/estrellas9"]
 [editable path="Menu"]
+[editable path="Profile"]
