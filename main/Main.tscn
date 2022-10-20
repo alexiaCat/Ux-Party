@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://main/button_pressed.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://main/environment.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/buttons/CONFIG.png" type="Texture" id=6]
 [ext_resource path="res://assets/buttons/config_press.png" type="Texture" id=7]
+[ext_resource path="res://tutoriales/mainymap/Tutorial_mainymap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://main/Main.gd" type="Script" id=9]
 [ext_resource path="res://menus/menu_config.tscn" type="PackedScene" id=10]
 
@@ -111,7 +112,18 @@ margin_top = 264.0
 margin_right = 27.0
 margin_bottom = 264.0
 
+[node name="Tutorial_mainymap" parent="Menu" instance=ExtResource( 8 )]
+
+[node name="TutorialDialog" parent="Menu/Tutorial_mainymap" index="0"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -244.5
+margin_bottom = 244.5
+
 [connection signal="pressed" from="HUD/Escena/Play_button" to="." method="_on_Play_button_pressed"]
 [connection signal="button_up" from="HUD/Escena/Config_button" to="Menu" method="_on_Config_button_button_up"]
+[connection signal="button_up" from="Menu/Modal_config/Tutorial" to="Menu/Tutorial_mainymap" method="_on_Tutorial_button_up"]
+[connection signal="button_up" from="Menu/Tutorial_mainymap/TutorialDialog/btn_salir" to="Menu/Tutorial_mainymap" method="_on_btn_salir_button_up"]
 
 [editable path="Menu"]
+[editable path="Menu/Tutorial_mainymap"]

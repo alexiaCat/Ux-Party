@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://menus/menu_config.gd" type="Script" id=1]
-[ext_resource path="res://menus/musica.png" type="Texture" id=2]
-[ext_resource path="res://menus/nota-musical.png" type="Texture" id=3]
-[ext_resource path="res://menus/musica_pressed.png" type="Texture" id=4]
-[ext_resource path="res://menus/nota-musical_pressed.png" type="Texture" id=5]
-[ext_resource path="res://menus/options.png" type="Texture" id=6]
-[ext_resource path="res://menus/btn_exit.png" type="Texture" id=7]
-[ext_resource path="res://menus/comojugar_pressed.png" type="Texture" id=8]
+[ext_resource path="res://menus/assets/musica.png" type="Texture" id=2]
+[ext_resource path="res://menus/assets/nota-musical.png" type="Texture" id=3]
+[ext_resource path="res://menus/assets/musica_pressed.png" type="Texture" id=4]
+[ext_resource path="res://menus/assets/nota-musical_pressed.png" type="Texture" id=5]
+[ext_resource path="res://menus/assets/options.png" type="Texture" id=6]
+[ext_resource path="res://menus/assets/btn_exit.png" type="Texture" id=7]
+[ext_resource path="res://menus/assets/comojugar_pressed.png" type="Texture" id=8]
 
 [node name="Menu" type="Control"]
 margin_left = 3.0

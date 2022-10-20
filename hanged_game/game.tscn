@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://hanged_game/Teclado.tscn" type="PackedScene" id=1]
 [ext_resource path="res://hanged_game/hangman.tscn" type="PackedScene" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://hanged_game/game.gd" type="Script" id=5]
 [ext_resource path="res://hanged_game/Letters.gd" type="Script" id=6]
 [ext_resource path="res://top_bar_hanged_game/top_bar_minigames.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/buttons/sd.png" type="Texture" id=8]
+[ext_resource path="res://assets/buttons/light-bulb.png" type="Texture" id=9]
+[ext_resource path="res://hanged_game/Hint.gd" type="Script" id=10]
+[ext_resource path="res://hanged_game/Hint.tscn" type="PackedScene" id=11]
 
 [node name="game" type="Node2D"]
 script = ExtResource( 5 )
@@ -123,8 +127,25 @@ margin_right = 41.0
 margin_right = 41.0
 
 [node name="hangman" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1, 21 )
 
 [node name="top_bar_minigames" parent="." instance=ExtResource( 7 )]
+
+[node name="btn_hint" type="TextureButton" parent="."]
+margin_left = 185.0
+margin_top = 99.0
+margin_right = 249.0
+margin_bottom = 163.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+
+[node name="Hint" parent="." instance=ExtResource( 11 )]
+margin_left = 151.0
+margin_top = 93.0
+margin_right = 191.0
+margin_bottom = 133.0
+script = ExtResource( 10 )
 
 [connection signal="notthere" from="Letters" to="." method="_on_Letters_notthere"]
 [connection signal="youwin" from="Letters" to="." method="_on_Letters_youwin"]
@@ -156,6 +177,8 @@ margin_right = 41.0
 [connection signal="pressed" from="Teclado/Columna9/Letra_q" to="Letters" method="handle_string" binds= [ "Q" ]]
 [connection signal="pressed" from="Teclado/Columna9/Letra_z" to="Letters" method="handle_string" binds= [ "Z" ]]
 [connection signal="seacaboeltiempo" from="top_bar_minigames" to="." method="_on_top_bar_minigames_seacaboeltiempo"]
+[connection signal="button_up" from="btn_hint" to="Hint" method="_on_btn_hint_button_up"]
 
 [editable path="Teclado"]
 [editable path="top_bar_minigames"]
+[editable path="Hint"]

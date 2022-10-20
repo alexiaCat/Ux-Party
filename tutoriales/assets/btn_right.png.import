@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nota-musical.png-f46a417d29ba7f72c359d65f273ee643.stex"
+path="res://.import/btn_right.png-1297bc697ec31aba359a00739e5152e5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menus/nota-musical.png"
-dest_files=[ "res://.import/nota-musical.png-f46a417d29ba7f72c359d65f273ee643.stex" ]
+source_file="res://tutoriales/assets/btn_right.png"
+dest_files=[ "res://.import/btn_right.png-1297bc697ec31aba359a00739e5152e5.stex" ]
 
 [params]
 

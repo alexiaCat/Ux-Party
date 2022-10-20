@@ -3,7 +3,7 @@ extends Control
 
 onready var popup = get_node("Modal_config")
 
-
+signal opentuto
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
+#	passemit_signal("opentuto")
 
 
 func _on_btn_exit_button_up():

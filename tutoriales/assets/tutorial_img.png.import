@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/musica.png-efc2631fcf4814618f8c5e9cb114e179.stex"
+path="res://.import/tutorial_img.png-2bedb2076135c8b074319d4cab776132.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menus/musica.png"
-dest_files=[ "res://.import/musica.png-efc2631fcf4814618f8c5e9cb114e179.stex" ]
+source_file="res://tutoriales/assets/tutorial_img.png"
+dest_files=[ "res://.import/tutorial_img.png-2bedb2076135c8b074319d4cab776132.stex" ]
 
 [params]
 

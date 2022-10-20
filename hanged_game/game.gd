@@ -51,3 +51,4 @@ func _on_top_bar_minigames_seacaboeltiempo():
 	get_tree().change_scene("res://main_map/Main_scene.tscn")
 	emit_signal("game_over")
 	print("se te acabo el tiempo")
+	Gamehandler.time_left = 60
