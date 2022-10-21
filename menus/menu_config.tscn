@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://menus/menu_config.gd" type="Script" id=1]
 [ext_resource path="res://menus/assets/musica.png" type="Texture" id=2]
@@ -7,7 +7,9 @@
 [ext_resource path="res://menus/assets/nota-musical_pressed.png" type="Texture" id=5]
 [ext_resource path="res://menus/assets/options.png" type="Texture" id=6]
 [ext_resource path="res://menus/assets/btn_exit.png" type="Texture" id=7]
-[ext_resource path="res://menus/assets/comojugar_pressed.png" type="Texture" id=8]
+[ext_resource path="res://assets/fonts/winner_hg.tres" type="DynamicFont" id=8]
+[ext_resource path="res://menus/assets/btn_pressed.png" type="Texture" id=9]
+[ext_resource path="res://menus/assets/btn_normal.png" type="Texture" id=10]
 
 [node name="Menu" type="Control"]
 margin_left = 3.0
@@ -39,19 +41,19 @@ margin_bottom = 408.0
 texture = ExtResource( 6 )
 
 [node name="Música" type="TextureButton" parent="Modal_config"]
-margin_left = 109.0
-margin_top = 57.0
-margin_right = 159.0
-margin_bottom = 107.0
+margin_left = 108.0
+margin_top = 64.0
+margin_right = 158.0
+margin_bottom = 114.0
 toggle_mode = true
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 4 )
 
 [node name="Efectos" type="TextureButton" parent="Modal_config"]
-margin_left = 112.0
-margin_top = 182.0
-margin_right = 162.0
-margin_bottom = 232.0
+margin_left = 109.0
+margin_top = 193.0
+margin_right = 159.0
+margin_bottom = 243.0
 toggle_mode = true
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )
@@ -61,8 +63,21 @@ margin_left = 36.0
 margin_top = 295.0
 margin_right = 237.0
 margin_bottom = 344.0
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 8 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="Modal_config/Tutorial"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -61.0
+margin_top = -13.0
+margin_right = 67.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 8 )
+text = "Cómo jugar"
 
 [node name="btn_exit" type="TextureButton" parent="Modal_config"]
 margin_left = 236.0

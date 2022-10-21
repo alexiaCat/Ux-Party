@@ -40,12 +40,20 @@ func _on_Letters_notthere():
 func _on_Letters_youwin():
 	get_tree().change_scene("res://main_map/Main_scene.tscn")
 	print("ganaste")
-	Gamehandler.level1 = true
+	if (Gamehandler.enquenivelestoy == 1):
+		Gamehandler.level1 = true
+		if(Gamehandler.puntos > Gamehandler.pnivel1):
+			Gamehandler.pnivel1 = Gamehandler.puntos
+	elif (Gamehandler.enquenivelestoy == 4):
+		Gamehandler.level4 = true
+		if(Gamehandler.puntos > Gamehandler.pnivel4):
+			Gamehandler.pnivel4 = Gamehandler.puntos
+	else:
+		Gamehandler.level7 = true
+		if(Gamehandler.puntos > Gamehandler.pnivel7):
+			Gamehandler.pnivel7 = Gamehandler.puntos
 	Gamehandler.time_left = 60
-	if(Gamehandler.puntos > Gamehandler.pnivel1):
-		Gamehandler.pnivel1 = Gamehandler.puntos
 		
-
 
 func _on_top_bar_minigames_seacaboeltiempo():
 	perder_vida()

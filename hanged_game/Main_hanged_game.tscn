@@ -1,11 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://hanged_game/background_ahorcado.tscn" type="PackedScene" id=1]
-[ext_resource path="res://hanged_game/Main_hanged_game.gd" type="Script" id=3]
 [ext_resource path="res://hanged_game/game.tscn" type="PackedScene" id=4]
 
 [node name="Main_hanged_game" type="Node2D"]
-script = ExtResource( 3 )
 
 [node name="background_ahorcado" parent="." instance=ExtResource( 1 )]
 

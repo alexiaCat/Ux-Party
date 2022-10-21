@@ -152,64 +152,73 @@ func paint_starslvl9():
 
 func _on_Level1_pressed():
 	if(Gamehandler.vidas_jugador > 0):
+		Gamehandler.enquenivelestoy = 1
 		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
 	else:
 		print("no tienes vidas")
 
 
 func _on_Level2_pressed():
-	if(Gamehandler.vidas_jugador < 0 || Gamehandler.level1 == false):
+	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level1 == false):
 		print("no puedes ingresar")
 	else:
+		Gamehandler.enquenivelestoy = 2
 		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
 
 
 func _on_Level3_pressed():
-	if(Gamehandler.vidas_jugador > 0 || Gamehandler.level2 == false):
+	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level2 == false):
 		print("no puedes ingresar")
 	else:
+		Gamehandler.enquenivelestoy = 3
 		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
 
 
 func _on_Level4_pressed():
-	if(Gamehandler.vidas_jugador > 0 || Gamehandler.level3 == false):
+	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level3 == false):
 		print("no puedes ingresar")
 	else:
+		Gamehandler.enquenivelestoy = 4
 		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
 
 
 func _on_Level5_pressed():
-	if(Gamehandler.vidas_jugador > 0 || Gamehandler.level4 == false):
+	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level4 == false):
 		print("no puedes ingresar")
 	else:
+		Gamehandler.enquenivelestoy = 5
 		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
 
 
 func _on_Level6_pressed():
-	if(Gamehandler.vidas_jugador > 0 || Gamehandler.level5 == false):
+	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level5 == false):
 		print("no puedes ingresar")
 	else:
+		Gamehandler.enquenivelestoy = 6
 		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
 
 
 func _on_Level7_pressed():
-	if(Gamehandler.vidas_jugador > 0 || Gamehandler.level6 == false):
+	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level6 == false):
 		print("no puedes ingresar")
 	else:
+		Gamehandler.enquenivelestoy = 7
 		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
 
 
 func _on_Level8_pressed():
-	if(Gamehandler.vidas_jugador > 0 || Gamehandler.level7 == false):
+	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level7 == false):
 		print("no puedes ingresar")
 	else:
+		Gamehandler.enquenivelestoy = 8
 		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
 
 
 func _on_Level9_pressed():
-	if(Gamehandler.vidas_jugador > 0 || Gamehandler.level8 == false):
+	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level8 == false):
 		print("no puedes ingresar")
 	else:
+		Gamehandler.enquenivelestoy = 9
 		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
 
 

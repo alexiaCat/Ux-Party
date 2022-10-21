@@ -8,7 +8,9 @@ onready var apretarletra_s : AudioStreamPlayer = get_node("click_letter")
 var arr_labels = []
 var alpha = []
 var arr_spaces = []
-var words = ["UX", "EXPERIENCIA"]
+var wordslvl1 = ["UX", "EXPERIENCIA"]
+var wordslvl4 = ["PERRO", "GATO"]
+var wordslvl7 = ["ALGO", "USUARIO"]
 
 var length
 var temp
@@ -19,8 +21,15 @@ signal youwin
 
 
 func _ready():
-	randomize()
-	input = words[randi() % words.size()]
+	if (Gamehandler.enquenivelestoy == 1):
+		randomize()
+		input = wordslvl1[randi() % wordslvl1.size()]
+	elif (Gamehandler.enquenivelestoy == 4):
+		randomize()
+		input = wordslvl4[randi() % wordslvl4.size()]
+	else:
+		randomize()
+		input = wordslvl7[randi() % wordslvl7.size()]
 	temp = input
 	arr_labels.clear()
 	alpha.clear()

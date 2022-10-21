@@ -1,6 +1,7 @@
 extends Node
 
-var counterhangedgame
+#saber que nivel voy a jugar
+var enquenivelestoy
 #cantidad maxima de vidas, comparar con vidas jugador ya que no puede exceder las 5
 var vidas_jugador = 5
 var time_left = 60
@@ -10,6 +11,9 @@ var puntajeglobal = 100
 var music = true
 var sounds = true
 var nameplayer = "juanita"
+var msg1 = "Sabes mucho"
+var msg2 = "Eres genial"
+var msg3 = "Eres el mejor\n del mundo"
 # para probar que funcionan las estrellas
 var pnivel1 = 0
 var pnivel2 = 0
@@ -23,14 +27,14 @@ var pnivel9 = 0
 var puntos = 0
 
 #variables para saber si el nivel esta pasado o no, ej: no poder ingresar a nivel 2 sin pasar nivel 1
-var level1 = false
-var level2 = false
-var level3 = false
-var level4 = false
-var level5 = false
-var level6 = false
-var level7 = false
-var level8 = false
+var level1 = true
+var level2 = true
+var level3 = true
+var level4 = true
+var level5 = true
+var level6 = true
+var level7 = true
+var level8 = true
 
 
 func _ready():
@@ -58,3 +62,16 @@ func update_time():
 
 func update_puntos():
 	get_tree().get_nodes_in_group("puntos")[0].text = String(puntos)
+	
+#funcion va en script de la escena winner
+func update_msg_ganador():
+	if (puntos > 199 && puntos < 299):
+		print("pinta 1 sola estrella")
+		get_tree().get_nodes_in_group("youwin")[0].text = msg1
+		$mapa_star/estrellas2/uno/star1.show()
+	elif(Gamehandler.puntos > 299 && Gamehandler.puntos < 499):
+		print("pinta 2 estrellas")
+		get_tree().get_nodes_in_group("youwin")[0].text = msg2
+		$mapa_star/estrellas2/uno/star1.show()
+	elif(Gamehandler.puntos == 500):
+		get_tree().get_nodes_in_group("youwin")[0].text = msg3

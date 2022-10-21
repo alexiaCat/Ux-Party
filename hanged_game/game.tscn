@@ -19,7 +19,7 @@ script = ExtResource( 5 )
 script = ExtResource( 6 )
 
 [node name="start" type="Position2D" parent="Letters"]
-position = Vector2( 29, 557 )
+position = Vector2( 37, 562 )
 
 [node name="click_letter" type="AudioStreamPlayer" parent="Letters"]
 stream = ExtResource( 4 )
@@ -130,6 +130,12 @@ margin_right = 41.0
 position = Vector2( 1, 21 )
 
 [node name="top_bar_minigames" parent="." instance=ExtResource( 7 )]
+
+[node name="Points" parent="top_bar_minigames/Control/MarginContainer2" index="0"]
+custom_colors/font_color = Color( 0.74902, 0.352941, 0.313726, 1 )
+
+[node name="ScoreLabel" parent="top_bar_minigames/Control/MarginContainer2" index="1"]
+custom_colors/font_color = Color( 0.74902, 0.352941, 0.313726, 1 )
 
 [node name="btn_hint" type="TextureButton" parent="."]
 margin_left = 185.0
