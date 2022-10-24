@@ -1,11 +1,13 @@
 extends Node2D
 
 var counter
+#variable para detectar a que escena debe enviar si gana o pierde
+var win = false
 
-signal game_over
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	counter = 0
+	Gamehandler.time_left = 60
 	Gamehandler.puntos = 500
 	Gamehandler.update_puntos()
 
@@ -30,15 +32,16 @@ func _on_Letters_notthere():
 		6: $hangman/person/pie_derecho.show()
 	if counter == 6:
 		perder_vida()
-		#probar si funciona contador de vidas
-		get_tree().change_scene("res://main_map/Main_scene.tscn")
-		emit_signal("game_over")
+		win = false;
+		$end_timer.start()
 		print("perdiste")
 
 
 
 func _on_Letters_youwin():
-	get_tree().change_scene("res://main_map/Main_scene.tscn")
+	$end_timer.start()
+	Gamehandler.puntajevariable = Gamehandler.puntos
+	win = true;
 	print("ganaste")
 	if (Gamehandler.enquenivelestoy == 1):
 		Gamehandler.level1 = true
@@ -55,9 +58,9 @@ func _on_Letters_youwin():
 	Gamehandler.time_left = 60
 		
 
-func _on_top_bar_minigames_seacaboeltiempo():
-	perder_vida()
-	get_tree().change_scene("res://main_map/Main_scene.tscn")
-	emit_signal("game_over")
-	print("se te acabo el tiempo")
-	Gamehandler.time_left = 60
+
+func _on_end_timer_timeout():
+	if (win == true):
+		get_tree().change_scene("res://win/hg/winner_hg.tscn")
+	else:
+		get_tree().change_scene("res://lost/loser.tscn")

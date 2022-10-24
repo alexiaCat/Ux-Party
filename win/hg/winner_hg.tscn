@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://win/hg/2f26222ac6b14270ad71a35c1a4d92aa (4).png" type="Texture" id=1]
 [ext_resource path="res://win/hg/imagen1.png" type="Texture" id=2]
@@ -8,12 +8,14 @@
 [ext_resource path="res://win/hg/btn_normal.png" type="Texture" id=6]
 [ext_resource path="res://win/hg/btn_pressed.png" type="Texture" id=7]
 [ext_resource path="res://win/hg/contento.png" type="Texture" id=8]
+[ext_resource path="res://win/hg/winner_hg.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=2]
 size = 24
 font_data = ExtResource( 5 )
 
 [node name="winner" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="fondo" type="TextureRect" parent="."]
 margin_right = 449.0
@@ -80,5 +82,7 @@ position = Vector2( 125, 393 )
 
 [node name="estrella1" parent="stars_lvl/star1" index="0"]
 visible = true
+
+[connection signal="button_up" from="fondo/Box/btn_nextlvl" to="." method="_on_btn_nextlvl_button_up"]
 
 [editable path="stars_lvl"]

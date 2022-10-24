@@ -3,7 +3,7 @@
 [ext_resource path="res://hanged_game/hover.tres" type="StyleBox" id=1]
 [ext_resource path="res://hanged_game/normal.tres" type="StyleBox" id=2]
 
-[node name="Teclado" type="HBoxContainer"]
+[node name="Teclado" type="HBoxContainer" groups=["teclado"]]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://top_bar_hanged_game/btn_tutorial.png" type="Texture" id=1]
 [ext_resource path="res://top_bar_hanged_game/btn_tutorial_press.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://top_bar_hanged_game/btn_quit.png" type="Texture" id=4]
 [ext_resource path="res://top_bar_hanged_game/btn_quitpressed.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://tutoriales/juegoahorcado/tutoAhorcado.tscn" type="PackedScene" id=7]
+[ext_resource path="res://menus/menu_ahorcado/Menu_ahorcado.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 6 )
@@ -37,7 +39,7 @@ margin_top = 9.0
 margin_bottom = 29.0
 custom_fonts/font = SubResource( 1 )
 
-[node name="Button_tutorial" type="TextureButton" parent="Control/MarginContainer/HBoxContainer"]
+[node name="Button_tutorial" type="TextureButton" parent="Control/MarginContainer/HBoxContainer" groups=["btntuto"]]
 margin_left = 119.0
 margin_right = 160.0
 margin_bottom = 38.0
@@ -55,7 +57,7 @@ text = "?"
 align = 1
 valign = 1
 
-[node name="Button_quit" type="TextureButton" parent="Control/MarginContainer/HBoxContainer"]
+[node name="Button_quit" type="TextureButton" parent="Control/MarginContainer/HBoxContainer" groups=["btnquit"]]
 margin_left = 279.0
 margin_right = 348.0
 margin_bottom = 38.0
@@ -75,14 +77,14 @@ margin_bottom = 10.0
 custom_fonts/font = SubResource( 1 )
 text = "Salir"
 
-[node name="MarginContainer2" type="MarginContainer" parent="Control"]
+[node name="Containerptj" type="MarginContainer" parent="Control" groups=["contenedorptj"]]
 anchor_right = 1.0
 margin_left = 150.0
 margin_top = 60.0
 margin_right = -180.0
 margin_bottom = 20.0
 
-[node name="Points" type="Label" parent="Control/MarginContainer2"]
+[node name="Points" type="Label" parent="Control/Containerptj"]
 margin_right = 118.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
@@ -90,7 +92,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "PUNTAJE:"
 
-[node name="ScoreLabel" type="Label" parent="Control/MarginContainer2" groups=["puntos"]]
+[node name="ScoreLabel" type="Label" parent="Control/Containerptj" groups=["puntos"]]
 margin_right = 118.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
@@ -99,7 +101,52 @@ custom_fonts/font = SubResource( 1 )
 text = "100"
 align = 2
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." groups=["hangedtime"]]
 autostart = true
 
+[node name="Tutorial_ahorcado" parent="." instance=ExtResource( 7 )]
+anchor_left = 0.46
+anchor_top = 0.332
+anchor_right = 0.46
+anchor_bottom = 0.332
+margin_left = -11.08
+margin_top = 58.272
+margin_right = 46.92
+margin_bottom = 109.272
+
+[node name="TutoriaAhorcado" parent="Tutorial_ahorcado" index="0"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -176.0
+margin_top = -244.0
+margin_right = 176.0
+margin_bottom = 244.0
+
+[node name="TextureRect" parent="Tutorial_ahorcado/TutoriaAhorcado" index="1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -179.0
+margin_top = -285.5
+margin_right = 176.0
+margin_bottom = 244.5
+
+[node name="btn_salir" parent="Tutorial_ahorcado/TutoriaAhorcado" index="5"]
+margin_left = 313.0
+margin_top = -46.0
+margin_right = 377.0
+margin_bottom = 18.0
+
+[node name="Menu_ahorcado" parent="." instance=ExtResource( 8 )]
+
+[connection signal="button_up" from="Control/MarginContainer/HBoxContainer/Button_tutorial" to="Tutorial_ahorcado" method="_on_Button_tutorial_button_up"]
+[connection signal="button_up" from="Control/MarginContainer/HBoxContainer/Button_quit" to="Menu_ahorcado" method="_on_Button_quit_button_up"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="button_up" from="Tutorial_ahorcado/TutoriaAhorcado/btn_salir" to="." method="_on_btn_salir_button_up"]
+[connection signal="button_up" from="Tutorial_ahorcado/TutoriaAhorcado/btn_salir" to="Tutorial_ahorcado" method="_on_btn_salir_button_up"]
+[connection signal="button_up" from="Menu_ahorcado/MenuAhorcado/TextureRect/btn_exit" to="Menu_ahorcado" method="_on_btn_exit_button_up"]
+[connection signal="button_up" from="Menu_ahorcado/MenuAhorcado/TextureRect/Salir" to="Menu_ahorcado" method="_on_Salir_button_up"]
+
+[editable path="Tutorial_ahorcado"]
+[editable path="Menu_ahorcado"]

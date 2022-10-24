@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/fonts/winner_hg.tres" type="DynamicFont" id=1]
 [ext_resource path="res://win/hg/2f26222ac6b14270ad71a35c1a4d92aa (4).png" type="Texture" id=2]
@@ -7,12 +7,14 @@
 [ext_resource path="res://lost/triste.png" type="Texture" id=5]
 [ext_resource path="res://win/hg/imagen1.png" type="Texture" id=6]
 [ext_resource path="res://assets/fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://lost/loser.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
 font_data = ExtResource( 7 )
 
 [node name="loser" type="Node2D"]
+script = ExtResource( 8 )
 
 [node name="fondo" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -72,3 +74,5 @@ margin_right = 85.0
 margin_bottom = 11.5
 custom_fonts/font = SubResource( 1 )
 text = "Volver al minimapa"
+
+[connection signal="button_up" from="fondo/btn_volver" to="." method="_on_btn_volver_button_up"]

@@ -1,14 +1,15 @@
 extends Node2D
 
-
+signal pasoeltiemporecargarotravida
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Gamehandler.update_vidas()
-	Gamehandler.recharge_life()
+	recharge_life()
 	pintarestrellasmapa()
 	Gamehandler.update_puntajeacumulado()
 	Gamehandler.update_nombrejugador()
+	Gamehandler.relojderecargarvidas()
 	
 	
 func pintarestrellasmapa():
@@ -225,8 +226,21 @@ func _on_Level9_pressed():
 func _on_tiempo_vidas_timeout():
 	if(Gamehandler.life_recharge > 0):
 		Gamehandler.life_recharge -= 1
-		print("life_recharge")
 		Gamehandler.relojderecargarvidas()
 	else:
-		Gamehandler.vidas_jugador += 1
-		Gamehandler.life_recharge = 240
+		emit_signal("pasoeltiemporecargarotravida")
+
+#recarga vidas cada 4 minutos
+func recharge_life():
+	if(Gamehandler.vidas_jugador < 5):
+		$life_time.start()
+		print(Gamehandler.vidas_jugador)
+
+
+
+func _on_Main_scene_pasoeltiemporecargarotravida():
+	Gamehandler.vidas_jugador += 1
+	Gamehandler.update_vidas()
+	print("se te cargo una vida")
+	Gamehandler.life_recharge = 240
+	$life_time.stop()

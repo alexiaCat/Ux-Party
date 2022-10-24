@@ -131,13 +131,7 @@ position = Vector2( 1, 21 )
 
 [node name="top_bar_minigames" parent="." instance=ExtResource( 7 )]
 
-[node name="Points" parent="top_bar_minigames/Control/MarginContainer2" index="0"]
-custom_colors/font_color = Color( 0.74902, 0.352941, 0.313726, 1 )
-
-[node name="ScoreLabel" parent="top_bar_minigames/Control/MarginContainer2" index="1"]
-custom_colors/font_color = Color( 0.74902, 0.352941, 0.313726, 1 )
-
-[node name="btn_hint" type="TextureButton" parent="."]
+[node name="btn_hint" type="TextureButton" parent="." groups=["hint"]]
 margin_left = 185.0
 margin_top = 99.0
 margin_right = 249.0
@@ -152,6 +146,9 @@ margin_top = 93.0
 margin_right = 191.0
 margin_bottom = 133.0
 script = ExtResource( 10 )
+
+[node name="end_timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="notthere" from="Letters" to="." method="_on_Letters_notthere"]
 [connection signal="youwin" from="Letters" to="." method="_on_Letters_youwin"]
@@ -182,9 +179,11 @@ script = ExtResource( 10 )
 [connection signal="pressed" from="Teclado/Columna9/Letra_i" to="Letters" method="handle_string" binds= [ "I" ]]
 [connection signal="pressed" from="Teclado/Columna9/Letra_q" to="Letters" method="handle_string" binds= [ "Q" ]]
 [connection signal="pressed" from="Teclado/Columna9/Letra_z" to="Letters" method="handle_string" binds= [ "Z" ]]
-[connection signal="seacaboeltiempo" from="top_bar_minigames" to="." method="_on_top_bar_minigames_seacaboeltiempo"]
 [connection signal="button_up" from="btn_hint" to="Hint" method="_on_btn_hint_button_up"]
+[connection signal="timeout" from="end_timer" to="." method="_on_end_timer_timeout"]
 
 [editable path="Teclado"]
 [editable path="top_bar_minigames"]
+[editable path="top_bar_minigames/Tutorial_ahorcado"]
+[editable path="top_bar_minigames/Menu_ahorcado"]
 [editable path="Hint"]

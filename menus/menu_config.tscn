@@ -58,6 +58,18 @@ toggle_mode = true
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )
 
+[node name="efts" type="Label" parent="Modal_config"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -44.0
+margin_top = -52.0
+margin_right = 46.0
+margin_bottom = -23.0
+custom_fonts/font = ExtResource( 8 )
+text = "Efectos"
+
 [node name="Tutorial" type="TextureButton" parent="Modal_config"]
 margin_left = 36.0
 margin_top = 295.0
@@ -85,5 +97,17 @@ margin_top = -45.0
 margin_right = 300.0
 margin_bottom = 19.0
 texture_normal = ExtResource( 7 )
+
+[node name="msc" type="Label" parent="Modal_config"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -39.0
+margin_top = -187.0
+margin_right = 41.0
+margin_bottom = -158.0
+custom_fonts/font = ExtResource( 8 )
+text = "Música"
 
 [connection signal="button_up" from="Modal_config/btn_exit" to="." method="_on_btn_exit_button_up"]

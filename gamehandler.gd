@@ -1,16 +1,23 @@
 extends Node
 
+var cont = 6
+var timer = Timer.new()  
+#variable donde guardo puntaje variable 
+var puntajevariable
+#saber si ingrese por primera vez
+var first_time = true
 #saber que nivel voy a jugar
 var enquenivelestoy
 #cantidad maxima de vidas, comparar con vidas jugador ya que no puede exceder las 5
 var vidas_jugador = 5
+#timer barra superior
 var time_left = 60
 # Luego de pasados 4 minutos desde la pérdida de una vida se repondrá la vida perdida 240.
-var life_recharge = 20
-var puntajeglobal = 100
+var life_recharge = 240
+var puntajeglobal = 0
 var music = true
 var sounds = true
-var nameplayer = "juanita"
+var nameplayer = "ingresa tu nombre"
 var msg1 = "Sabes mucho"
 var msg2 = "Eres genial"
 var msg3 = "Eres el mejor\n del mundo"
@@ -36,15 +43,27 @@ var level6 = true
 var level7 = true
 var level8 = true
 
-
-func _ready():
-	pass
+var x: int = 0
 	
-func recharge_life():
-	if(vidas_jugador < 5):
-		print(vidas_jugador)
-		relojderecargarvidas()
-		
+func _ready():
+	sumarvida()
+  
+func on_global_timer_timeout():
+	if(life_recharge > 0):
+		life_recharge -= 1
+	else:
+		timer.connect("timeout", self, "on_global_timer_timeout")   
+		print("foo")  
+
+	
+func sumarvida():
+	if(cont > 4):
+		timer.start(life_recharge)
+		self.add_child(timer)
+		print("hola")
+		timer.connect("timeout", self, "on_global_timer_timeout")  
+	
+	
 func update_puntajeacumulado():
 	get_tree().get_nodes_in_group("points_player")[0].text = String(puntajeglobal)
 	
@@ -63,15 +82,3 @@ func update_time():
 func update_puntos():
 	get_tree().get_nodes_in_group("puntos")[0].text = String(puntos)
 	
-#funcion va en script de la escena winner
-func update_msg_ganador():
-	if (puntos > 199 && puntos < 299):
-		print("pinta 1 sola estrella")
-		get_tree().get_nodes_in_group("youwin")[0].text = msg1
-		$mapa_star/estrellas2/uno/star1.show()
-	elif(Gamehandler.puntos > 299 && Gamehandler.puntos < 499):
-		print("pinta 2 estrellas")
-		get_tree().get_nodes_in_group("youwin")[0].text = msg2
-		$mapa_star/estrellas2/uno/star1.show()
-	elif(Gamehandler.puntos == 500):
-		get_tree().get_nodes_in_group("youwin")[0].text = msg3
