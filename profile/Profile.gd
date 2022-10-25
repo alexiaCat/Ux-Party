@@ -5,14 +5,11 @@ onready var popup = get_node("Modal_profile")
 
 
 func _ready():
-	pass # Replace with function body.
+	Gamehandler.update_nombrejugador()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	
 
-
+#modal profile
 func _on_Myprofile_button_up():
 	popup.visible = true
 

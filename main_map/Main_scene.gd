@@ -1,15 +1,18 @@
 extends Node2D
 
-signal pasoeltiemporecargarotravida
+export(Texture) var past_level
+
+var label_node
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Gamehandler.update_vidas()
-	recharge_life()
 	pintarestrellasmapa()
 	Gamehandler.update_puntajeacumulado()
 	Gamehandler.update_nombrejugador()
 	Gamehandler.relojderecargarvidas()
+	change_icons()
 	
 	
 func pintarestrellasmapa():
@@ -150,6 +153,36 @@ func paint_starslvl9():
 		$mapa_star/estrellas9/dos/star2.show()
 		$mapa_star/estrellas9/tres/start3.show()
 
+#funciones para cambiar icono de los niveles pasados
+func change_icons():
+	if(Gamehandler.level1 == true):
+		$Level1.texture_normal = past_level
+		$Level1.texture_hover = past_level
+	if(Gamehandler.level2 == true):
+		$Level2.texture_normal = past_level
+		$Level2.texture_hover = past_level
+	if(Gamehandler.level3 == true):
+		$Level3.texture_normal = past_level
+		$Level3.texture_hover = past_level
+	if(Gamehandler.level4 == true):
+		$Level4.texture_normal = past_level
+		$Level4.texture_hover = past_level
+	if(Gamehandler.level5 == true):
+		$Level5.texture_normal = past_level
+		$Level5.texture_hover = past_level
+	if(Gamehandler.level6 == true):
+		$Level6.texture_normal = past_level
+		$Level6.texture_hover = past_level
+	if(Gamehandler.level7 == true):
+		$Level7.texture_normal = past_level
+		$Level7.texture_hover = past_level
+	if(Gamehandler.level8 == true):
+		$Level8.texture_normal = past_level
+		$Level8.texture_hover = past_level
+	if(Gamehandler.level9 == true):
+		$Level9.texture_normal = past_level
+		$Level9.texture_hover = past_level
+
 
 func _on_Level1_pressed():
 	if(Gamehandler.vidas_jugador > 0):
@@ -223,24 +256,8 @@ func _on_Level9_pressed():
 		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
 
 
-func _on_tiempo_vidas_timeout():
-	if(Gamehandler.life_recharge > 0):
-		Gamehandler.life_recharge -= 1
-		Gamehandler.relojderecargarvidas()
-	else:
-		emit_signal("pasoeltiemporecargarotravida")
 
-#recarga vidas cada 4 minutos
-func recharge_life():
-	if(Gamehandler.vidas_jugador < 5):
-		$life_time.start()
-		print(Gamehandler.vidas_jugador)
-
-
-
-func _on_Main_scene_pasoeltiemporecargarotravida():
-	Gamehandler.vidas_jugador += 1
-	Gamehandler.update_vidas()
-	print("se te cargo una vida")
-	Gamehandler.life_recharge = 240
-	$life_time.stop()
+func _on_inputName_text_entered(new_text):
+	Gamehandler.nameplayer = new_text
+	Gamehandler.update_nombrejugador()
+	$Profile/edit_profile/Window_name/TextureRect/inputName.clear()

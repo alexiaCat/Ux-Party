@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://main_map/main_background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://barra inicio mapa/HUD.tscn" type="PackedScene" id=2]
@@ -11,12 +11,15 @@
 [ext_resource path="res://menus/menuprincipal.gd" type="Script" id=9]
 [ext_resource path="res://profile/Profile.tscn" type="PackedScene" id=10]
 [ext_resource path="res://tutoriales/mainymap/Tutorial_mainymap.tscn" type="PackedScene" id=11]
+[ext_resource path="res://main_map/LEVEL_PASS.png" type="Texture" id=12]
+[ext_resource path="res://profile/edit_profile/edit_profile.gd" type="Script" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 1
 
 [node name="Main_scene" type="Node2D"]
 script = ExtResource( 3 )
+past_level = ExtResource( 12 )
 
 [node name="main_background" parent="." instance=ExtResource( 1 )]
 
@@ -240,12 +243,15 @@ custom_colors/font_color = Color( 0.00392157, 0.0156863, 0.0666667, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "jhh"
 
-[node name="life_time" type="Timer" parent="."]
-
 [node name="Menu" parent="." instance=ExtResource( 8 )]
 script = ExtResource( 9 )
 
 [node name="Profile" parent="." instance=ExtResource( 10 )]
+
+[node name="Modal_profile" parent="Profile" index="0" groups=["controlprofile"]]
+
+[node name="edit_profile" parent="Profile" index="1"]
+script = ExtResource( 13 )
 
 [node name="Tutorial_mainymap" parent="." instance=ExtResource( 11 )]
 anchor_left = 0.5
@@ -273,7 +279,6 @@ margin_top = -284.5
 margin_right = 178.5
 margin_bottom = 245.5
 
-[connection signal="pasoeltiemporecargarotravida" from="." to="." method="_on_Main_scene_pasoeltiemporecargarotravida"]
 [connection signal="button_up" from="HUD/Control/MarginContainer/HBoxContainer/Myprofile" to="Profile" method="_on_Myprofile_button_up"]
 [connection signal="button_up" from="HUD/Control/MarginContainer/HBoxContainer/Config" to="Menu" method="_on_Config_button_up"]
 [connection signal="pressed" from="Level1" to="." method="_on_Level1_pressed"]
@@ -285,9 +290,12 @@ margin_bottom = 245.5
 [connection signal="pressed" from="Level7" to="." method="_on_Level7_pressed"]
 [connection signal="pressed" from="Level8" to="." method="_on_Level8_pressed"]
 [connection signal="pressed" from="Level9" to="." method="_on_Level9_pressed"]
-[connection signal="timeout" from="life_time" to="." method="_on_tiempo_vidas_timeout"]
 [connection signal="button_up" from="Menu/Modal_config/Tutorial" to="Tutorial_mainymap" method="_on_Tutorial_button_up"]
+[connection signal="button_up" from="Profile/Modal_profile/TextureRect/editar_nombre" to="Profile/edit_profile" method="_on_editar_nombre_button_up"]
 [connection signal="button_up" from="Profile/Modal_profile/btn_exit" to="Profile" method="_on_btn_exit_button_up"]
+[connection signal="text_entered" from="Profile/edit_profile/Window_name/TextureRect/inputName" to="." method="_on_inputName_text_entered"]
+[connection signal="button_up" from="Profile/edit_profile/Window_name/TextureRect/btn_acept" to="Profile/edit_profile" method="_on_btn_acept_button_up"]
+[connection signal="button_up" from="Profile/edit_profile/Window_name/TextureRect/btn_exit" to="Profile/edit_profile" method="_on_btn_exit_button_up"]
 [connection signal="button_up" from="Tutorial_mainymap/TutorialDialog/btn_salir" to="Tutorial_mainymap" method="_on_btn_salir_button_up"]
 
 [editable path="HUD"]
@@ -303,4 +311,5 @@ margin_bottom = 245.5
 [editable path="mapa_star/estrellas9"]
 [editable path="Menu"]
 [editable path="Profile"]
+[editable path="Profile/edit_profile"]
 [editable path="Tutorial_mainymap"]

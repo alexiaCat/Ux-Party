@@ -33,36 +33,21 @@ var pnivel8 = 0
 var pnivel9 = 0
 var puntos = 0
 
+
 #variables para saber si el nivel esta pasado o no, ej: no poder ingresar a nivel 2 sin pasar nivel 1
-var level1 = true
-var level2 = true
-var level3 = true
-var level4 = true
-var level5 = true
-var level6 = true
-var level7 = true
-var level8 = true
+var level1 = false
+var level2 = false
+var level3 = false
+var level4 = false
+var level5 = false
+var level6 = false
+var level7 = false
+var level8 = false
+var level9 = false
 
-var x: int = 0
-	
+
 func _ready():
-	sumarvida()
-  
-func on_global_timer_timeout():
-	if(life_recharge > 0):
-		life_recharge -= 1
-	else:
-		timer.connect("timeout", self, "on_global_timer_timeout")   
-		print("foo")  
-
-	
-func sumarvida():
-	if(cont > 4):
-		timer.start(life_recharge)
-		self.add_child(timer)
-		print("hola")
-		timer.connect("timeout", self, "on_global_timer_timeout")  
-	
+	pass
 	
 func update_puntajeacumulado():
 	get_tree().get_nodes_in_group("points_player")[0].text = String(puntajeglobal)

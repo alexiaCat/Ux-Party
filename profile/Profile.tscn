@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://profile/profile.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://menus/assets/btn_exit.png" type="Texture" id=3]
+[ext_resource path="res://profile/edit_profile/edit_profile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://profile/Profile.gd" type="Script" id=5]
 [ext_resource path="res://profile/registrarse.png" type="Texture" id=6]
 [ext_resource path="res://profile/registrarse_pressed.png" type="Texture" id=7]
@@ -92,3 +93,15 @@ margin_top = -39.0
 margin_right = 308.0
 margin_bottom = 25.0
 texture_normal = ExtResource( 3 )
+
+[node name="edit_profile" parent="." instance=ExtResource( 4 )]
+
+[connection signal="button_up" from="Modal_profile/TextureRect/editar_nombre" to="." method="_on_editar_nombre_button_up"]
+[connection signal="text_changed" from="edit_profile/Window_name/TextureRect/inputName" to="." method="_on_inputName_text_changed"]
+[connection signal="text_entered" from="edit_profile/Window_name/TextureRect/inputName" to="." method="_on_inputName_text_entered"]
+[connection signal="button_down" from="edit_profile/Window_name/TextureRect/btn_acept" to="." method="_on_btn_acept_button_down"]
+[connection signal="button_up" from="edit_profile/Window_name/TextureRect/btn_acept" to="edit_profile" method="_on_btn_acept_button_up"]
+[connection signal="button_down" from="edit_profile/Window_name/TextureRect/btn_exit" to="." method="_on_btn_exit_button_down"]
+[connection signal="button_up" from="edit_profile/Window_name/TextureRect/btn_exit" to="edit_profile" method="_on_btn_exit_button_up"]
+
+[editable path="edit_profile"]
