@@ -7,12 +7,13 @@ var label_node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Gamehandler.recargarvidas()
 	Gamehandler.update_vidas()
 	pintarestrellasmapa()
 	Gamehandler.update_puntajeacumulado()
 	Gamehandler.update_nombrejugador()
-	Gamehandler.relojderecargarvidas()
 	change_icons()
+	Gamehandler.update_vidas()
 	
 	
 func pintarestrellasmapa():

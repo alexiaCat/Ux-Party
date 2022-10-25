@@ -48,6 +48,15 @@ var level9 = false
 
 func _ready():
 	pass
+
+#recarga vidas cada 4 minutos
+func recargarvidas():
+	if (vidas_jugador < 5):
+		yield(get_tree().create_timer(240), "timeout")
+		print("hay que recargar una vida")
+		vidas_jugador += 1
+	update_vidas()
+
 	
 func update_puntajeacumulado():
 	get_tree().get_nodes_in_group("points_player")[0].text = String(puntajeglobal)
@@ -58,8 +67,6 @@ func update_nombrejugador():
 func update_vidas():
 	get_tree().get_nodes_in_group("vidasjugador")[0].text = String(vidas_jugador)
 
-func relojderecargarvidas():
-	get_tree().get_nodes_in_group("vida_maxima")[0].text = String(life_recharge)
 
 func update_time():
 	get_tree().get_nodes_in_group("tiempo")[0].text = String(time_left/60) + ":" + String(time_left%60)

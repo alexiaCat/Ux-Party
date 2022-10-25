@@ -42,19 +42,21 @@ func _on_Letters_youwin():
 	$end_timer.start()
 	Gamehandler.puntajevariable = Gamehandler.puntos
 	win = true;
-	print("ganaste")
 	if (Gamehandler.enquenivelestoy == 1):
 		Gamehandler.level1 = true
 		if(Gamehandler.puntos > Gamehandler.pnivel1):
 			Gamehandler.pnivel1 = Gamehandler.puntos
+			Gamehandler.puntajeglobal += Gamehandler.puntos
 	elif (Gamehandler.enquenivelestoy == 4):
 		Gamehandler.level4 = true
 		if(Gamehandler.puntos > Gamehandler.pnivel4):
 			Gamehandler.pnivel4 = Gamehandler.puntos
+			Gamehandler.puntajeglobal += Gamehandler.puntos
 	else:
 		Gamehandler.level7 = true
 		if(Gamehandler.puntos > Gamehandler.pnivel7):
 			Gamehandler.pnivel7 = Gamehandler.puntos
+			Gamehandler.puntajeglobal += Gamehandler.puntos
 	Gamehandler.time_left = 60
 		
 
