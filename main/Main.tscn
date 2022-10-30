@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://main/button_pressed.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://main/Main.gd" type="Script" id=9]
 [ext_resource path="res://menus/menu_config.tscn" type="PackedScene" id=10]
 [ext_resource path="res://first_dataname/nombre_usuario.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/audio/Intro Theme.ogg" type="AudioStream" id=12]
 
 [sub_resource type="GDScript" id=4]
 
@@ -123,8 +124,14 @@ margin_bottom = 244.5
 
 [node name="nombre_usuario" parent="." instance=ExtResource( 11 )]
 
+[node name="fondomusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+bus = "Musica"
+
 [connection signal="pressed" from="HUD/Escena/Play_button" to="." method="_on_Play_button_pressed"]
 [connection signal="button_up" from="HUD/Escena/Config_button" to="Menu" method="_on_Config_button_button_up"]
+[connection signal="toggled" from="Menu/Modal_config/Música" to="." method="_on_Msica_toggled"]
 [connection signal="button_up" from="Menu/Modal_config/Tutorial" to="Menu/Tutorial_mainymap" method="_on_Tutorial_button_up"]
 [connection signal="button_up" from="Menu/Tutorial_mainymap/TutorialDialog/btn_salir" to="Menu/Tutorial_mainymap" method="_on_btn_salir_button_up"]
 [connection signal="text_changed" from="nombre_usuario/Window_name/inputName" to="." method="_on_inputName_text_changed"]

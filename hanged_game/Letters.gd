@@ -2,15 +2,16 @@ extends Node2D
 
 export (String) var input
 var line = preload("res://hanged_game/Letters.tscn")
-onready var apretarletra_s : AudioStreamPlayer = get_node("click_letter")
 
 
 var arr_labels = []
 var alpha = []
 var arr_spaces = []
-var wordslvl1 = ["UX", "EXPERIENCIA"]
+var wordslvl1 = ["USUARIO", "SERVICIO", "PRODUCTO", "SISTEMA"]
+var hintslvl1 =["Es aquella persona que utiliza un producto o servicio de forma habitual", "2", "3","4"]
 var wordslvl4 = ["PERRO", "GATO"]
 var wordslvl7 = ["ALGO", "USUARIO"]
+var definicion
 
 var length
 var temp
@@ -31,6 +32,8 @@ func _ready():
 		randomize()
 		input = wordslvl7[randi() % wordslvl7.size()]
 	temp = input
+	definicion = capturardefinicion(temp)
+	get_tree().get_nodes_in_group("texthint")[0].text = definicion 
 	arr_labels.clear()
 	alpha.clear()
 	arr_spaces.clear()
@@ -42,6 +45,17 @@ func _ready():
 	temp = temp.replace("/", "")
 	length = temp.length()
 
+func capturardefinicion(temp):
+	var def = ""
+	if(temp == "USUARIO"):
+		def = "Es aquel que utiliza un producto o servicio de forma habitual"
+	if(temp == "SERVICIO"):
+		def = "Es una utilidad intangible, que se ofrece a otra persona."
+	if(temp == "PRODUCTO"):
+		def = "Es algo que puedes percibir con tus sentidos: lo ves, lo tocas, lo hueles y, en algunos casos, hasta lo oyes o lo degustas"
+	if(temp == "SISTEMA"):
+		def = "es un sistema"
+	return def
 
 func initialize():
 	var pos = $start.position
@@ -71,9 +85,8 @@ func not_there():
 
 
 func handle_string(s):
-	apretarletra_s.play()
+	$click.play()
 	var pos = temp.find(s)
-	apretarletra_s.stop()
 	if pos != -1:
 		for i in range(pos, length):
 			if temp.substr(i, 1) == s:

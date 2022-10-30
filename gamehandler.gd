@@ -1,5 +1,7 @@
 extends Node
 
+var music = true
+var effects = true
 var cont = 6
 var timer = Timer.new()  
 #variable donde guardo puntaje variable 
@@ -15,8 +17,6 @@ var time_left = 60
 # Luego de pasados 4 minutos desde la pérdida de una vida se repondrá la vida perdida 240.
 var life_recharge = 240
 var puntajeglobal = 0
-var music = true
-var sounds = true
 var nameplayer = "ingresa tu nombre"
 var msg1 = "Sabes mucho"
 var msg2 = "Eres genial"

@@ -1,6 +1,8 @@
 extends Node2D
-
+var sounds_bus = AudioServer.get_bus_index("Efectos")
+var sounds_bus2 = AudioServer.get_bus_index("Musica")
 export(Texture) var past_level
+export(AudioStream) var music
 
 var label_node
 
@@ -262,3 +264,14 @@ func _on_inputName_text_entered(new_text):
 	Gamehandler.nameplayer = new_text
 	Gamehandler.update_nombrejugador()
 	$Profile/edit_profile/Window_name/TextureRect/inputName.clear()
+
+
+func _on_Msica_toggled(button_pressed):
+	if (button_pressed == true):
+		Gamehandler.effects = button_pressed
+		print(button_pressed)
+		AudioServer.set_bus_volume_db(sounds_bus2, -80.0)
+	else:
+		print(button_pressed)
+		Gamehandler.effects = button_pressed
+		AudioServer.set_bus_volume_db(sounds_bus2, 0)
