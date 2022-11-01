@@ -37,12 +37,19 @@ func _on_Letters_notthere():
 		perder_vida()
 		win = false;
 		$end_timer.start()
-		print("perdiste")
+		get_tree().get_nodes_in_group("teclado")[0].hide()
+		get_tree().get_nodes_in_group("hint")[0].disabled = true
+		get_tree().get_nodes_in_group("btnquit")[0].disabled = true
+		get_tree().get_nodes_in_group("btntuto")[0].disabled = true
 
 
 
 func _on_Letters_youwin():
 	$end_timer.start()
+	get_tree().get_nodes_in_group("teclado")[0].hide()
+	get_tree().get_nodes_in_group("hint")[0].disabled = true
+	get_tree().get_nodes_in_group("btnquit")[0].disabled = true
+	get_tree().get_nodes_in_group("btntuto")[0].disabled = true
 	Gamehandler.puntajevariable = Gamehandler.puntos
 	win = true;
 	if (Gamehandler.enquenivelestoy == 1):

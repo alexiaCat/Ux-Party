@@ -163,11 +163,11 @@ func buttons_answer(button) -> void:
 				Gamehandler.update_puntos()
 				Gamehandler.update_npregunta()
 				$error.play()
-				button.modulate = color_wrong					 		
-					
+				button.modulate = color_wrong
 
 		yield(get_tree().create_timer(1), "timeout")
 		for bt in buttons:
+			
 			bt.modulate = Color.white
 			bt.disconnect("pressed", self, "buttons_answer")
 		

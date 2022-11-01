@@ -39,12 +39,12 @@ var puntos = 0
 var level1 = true
 var level2 = true
 var level3 = true
-var level4 = false
-var level5 = false
-var level6 = false
-var level7 = false
-var level8 = false
-var level9 = false
+var level4 = true
+var level5 = true
+var level6 = true
+var level7 = true
+var level8 = true
+var level9 = true
 
 
 func _ready():

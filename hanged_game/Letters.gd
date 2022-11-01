@@ -47,11 +47,11 @@ func _ready():
 func capturardefinicion(temp):
 	var def = ""
 	if(temp == "USABILIDAD"):
-		def = "Es aquel que utiliza un producto o servicio de forma habitual"
-	if(temp == "HEURÍSTICA"):
-		def = "Es una utilidad intangible, que se ofrece a otra persona."
+		def = "Capacidad de hacer algo de manera intuitiva y fácil."
+	if(temp == "HEURISTICA"):
+		def = "Es el conjunto de técnicas o métodos para resolver un problema."
 	if(temp == "AFFORDANCE"):
-		def = "Es algo que puedes percibir con tus sentidos: lo ves, lo tocas, lo hueles y, en algunos casos, hasta lo oyes o lo degustas"
+		def = "Es lo que se puede hacer con un objeto en función de las capacidades del usuario."
 	return def
 
 func initialize():
@@ -103,6 +103,5 @@ func win():
 		if i == "/":
 			slash_counter = slash_counter + 1	
 	if slash_counter == length:
-		print("ganaste oezi")
 		emit_signal("youwin")
 

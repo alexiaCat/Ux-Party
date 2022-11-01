@@ -3,6 +3,7 @@ extends Node2D
 # hay que saber en que nivel estoy y hacer una condicion en el button para que avance al nivel que sigue
 func _ready():
 	paint_starsyupdatemsg()
+	print(Gamehandler.enquenivelestoy)
 
 func paint_starsyupdatemsg():
 	if(Gamehandler.enquenivelestoy == 1 or Gamehandler.enquenivelestoy == 4 or Gamehandler.enquenivelestoy == 7):
@@ -34,5 +35,12 @@ func paint_starsyupdatemsg():
 
 
 func _on_btn_nextlvl_button_up():
-	get_tree().change_scene("res://main_map/Main_scene.tscn")
+	if(Gamehandler.enquenivelestoy == 1):
+		get_tree().change_scene("res://hanged_game/answers/usabilidad.tscn")
+	elif(Gamehandler.enquenivelestoy == 4):
+		get_tree().change_scene("res://hanged_game/answers/heuristica.tscn")
+	elif(Gamehandler.enquenivelestoy == 7):
+		get_tree().change_scene("res://hanged_game/answers/affordance.tscn")
+	else:
+		get_tree().change_scene("res://main_map/Main_scene.tscn")
 
