@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Trivia/scripts/resources/res_question.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+question_info = "¿Que es UX?"
+type = 0
+options = [ "Experiencia del Usuario con un sistema", "Interfaz de usuario", "Experiencia del consumidor", "Ninguna de las anteriores" ]
+correct = "Experiencia del Usuario con un sistema"

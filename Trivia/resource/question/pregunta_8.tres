@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Trivia/scripts/resources/res_question.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+question_info = "¿Qué son las heurísticas Nielsen?"
+type = 0
+options = [ "Métodos de inspección de usabilidad", "Modelos predictivos", "Pruebas de usabilidad ", "Un estandar de medicion de UX" ]
+correct = "Métodos de inspección de usabilidad"

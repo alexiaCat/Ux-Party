@@ -1,0 +1,200 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/audio/forest_0.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Trivia/top_bar_quiz/top_bar_minigames.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Trivia/scripts/level/level_game.gd" type="Script" id=3]
+[ext_resource path="res://Trivia/resource/bd/bd_quiz_game.tres" type="Resource" id=4]
+[ext_resource path="res://Trivia/enviroments/fondo.png" type="Texture" id=5]
+[ext_resource path="res://Trivia/resource/bd/bd_quiz_game_2.tres" type="Resource" id=6]
+[ext_resource path="res://Trivia/resource/bd/bd_quiz_game_3.tres" type="Resource" id=7]
+[ext_resource path="res://assets/fonts/fontTrivia.tres" type="DynamicFont" id=8]
+[ext_resource path="res://assets/audio/correct_1.mp3" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/incorrecto_3.wav" type="AudioStream" id=10]
+[ext_resource path="res://Trivia/pressedcolor.tres" type="StyleBox" id=11]
+
+[sub_resource type="CanvasItemMaterial" id=8]
+
+[sub_resource type="Theme" id=9]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+
+[node name="trivia_lvl" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = 6.0
+margin_right = -6.0
+margin_bottom = 6.0
+script = ExtResource( 3 )
+bd_quiz = ExtResource( 4 )
+bd_quiz_2 = ExtResource( 6 )
+bd_quiz_3 = ExtResource( 7 )
+color_right = Color( 0.168627, 0.886275, 0.262745, 1 )
+color_wrong = Color( 0.901961, 0.0431373, 0.0431373, 1 )
+
+[node name="top_bar_minigames" parent="." instance=ExtResource( 2 )]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 6.0
+margin_top = -5.0
+margin_right = 454.0
+margin_bottom = 699.0
+texture = ExtResource( 5 )
+
+[node name="question_info" type="VBoxContainer" parent="."]
+material = SubResource( 8 )
+use_parent_material = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -190.0
+margin_top = 155.0
+margin_right = 198.0
+margin_bottom = 290.0
+theme = SubResource( 9 )
+
+[node name="txt_question" type="Label" parent="question_info"]
+margin_top = 7.0
+margin_right = 388.0
+margin_bottom = 127.0
+rect_min_size = Vector2( 370, 120 )
+size_flags_vertical = 6
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 8 )
+custom_styles/normal = SubResource( 7 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="puntajequiz" type="Label" parent="GUI" groups=["puntos"]]
+margin_left = 236.0
+margin_top = 60.0
+margin_right = 256.0
+margin_bottom = 106.0
+custom_fonts/font = ExtResource( 8 )
+
+[node name="tiempo" type="Label" parent="GUI" groups=["tiempo"]]
+visible = false
+margin_left = 200.0
+margin_top = 645.0
+margin_right = 247.0
+margin_bottom = 673.0
+
+[node name="ntexto_pregunta" type="Label" parent="GUI"]
+margin_left = 375.0
+margin_top = 57.0
+margin_right = 415.0
+margin_bottom = 85.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "- 5"
+
+[node name="numero_pregunta" type="Label" parent="GUI" groups=["npregunta"]]
+margin_left = 360.0
+margin_top = 57.0
+margin_right = 378.0
+margin_bottom = 82.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "1"
+autowrap = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="question_holder" type="VBoxContainer" parent="."]
+margin_left = 58.0
+margin_top = 350.0
+margin_right = 406.0
+margin_bottom = 610.0
+rect_min_size = Vector2( 0, 250 )
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="boton_opc_1" type="Button" parent="question_holder"]
+margin_right = 348.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_constants/hseparation = 0
+custom_fonts/font = ExtResource( 8 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/normal = SubResource( 3 )
+action_mode = 0
+
+[node name="boton_opc_2" type="Button" parent="question_holder"]
+margin_top = 70.0
+margin_right = 348.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 50 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_constants/hseparation = 0
+custom_fonts/font = ExtResource( 8 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/normal = SubResource( 4 )
+action_mode = 0
+
+[node name="boton_opc_3" type="Button" parent="question_holder"]
+margin_top = 140.0
+margin_right = 348.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 0, 50 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_constants/hseparation = 0
+custom_fonts/font = ExtResource( 8 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/normal = SubResource( 4 )
+
+[node name="boton_opc_4" type="Button" parent="question_holder"]
+margin_top = 210.0
+margin_right = 348.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 0, 50 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_constants/hseparation = 0
+custom_fonts/font = ExtResource( 8 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/normal = SubResource( 4 )
+
+[node name="finish_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="musicadefondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+bus = "Musica"
+
+[node name="correct" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+bus = "Efectos"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="finish_timer" to="." method="_on_finish_timer_timeout"]
+
+[editable path="top_bar_minigames"]
+[editable path="top_bar_minigames/Menu_trivia"]

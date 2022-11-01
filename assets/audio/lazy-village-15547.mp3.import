@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lazy-village-15547.mp3-1af5022c312a99b0724e2b6f6d869906.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/lazy-village-15547.mp3"
+dest_files=[ "res://.import/lazy-village-15547.mp3-1af5022c312a99b0724e2b6f6d869906.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

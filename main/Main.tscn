@@ -123,6 +123,11 @@ margin_top = -244.5
 margin_bottom = 244.5
 
 [node name="nombre_usuario" parent="." instance=ExtResource( 11 )]
+visible = false
+margin_left = 52.0
+margin_top = 170.0
+margin_right = 100.0
+margin_bottom = 220.0
 
 [node name="fondomusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
@@ -134,9 +139,7 @@ bus = "Musica"
 [connection signal="toggled" from="Menu/Modal_config/Música" to="." method="_on_Msica_toggled"]
 [connection signal="button_up" from="Menu/Modal_config/Tutorial" to="Menu/Tutorial_mainymap" method="_on_Tutorial_button_up"]
 [connection signal="button_up" from="Menu/Tutorial_mainymap/TutorialDialog/btn_salir" to="Menu/Tutorial_mainymap" method="_on_btn_salir_button_up"]
-[connection signal="text_changed" from="nombre_usuario/Window_name/inputName" to="." method="_on_inputName_text_changed"]
-[connection signal="text_entered" from="nombre_usuario/Window_name/inputName" to="." method="_on_inputName_text_entered"]
-[connection signal="button_up" from="nombre_usuario/Window_name/btn_acept" to="." method="_on_btn_acept_button_up"]
+[connection signal="pressed" from="nombre_usuario/TextureRect/btn_acept" to="." method="_on_btn_acept_pressed"]
 
 [editable path="Menu"]
 [editable path="Menu/Tutorial_mainymap"]

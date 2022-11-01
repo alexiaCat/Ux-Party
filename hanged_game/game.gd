@@ -2,17 +2,18 @@ extends Node2D
 var sounds_bus = AudioServer.get_bus_index("Efectos")
 var sounds_bus2 = AudioServer.get_bus_index("Musica")
 var counter
+export(Texture) var press_sound
 #variable para detectar a que escena debe enviar si gana o pierde
 var win = false
 
 
 
 func _ready():
+	$top_bar_minigames/Menu_ahorcado/MenuAhorcado/TextureRect/efects.pressed = Gamehandler.effects
 	counter = 0
 	Gamehandler.time_left = 60
 	Gamehandler.puntos = 500
 	Gamehandler.update_puntos()
-
 
 func perder_vida():
 	Gamehandler.vidas_jugador -= 1
@@ -71,22 +72,18 @@ func _on_end_timer_timeout():
 
 
 func _on_music_toggled(button_pressed):
-	if (button_pressed == true):
-		Gamehandler.effects = button_pressed
-		print(button_pressed)
+	if (button_pressed):
+		Gamehandler.effects = true
 		AudioServer.set_bus_volume_db(sounds_bus2, -80.0)
 	else:
-		print(button_pressed)
-		Gamehandler.effects = button_pressed
+		Gamehandler.effects = false
 		AudioServer.set_bus_volume_db(sounds_bus2, 0)
 
 
 func _on_efects_toggled(button_pressed):
-	if (button_pressed == true):
-		Gamehandler.effects = button_pressed
-		print(button_pressed)
+	if (button_pressed):
+		Gamehandler.effects = true
 		AudioServer.set_bus_volume_db(sounds_bus, -80.0)
 	else:
-		print(button_pressed)
-		Gamehandler.effects = button_pressed
+		Gamehandler.effects = false
 		AudioServer.set_bus_volume_db(sounds_bus, 0)

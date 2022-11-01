@@ -4,6 +4,7 @@ var sounds_bus2 = AudioServer.get_bus_index("Musica")
 export(Texture) var past_level
 export(AudioStream) var music
 
+
 var label_node
 
 
@@ -200,7 +201,7 @@ func _on_Level2_pressed():
 		print("no puedes ingresar")
 	else:
 		Gamehandler.enquenivelestoy = 2
-		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
+		get_tree().change_scene("res://Trivia/trivia_lvl.tscn")
 
 
 func _on_Level3_pressed():
@@ -224,7 +225,7 @@ func _on_Level5_pressed():
 		print("no puedes ingresar")
 	else:
 		Gamehandler.enquenivelestoy = 5
-		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
+		get_tree().change_scene("res://Trivia/trivia_lvl.tscn")
 
 
 func _on_Level6_pressed():
@@ -248,7 +249,7 @@ func _on_Level8_pressed():
 		print("no puedes ingresar")
 	else:
 		Gamehandler.enquenivelestoy = 8
-		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
+		get_tree().change_scene("res://Trivia/trivia_lvl.tscn")
 
 
 func _on_Level9_pressed():
@@ -260,18 +261,12 @@ func _on_Level9_pressed():
 
 
 
-func _on_inputName_text_entered(new_text):
-	Gamehandler.nameplayer = new_text
-	Gamehandler.update_nombrejugador()
-	$Profile/edit_profile/Window_name/TextureRect/inputName.clear()
-
-
 func _on_Msica_toggled(button_pressed):
 	if (button_pressed == true):
-		Gamehandler.effects = button_pressed
-		print(button_pressed)
+		Gamehandler.effects = true
 		AudioServer.set_bus_volume_db(sounds_bus2, -80.0)
 	else:
-		print(button_pressed)
-		Gamehandler.effects = button_pressed
+		Gamehandler.effects = false
 		AudioServer.set_bus_volume_db(sounds_bus2, 0)
+
+

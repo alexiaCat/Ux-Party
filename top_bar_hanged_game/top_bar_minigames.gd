@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+func _ready():
+	pass
 
 func _on_Timer_timeout():
 	if(Gamehandler.time_left > 0):

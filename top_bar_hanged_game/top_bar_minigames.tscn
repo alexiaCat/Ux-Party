@@ -140,6 +140,10 @@ margin_bottom = 18.0
 
 [node name="Menu_ahorcado" parent="." instance=ExtResource( 8 )]
 
+[node name="efects" parent="Menu_ahorcado/MenuAhorcado/TextureRect" index="5"]
+shortcut_in_tooltip = false
+action_mode = 0
+
 [connection signal="button_up" from="Control/MarginContainer/HBoxContainer/Button_tutorial" to="Tutorial_ahorcado" method="_on_Button_tutorial_button_up"]
 [connection signal="button_up" from="Control/MarginContainer/HBoxContainer/Button_quit" to="Menu_ahorcado" method="_on_Button_quit_button_up"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

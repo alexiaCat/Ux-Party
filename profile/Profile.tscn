@@ -95,13 +95,16 @@ margin_bottom = 25.0
 texture_normal = ExtResource( 3 )
 
 [node name="edit_profile" parent="." instance=ExtResource( 4 )]
+margin_left = 180.0
+margin_top = 273.0
+margin_right = 228.0
+margin_bottom = 323.0
 
-[connection signal="button_up" from="Modal_profile/TextureRect/editar_nombre" to="." method="_on_editar_nombre_button_up"]
-[connection signal="text_changed" from="edit_profile/Window_name/TextureRect/inputName" to="." method="_on_inputName_text_changed"]
-[connection signal="text_entered" from="edit_profile/Window_name/TextureRect/inputName" to="." method="_on_inputName_text_entered"]
-[connection signal="button_down" from="edit_profile/Window_name/TextureRect/btn_acept" to="." method="_on_btn_acept_button_down"]
-[connection signal="button_up" from="edit_profile/Window_name/TextureRect/btn_acept" to="edit_profile" method="_on_btn_acept_button_up"]
-[connection signal="button_down" from="edit_profile/Window_name/TextureRect/btn_exit" to="." method="_on_btn_exit_button_down"]
-[connection signal="button_up" from="edit_profile/Window_name/TextureRect/btn_exit" to="edit_profile" method="_on_btn_exit_button_up"]
+[node name="inputName" parent="edit_profile/TextureRect" index="1"]
+script = null
+
+[connection signal="pressed" from="Modal_profile/TextureRect/editar_nombre" to="." method="_on_editar_nombre_pressed"]
+[connection signal="pressed" from="edit_profile/TextureRect/btn_acept" to="." method="_on_btn_acept_pressed"]
+[connection signal="pressed" from="edit_profile/TextureRect/btn_exit" to="." method="_on_btn_exit_pressed"]
 
 [editable path="edit_profile"]

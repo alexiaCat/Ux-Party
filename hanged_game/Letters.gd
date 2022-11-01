@@ -7,10 +7,9 @@ var line = preload("res://hanged_game/Letters.tscn")
 var arr_labels = []
 var alpha = []
 var arr_spaces = []
-var wordslvl1 = ["USUARIO", "SERVICIO", "PRODUCTO", "SISTEMA"]
-var hintslvl1 =["Es aquella persona que utiliza un producto o servicio de forma habitual", "2", "3","4"]
-var wordslvl4 = ["PERRO", "GATO"]
-var wordslvl7 = ["ALGO", "USUARIO"]
+var wordslvl1 = ["USABILIDAD"]
+var wordslvl4 = ["HEURISTICA"]
+var wordslvl7 = ["AFFORDANCE"]
 var definicion
 
 var length
@@ -47,14 +46,12 @@ func _ready():
 
 func capturardefinicion(temp):
 	var def = ""
-	if(temp == "USUARIO"):
+	if(temp == "USABILIDAD"):
 		def = "Es aquel que utiliza un producto o servicio de forma habitual"
-	if(temp == "SERVICIO"):
+	if(temp == "HEURÍSTICA"):
 		def = "Es una utilidad intangible, que se ofrece a otra persona."
-	if(temp == "PRODUCTO"):
+	if(temp == "AFFORDANCE"):
 		def = "Es algo que puedes percibir con tus sentidos: lo ves, lo tocas, lo hueles y, en algunos casos, hasta lo oyes o lo degustas"
-	if(temp == "SISTEMA"):
-		def = "es un sistema"
 	return def
 
 func initialize():

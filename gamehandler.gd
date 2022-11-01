@@ -1,9 +1,8 @@
 extends Node
 
-var music = true
-var effects = true
+var music = false
+var effects = false
 var cont = 6
-var timer = Timer.new()  
 #variable donde guardo puntaje variable 
 var puntajevariable
 #saber si ingrese por primera vez
@@ -16,7 +15,9 @@ var vidas_jugador = 5
 var time_left = 60
 # Luego de pasados 4 minutos desde la pérdida de una vida se repondrá la vida perdida 240.
 var life_recharge = 240
+var tiempo = 0
 var puntajeglobal = 0
+var npregunta = 1
 var nameplayer = "ingresa tu nombre"
 var msg1 = "Sabes mucho"
 var msg2 = "Eres genial"
@@ -35,9 +36,9 @@ var puntos = 0
 
 
 #variables para saber si el nivel esta pasado o no, ej: no poder ingresar a nivel 2 sin pasar nivel 1
-var level1 = false
-var level2 = false
-var level3 = false
+var level1 = true
+var level2 = true
+var level3 = true
 var level4 = false
 var level5 = false
 var level6 = false
@@ -53,7 +54,6 @@ func _ready():
 func recargarvidas():
 	if (vidas_jugador < 5):
 		yield(get_tree().create_timer(240), "timeout")
-		print("hay que recargar una vida")
 		vidas_jugador += 1
 	update_vidas()
 
@@ -66,7 +66,12 @@ func update_nombrejugador():
 	
 func update_vidas():
 	get_tree().get_nodes_in_group("vidasjugador")[0].text = String(vidas_jugador)
-
+	
+func update_npregunta():
+	get_tree().get_nodes_in_group("npregunta")[0].text = String(npregunta)	
+	
+func disminuir_tiempo():
+	get_tree().get_nodes_in_group("tiempo_left")[0].text = String(time_left/60) + ":" + String(time_left%60)
 
 func update_time():
 	get_tree().get_nodes_in_group("tiempo")[0].text = String(time_left/60) + ":" + String(time_left%60)
