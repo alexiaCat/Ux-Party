@@ -8,7 +8,7 @@
 [ext_resource path="res://tutoriales/assets/tutorial_img.png" type="Texture" id=6]
 [ext_resource path="res://menus/assets/btn_exit.png" type="Texture" id=7]
 [ext_resource path="res://tutoriales/juegoahorcado/tutoAhorcado.gd" type="Script" id=8]
-[ext_resource path="res://tutoriales/assets/merge_from_ofoct _ahorcado.png" type="Texture" id=9]
+[ext_resource path="res://tutoriales/assets/tutorial_ahorcado_3.png" type="Texture" id=9]
 
 [node name="Tutorial_ahorcado" type="Control"]
 margin_right = 40.0
@@ -35,7 +35,7 @@ texture = ExtResource( 6 )
 [node name="TutoAhorcado" type="Sprite" parent="TutoriaAhorcado" groups=["imagen"]]
 position = Vector2( 176.5, 204 )
 texture = ExtResource( 9 )
-hframes = 23
+hframes = 24
 
 [node name="flecha_izq" type="TextureButton" parent="TutoriaAhorcado"]
 margin_left = 30.5

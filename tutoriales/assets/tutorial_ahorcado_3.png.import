@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/merge_from_ofoct _ahorcado.png-be04b47451b6a3a1c0dbfcadcde29342.stex"
+path="res://.import/tutorial_ahorcado_3.png-03b4ac7a71d0d0ab0c3d3e5e8e9f5687.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tutoriales/assets/merge_from_ofoct _ahorcado.png"
-dest_files=[ "res://.import/merge_from_ofoct _ahorcado.png-be04b47451b6a3a1c0dbfcadcde29342.stex" ]
+source_file="res://tutoriales/assets/tutorial_ahorcado_3.png"
+dest_files=[ "res://.import/tutorial_ahorcado_3.png-03b4ac7a71d0d0ab0c3d3e5e8e9f5687.stex" ]
 
 [params]
 
