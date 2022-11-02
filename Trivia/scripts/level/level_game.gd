@@ -17,10 +17,6 @@ var win = false
 
 onready var question_texts := $question_info/txt_question
 
-
-#func perder_vida():
-	#Gamehandler.vidas_jugador -= 1
-
 #carga el juego 
 func _ready() -> void:
 	for _button in $question_holder.get_children():
@@ -31,31 +27,21 @@ func _ready() -> void:
 	Gamehandler.update_puntos()
 	if Gamehandler.enquenivelestoy == 2:
 		quiz_shuffle = randomize_array(bd_quiz.bd)
-		load_quiz()
 	elif Gamehandler.enquenivelestoy == 5:
 		quiz_shuffle = randomize_array(bd_quiz_2.bd)
-		load_quiz()
 	elif Gamehandler.enquenivelestoy == 8:
 		quiz_shuffle = randomize_array(bd_quiz_3.bd)
-		load_quiz()	
+	load_quiz()	
 	
-	
-	
-
-
 #FUNCION QUE CARGA LAS DISTINTAS PREGUNTAS SEGUN EL NIVEL
 func load_quiz() -> void:	
 #######################AQUI SE CARGAN PREGUNTAS DEL NIVEL 2#########################################
 	if Gamehandler.enquenivelestoy == 2:
 		if index >= bd_quiz.bd.size():
 			if Gamehandler.puntos <= 199:
-				#mostrar ventana que perdio
 				_perdiste_por_puntos()	
 			else:
-				#asignar puntaje a puntaje global
-				#mostrar ventana que gano
 				_on_Letters_youwin_quiz()			
-							
 			return
 				
 		#randomiza el orden de las preguntas

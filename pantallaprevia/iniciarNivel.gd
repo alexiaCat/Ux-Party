@@ -16,4 +16,4 @@ func _on_btn_iniciar_pressed():
 	elif(Gamehandler.enquenivelestoy == 2 || Gamehandler.enquenivelestoy == 5 || Gamehandler.enquenivelestoy == 8):
 		get_tree().change_scene("res://Trivia/trivia_lvl.tscn")
 	else:
-		get_tree().change_scene("res://Trivia/trivia_lvl.tscn")
+		get_tree().change_scene("res://Comparar y decidir/comparar_y_decidir.tscn")

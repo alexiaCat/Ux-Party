@@ -49,6 +49,7 @@ margin_bottom = 138.0
 custom_colors/selection_color = Color( 1, 0.192157, 0.192157, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
+max_length = 15
 placeholder_text = "Ej: Rosita"
 
 [node name="btn_acept" type="TextureButton" parent="TextureRect"]

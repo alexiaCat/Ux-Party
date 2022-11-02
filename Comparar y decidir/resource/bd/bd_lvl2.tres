@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://Comparar y decidir/scripts/resources/bd_cyd.gd" type="Script" id=1]
+[ext_resource path="res://Comparar y decidir/resource/question/p7.tres" type="Resource" id=2]
+[ext_resource path="res://Comparar y decidir/resource/question/p8.tres" type="Resource" id=3]
+[ext_resource path="res://Comparar y decidir/resource/question/p9.tres" type="Resource" id=4]
+[ext_resource path="res://Comparar y decidir/resource/question/p10.tres" type="Resource" id=5]
+[ext_resource path="res://Comparar y decidir/resource/question/p6.tres" type="Resource" id=6]
+
+[resource]
+script = ExtResource( 1 )
+bd = [ ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ]

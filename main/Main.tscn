@@ -107,27 +107,6 @@ texture_hover = ExtResource( 6 )
 
 [node name="MenuMain" parent="." instance=ExtResource( 8 )]
 
-[node name="gral" parent="MenuMain/Modal_config/TextureRect/VBoxContainer" index="0"]
-margin_bottom = 23.0
-
-[node name="vGeneral" parent="MenuMain/Modal_config/TextureRect/VBoxContainer" index="1"]
-margin_top = 27.0
-margin_bottom = 43.0
-
-[node name="efts" parent="MenuMain/Modal_config/TextureRect/VBoxContainer2" index="0"]
-margin_bottom = 23.0
-
-[node name="vEfectos" parent="MenuMain/Modal_config/TextureRect/VBoxContainer2" index="1"]
-margin_top = 27.0
-margin_bottom = 43.0
-
-[node name="msc2" parent="MenuMain/Modal_config/TextureRect/VBoxContainer3" index="0"]
-margin_bottom = 23.0
-
-[node name="vMusica" parent="MenuMain/Modal_config/TextureRect/VBoxContainer3" index="1"]
-margin_top = 27.0
-margin_bottom = 43.0
-
 [node name="nombre_usuario" parent="." instance=ExtResource( 11 )]
 visible = false
 margin_left = 52.0
