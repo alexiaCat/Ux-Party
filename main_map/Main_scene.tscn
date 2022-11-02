@@ -243,6 +243,27 @@ script = ExtResource( 13 )
 
 [node name="MenuMapa" parent="." instance=ExtResource( 8 )]
 
+[node name="gral" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer" index="0"]
+margin_bottom = 23.0
+
+[node name="vGeneral" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer" index="1"]
+margin_top = 27.0
+margin_bottom = 43.0
+
+[node name="efts" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer2" index="0"]
+margin_bottom = 23.0
+
+[node name="vEfectos" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer2" index="1"]
+margin_top = 27.0
+margin_bottom = 43.0
+
+[node name="msc2" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer3" index="0"]
+margin_bottom = 23.0
+
+[node name="vMusica" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer3" index="1"]
+margin_top = 27.0
+margin_bottom = 43.0
+
 [node name="Tutorial_mainymap" parent="." instance=ExtResource( 11 )]
 anchor_left = 0.5
 anchor_top = 0.5

@@ -26,6 +26,7 @@ position = Vector2( 37, 562 )
 
 [node name="click" type="AudioStreamPlayer" parent="Letters"]
 stream = ExtResource( 4 )
+bus = "EFECTOS"
 
 [node name="Teclado" parent="." instance=ExtResource( 1 )]
 margin_left = 26.0
@@ -134,12 +135,6 @@ position = Vector2( 1, 21 )
 
 [node name="top_bar_minigames" parent="." instance=ExtResource( 7 )]
 
-[node name="music" parent="top_bar_minigames/Menu_ahorcado/MenuAhorcado/TextureRect" index="4"]
-margin_left = 59.5
-margin_right = 109.5
-shortcut_in_tooltip = false
-action_mode = 0
-
 [node name="btn_hint" type="TextureButton" parent="." groups=["hint"]]
 margin_left = 185.0
 margin_top = 99.0
@@ -163,6 +158,7 @@ one_shot = true
 [node name="musicadefondo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 autoplay = true
+bus = "MUSICA"
 
 [connection signal="notthere" from="Letters" to="." method="_on_Letters_notthere"]
 [connection signal="youwin" from="Letters" to="." method="_on_Letters_youwin"]
@@ -193,8 +189,9 @@ autoplay = true
 [connection signal="pressed" from="Teclado/Columna9/Letra_i" to="Letters" method="handle_string" binds= [ "I" ]]
 [connection signal="pressed" from="Teclado/Columna9/Letra_q" to="Letters" method="handle_string" binds= [ "Q" ]]
 [connection signal="pressed" from="Teclado/Columna9/Letra_z" to="Letters" method="handle_string" binds= [ "Z" ]]
-[connection signal="toggled" from="top_bar_minigames/Menu_ahorcado/MenuAhorcado/TextureRect/music" to="." method="_on_music_toggled"]
-[connection signal="toggled" from="top_bar_minigames/Menu_ahorcado/MenuAhorcado/TextureRect/efects" to="." method="_on_efects_toggled"]
+[connection signal="value_changed" from="top_bar_minigames/Menu_ahorcado/MenuAhorcado/TextureRect/VBoxContainer/vGral" to="top_bar_minigames/Menu_ahorcado" method="_on_vGral_value_changed"]
+[connection signal="value_changed" from="top_bar_minigames/Menu_ahorcado/MenuAhorcado/TextureRect/VBoxContainer2/vMusic" to="top_bar_minigames/Menu_ahorcado" method="_on_vMusic_value_changed"]
+[connection signal="value_changed" from="top_bar_minigames/Menu_ahorcado/MenuAhorcado/TextureRect/VBoxContainer3/vEffects" to="top_bar_minigames/Menu_ahorcado" method="_on_vEffects_value_changed"]
 [connection signal="button_up" from="btn_hint" to="Hint" method="_on_btn_hint_button_up"]
 [connection signal="timeout" from="end_timer" to="." method="_on_end_timer_timeout"]
 

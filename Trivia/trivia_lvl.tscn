@@ -200,14 +200,15 @@ one_shot = true
 [node name="musicadefondo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 autoplay = true
-bus = "Musica"
+bus = "MUSICA"
 
 [node name="correct" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+bus = "EFECTOS"
 
 [node name="error" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-bus = "Efectos"
+bus = "EFECTOS"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="finish_timer" to="." method="_on_finish_timer_timeout"]
