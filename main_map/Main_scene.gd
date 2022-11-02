@@ -3,7 +3,7 @@ var sounds_bus = AudioServer.get_bus_index("Efectos")
 var sounds_bus2 = AudioServer.get_bus_index("Musica")
 export(Texture) var past_level
 export(AudioStream) var music
-
+onready var new_file = $iniciarNivel
 
 var label_node
 
@@ -191,7 +191,8 @@ func change_icons():
 func _on_Level1_pressed():
 	if(Gamehandler.vidas_jugador > 0):
 		Gamehandler.enquenivelestoy = 1
-		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 	else:
 		print("no tienes vidas")
 
@@ -201,7 +202,8 @@ func _on_Level2_pressed():
 		print("no puedes ingresar")
 	else:
 		Gamehandler.enquenivelestoy = 2
-		get_tree().change_scene("res://Trivia/trivia_lvl.tscn")
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 
 
 func _on_Level3_pressed():
@@ -209,7 +211,8 @@ func _on_Level3_pressed():
 		print("no puedes ingresar")
 	else:
 		Gamehandler.enquenivelestoy = 3
-		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 
 
 func _on_Level4_pressed():
@@ -217,7 +220,8 @@ func _on_Level4_pressed():
 		print("no puedes ingresar")
 	else:
 		Gamehandler.enquenivelestoy = 4
-		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 
 
 func _on_Level5_pressed():
@@ -225,7 +229,8 @@ func _on_Level5_pressed():
 		print("no puedes ingresar")
 	else:
 		Gamehandler.enquenivelestoy = 5
-		get_tree().change_scene("res://Trivia/trivia_lvl.tscn")
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 
 
 func _on_Level6_pressed():
@@ -233,7 +238,8 @@ func _on_Level6_pressed():
 		print("no puedes ingresar")
 	else:
 		Gamehandler.enquenivelestoy = 6
-		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 
 
 func _on_Level7_pressed():
@@ -241,7 +247,8 @@ func _on_Level7_pressed():
 		print("no puedes ingresar")
 	else:
 		Gamehandler.enquenivelestoy = 7
-		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 
 
 func _on_Level8_pressed():
@@ -249,7 +256,8 @@ func _on_Level8_pressed():
 		print("no puedes ingresar")
 	else:
 		Gamehandler.enquenivelestoy = 8
-		get_tree().change_scene("res://Trivia/trivia_lvl.tscn")
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 
 
 func _on_Level9_pressed():
@@ -257,16 +265,10 @@ func _on_Level9_pressed():
 		print("no puedes ingresar")
 	else:
 		Gamehandler.enquenivelestoy = 9
-		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 
 
 
-func _on_Msica_toggled(button_pressed):
-	if (button_pressed == true):
-		Gamehandler.effects = true
-		AudioServer.set_bus_volume_db(sounds_bus2, -80.0)
-	else:
-		Gamehandler.effects = false
-		AudioServer.set_bus_volume_db(sounds_bus2, 0)
-
-
+func _on_btn_exit_button_up():
+	new_file.hide()

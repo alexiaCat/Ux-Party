@@ -33,6 +33,9 @@ var pnivel7 = 0
 var pnivel8 = 0
 var pnivel9 = 0
 var puntos = 0
+const ahorcado = "Ahorcado"
+const trivia = "Trivia de preguntas"
+const cyd = "Juego de comparar y decidir"
 
 
 #variables para saber si el nivel esta pasado o no, ej: no poder ingresar a nivel 2 sin pasar nivel 1
@@ -79,3 +82,11 @@ func update_time():
 func update_puntos():
 	get_tree().get_nodes_in_group("puntos")[0].text = String(puntos)
 	
+func update_datosdenivel():
+	if(enquenivelestoy == 1 || enquenivelestoy == 4 || enquenivelestoy == 7):
+		get_tree().get_nodes_in_group("msgnivel")[0].text = String(ahorcado)
+	elif(enquenivelestoy == 2 || enquenivelestoy == 5 || enquenivelestoy == 8):
+		get_tree().get_nodes_in_group("msgnivel")[0].text = String(trivia)
+	else:
+		get_tree().get_nodes_in_group("msgnivel")[0].text = String(cyd)
+	get_tree().get_nodes_in_group("numnivel")[0].text = String(enquenivelestoy)

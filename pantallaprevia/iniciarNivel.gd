@@ -1,8 +1,5 @@
 extends Control
 
-const ahorcado = "Ahorcado"
-const trivia = "Trivia de preguntas"
-const cyd = "Juego de comparar y decidir"
 
 func _ready():
 	pass # Replace with function body.
@@ -11,3 +8,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_btn_iniciar_pressed():
+	if(Gamehandler.enquenivelestoy == 1 || Gamehandler.enquenivelestoy == 4 || Gamehandler.enquenivelestoy == 7):
+		get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")
+	elif(Gamehandler.enquenivelestoy == 2 || Gamehandler.enquenivelestoy == 5 || Gamehandler.enquenivelestoy == 8):
+		get_tree().change_scene("res://Trivia/trivia_lvl.tscn")
+	else:
+		get_tree().change_scene("res://Trivia/trivia_lvl.tscn")
