@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://main/button_pressed.png" type="Texture" id=2]
@@ -7,9 +7,8 @@
 [ext_resource path="res://main/environment.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/buttons/CONFIG.png" type="Texture" id=6]
 [ext_resource path="res://assets/buttons/config_press.png" type="Texture" id=7]
-[ext_resource path="res://tutoriales/mainymap/Tutorial_mainymap.tscn" type="PackedScene" id=8]
+[ext_resource path="res://menus/menu_config2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://main/Main.gd" type="Script" id=9]
-[ext_resource path="res://menus/menu_config.tscn" type="PackedScene" id=10]
 [ext_resource path="res://first_dataname/nombre_usuario.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/audio/Intro Theme.ogg" type="AudioStream" id=12]
 
@@ -106,21 +105,7 @@ texture_hover = ExtResource( 6 )
 
 [node name="environment" parent="." instance=ExtResource( 5 )]
 
-[node name="Menu" parent="." instance=ExtResource( 10 )]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 27.0
-margin_top = 264.0
-margin_right = 27.0
-margin_bottom = 264.0
-
-[node name="Tutorial_mainymap" parent="Menu" instance=ExtResource( 8 )]
-
-[node name="TutorialDialog" parent="Menu/Tutorial_mainymap" index="0"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_top = -244.5
-margin_bottom = 244.5
+[node name="MenuMain" parent="." instance=ExtResource( 8 )]
 
 [node name="nombre_usuario" parent="." instance=ExtResource( 11 )]
 visible = false
@@ -132,15 +117,14 @@ margin_bottom = 220.0
 [node name="fondomusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 autoplay = true
-bus = "Musica"
+bus = "MUSICA"
 
 [connection signal="pressed" from="HUD/Escena/Play_button" to="." method="_on_Play_button_pressed"]
-[connection signal="button_up" from="HUD/Escena/Config_button" to="Menu" method="_on_Config_button_button_up"]
-[connection signal="toggled" from="Menu/Modal_config/Música" to="." method="_on_Msica_toggled"]
-[connection signal="button_up" from="Menu/Modal_config/Tutorial" to="Menu/Tutorial_mainymap" method="_on_Tutorial_button_up"]
-[connection signal="button_up" from="Menu/Tutorial_mainymap/TutorialDialog/btn_salir" to="Menu/Tutorial_mainymap" method="_on_btn_salir_button_up"]
+[connection signal="button_up" from="HUD/Escena/Config_button" to="MenuMain" method="_on_Config_button_button_up"]
+[connection signal="value_changed" from="MenuMain/Modal_config/TextureRect/VBoxContainer/vGeneral" to="MenuMain" method="_on_vGeneral_value_changed"]
+[connection signal="value_changed" from="MenuMain/Modal_config/TextureRect/VBoxContainer2/vEfectos" to="MenuMain" method="_on_vEfectos_value_changed"]
+[connection signal="value_changed" from="MenuMain/Modal_config/TextureRect/VBoxContainer3/vMusica" to="MenuMain" method="_on_vMusica_value_changed"]
 [connection signal="pressed" from="nombre_usuario/TextureRect/btn_acept" to="." method="_on_btn_acept_pressed"]
 
-[editable path="Menu"]
-[editable path="Menu/Tutorial_mainymap"]
+[editable path="MenuMain"]
 [editable path="nombre_usuario"]

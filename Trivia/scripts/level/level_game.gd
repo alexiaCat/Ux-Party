@@ -138,6 +138,10 @@ func buttons_answer(button) -> void:
 				Gamehandler.update_npregunta()
 				$correct.play()
 				button.modulate = color_right
+				get_tree().get_nodes_in_group("button")[0].disabled = true
+				get_tree().get_nodes_in_group("button")[1].disabled = true
+				get_tree().get_nodes_in_group("button")[2].disabled = true
+				get_tree().get_nodes_in_group("button")[3].disabled = true
 			else:
 				Gamehandler.puntos += 0
 				if (Gamehandler.npregunta < 5):
@@ -146,6 +150,10 @@ func buttons_answer(button) -> void:
 				Gamehandler.update_npregunta()
 				$error.play()
 				button.modulate = color_wrong
+				get_tree().get_nodes_in_group("button")[0].disabled = true
+				get_tree().get_nodes_in_group("button")[1].disabled = true
+				get_tree().get_nodes_in_group("button")[2].disabled = true
+				get_tree().get_nodes_in_group("button")[3].disabled = true
 				
 		elif Gamehandler.tiempo > 12: 
 			if bd_quiz.bd[index].correct == button.text:
@@ -156,6 +164,10 @@ func buttons_answer(button) -> void:
 				Gamehandler.update_npregunta()
 				$correct.play()
 				button.modulate = color_right
+				get_tree().get_nodes_in_group("button")[0].disabled = true
+				get_tree().get_nodes_in_group("button")[1].disabled = true
+				get_tree().get_nodes_in_group("button")[2].disabled = true
+				get_tree().get_nodes_in_group("button")[3].disabled = true
 			else:
 				Gamehandler.puntos += 0
 				if (Gamehandler.npregunta < 5):
@@ -164,10 +176,14 @@ func buttons_answer(button) -> void:
 				Gamehandler.update_npregunta()
 				$error.play()
 				button.modulate = color_wrong
+				get_tree().get_nodes_in_group("button")[0].disabled = true
+				get_tree().get_nodes_in_group("button")[1].disabled = true
+				get_tree().get_nodes_in_group("button")[2].disabled = true
+				get_tree().get_nodes_in_group("button")[3].disabled = true
 
 		yield(get_tree().create_timer(1), "timeout")
 		for bt in buttons:
-			
+			bt.disabled = false
 			bt.modulate = Color.white
 			bt.disconnect("pressed", self, "buttons_answer")
 		
@@ -188,6 +204,11 @@ func buttons_answer(button) -> void:
 				Gamehandler.update_puntos()
 				Gamehandler.update_npregunta()
 				button.modulate = color_right
+				$correct.play()
+				get_tree().get_nodes_in_group("button")[0].disabled = true
+				get_tree().get_nodes_in_group("button")[1].disabled = true
+				get_tree().get_nodes_in_group("button")[2].disabled = true
+				get_tree().get_nodes_in_group("button")[3].disabled = true
 			else:
 				Gamehandler.puntos += 0
 				if (Gamehandler.npregunta < 5):
@@ -195,6 +216,11 @@ func buttons_answer(button) -> void:
 				Gamehandler.update_puntos()
 				Gamehandler.update_npregunta()
 				button.modulate = color_wrong
+				$error.play()
+				get_tree().get_nodes_in_group("button")[0].disabled = true
+				get_tree().get_nodes_in_group("button")[1].disabled = true
+				get_tree().get_nodes_in_group("button")[2].disabled = true
+				get_tree().get_nodes_in_group("button")[3].disabled = true
 				
 		elif Gamehandler.tiempo > 12: 
 			if bd_quiz_2.bd[index].correct == button.text:
@@ -204,17 +230,28 @@ func buttons_answer(button) -> void:
 				Gamehandler.update_puntos()
 				Gamehandler.update_npregunta()
 				button.modulate = color_right
+				$correct.play()
+				get_tree().get_nodes_in_group("button")[0].disabled = true
+				get_tree().get_nodes_in_group("button")[1].disabled = true
+				get_tree().get_nodes_in_group("button")[2].disabled = true
+				get_tree().get_nodes_in_group("button")[3].disabled = true
 			else:
 				Gamehandler.puntos += 0
 				if (Gamehandler.npregunta < 5):
 					Gamehandler.npregunta += 1
 				Gamehandler.update_puntos()
 				Gamehandler.update_npregunta()
-				button.modulate = color_wrong					 		
+				button.modulate = color_wrong
+				$error.play()
+				get_tree().get_nodes_in_group("button")[0].disabled = true
+				get_tree().get_nodes_in_group("button")[1].disabled = true
+				get_tree().get_nodes_in_group("button")[2].disabled = true
+				get_tree().get_nodes_in_group("button")[3].disabled = true				 		
 					
 
 		yield(get_tree().create_timer(1), "timeout")
 		for bt in buttons:
+			bt.disabled = false
 			bt.modulate = Color.white
 			bt.disconnect("pressed", self, "buttons_answer")
 		
@@ -235,6 +272,11 @@ func buttons_answer(button) -> void:
 				Gamehandler.update_puntos()
 				Gamehandler.update_npregunta()
 				button.modulate = color_right
+				$correct.play()
+				get_tree().get_nodes_in_group("button")[0].disabled = true
+				get_tree().get_nodes_in_group("button")[1].disabled = true
+				get_tree().get_nodes_in_group("button")[2].disabled = true
+				get_tree().get_nodes_in_group("button")[3].disabled = true
 			else:
 				Gamehandler.puntos += 0
 				if (Gamehandler.npregunta < 5):
@@ -242,6 +284,11 @@ func buttons_answer(button) -> void:
 				Gamehandler.update_puntos()
 				Gamehandler.update_npregunta()
 				button.modulate = color_wrong
+				$error.play()
+				get_tree().get_nodes_in_group("button")[0].disabled = true
+				get_tree().get_nodes_in_group("button")[1].disabled = true
+				get_tree().get_nodes_in_group("button")[2].disabled = true
+				get_tree().get_nodes_in_group("button")[3].disabled = true
 				
 		elif Gamehandler.tiempo > 12: 
 			if bd_quiz_3.bd[index].correct == button.text:
@@ -251,17 +298,28 @@ func buttons_answer(button) -> void:
 				Gamehandler.update_puntos()
 				Gamehandler.update_npregunta()
 				button.modulate = color_right
+				$correct.play()
+				get_tree().get_nodes_in_group("button")[0].disabled = true
+				get_tree().get_nodes_in_group("button")[1].disabled = true
+				get_tree().get_nodes_in_group("button")[2].disabled = true
+				get_tree().get_nodes_in_group("button")[3].disabled = true
 			else:
 				Gamehandler.puntos += 0
 				if (Gamehandler.npregunta < 5):
 					Gamehandler.npregunta += 1
 				Gamehandler.update_puntos()
 				Gamehandler.update_npregunta()
-				button.modulate = color_wrong					 		
+				button.modulate = color_wrong
+				$error.play()
+				get_tree().get_nodes_in_group("button")[0].disabled = true
+				get_tree().get_nodes_in_group("button")[1].disabled = true
+				get_tree().get_nodes_in_group("button")[2].disabled = true
+				get_tree().get_nodes_in_group("button")[3].disabled = true					 		
 					
 
 		yield(get_tree().create_timer(1), "timeout")
 		for bt in buttons:
+			bt.disabled = false
 			bt.modulate = Color.white
 			bt.disconnect("pressed", self, "buttons_answer")
 		

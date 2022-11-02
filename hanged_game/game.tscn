@@ -26,7 +26,6 @@ position = Vector2( 37, 562 )
 
 [node name="click" type="AudioStreamPlayer" parent="Letters"]
 stream = ExtResource( 4 )
-bus = "Efectos"
 
 [node name="Teclado" parent="." instance=ExtResource( 1 )]
 margin_left = 26.0
@@ -164,7 +163,6 @@ one_shot = true
 [node name="musicadefondo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 autoplay = true
-bus = "Musica"
 
 [connection signal="notthere" from="Letters" to="." method="_on_Letters_notthere"]
 [connection signal="youwin" from="Letters" to="." method="_on_Letters_youwin"]

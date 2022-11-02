@@ -7,8 +7,8 @@
 [ext_resource path="res://main_map/level_pressed.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/fontparamapa.tres" type="DynamicFont" id=6]
 [ext_resource path="res://stars/mapa_star.tscn" type="PackedScene" id=7]
-[ext_resource path="res://menus/menu_mapaprincipal.tscn" type="PackedScene" id=8]
-[ext_resource path="res://menus/menuprincipal.gd" type="Script" id=9]
+[ext_resource path="res://menus/menu_main.tscn" type="PackedScene" id=8]
+[ext_resource path="res://pantallaprevia/iniciarNivel.tscn" type="PackedScene" id=9]
 [ext_resource path="res://profile/Profile.tscn" type="PackedScene" id=10]
 [ext_resource path="res://tutoriales/mainymap/Tutorial_mainymap.tscn" type="PackedScene" id=11]
 [ext_resource path="res://main_map/LEVEL_PASS.png" type="Texture" id=12]
@@ -233,9 +233,6 @@ valign = 1
 
 [node name="mapa_star" parent="." instance=ExtResource( 7 )]
 
-[node name="Menu" parent="." instance=ExtResource( 8 )]
-script = ExtResource( 9 )
-
 [node name="Profile" parent="." instance=ExtResource( 10 )]
 
 [node name="Modal_profile" parent="Profile" index="0" groups=["controlprofile"]]
@@ -243,6 +240,8 @@ script = ExtResource( 9 )
 [node name="edit_profile" parent="Profile" index="1"]
 visible = false
 script = ExtResource( 13 )
+
+[node name="MenuMapa" parent="." instance=ExtResource( 8 )]
 
 [node name="Tutorial_mainymap" parent="." instance=ExtResource( 11 )]
 anchor_left = 0.5
@@ -273,10 +272,20 @@ margin_bottom = 245.5
 [node name="mainmusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 autoplay = true
-bus = "Musica"
+bus = "MUSICA"
+
+[node name="iniciarNivel" parent="." instance=ExtResource( 9 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 57.0
+margin_top = 239.0
+margin_right = 97.0
+margin_bottom = 279.0
 
 [connection signal="button_up" from="HUD/Control/MarginContainer/HBoxContainer/Myprofile" to="Profile" method="_on_Myprofile_button_up"]
-[connection signal="button_up" from="HUD/Control/MarginContainer/HBoxContainer/Config" to="Menu" method="_on_Config_button_up"]
+[connection signal="button_up" from="HUD/Control/MarginContainer/HBoxContainer/Config" to="MenuMapa" method="_on_Config_button_up"]
 [connection signal="pressed" from="Level1" to="." method="_on_Level1_pressed"]
 [connection signal="pressed" from="Level2" to="." method="_on_Level2_pressed"]
 [connection signal="pressed" from="Level3" to="." method="_on_Level3_pressed"]
@@ -286,9 +295,11 @@ bus = "Musica"
 [connection signal="pressed" from="Level7" to="." method="_on_Level7_pressed"]
 [connection signal="pressed" from="Level8" to="." method="_on_Level8_pressed"]
 [connection signal="pressed" from="Level9" to="." method="_on_Level9_pressed"]
-[connection signal="toggled" from="Menu/Modal_config/Música" to="." method="_on_Msica_toggled"]
-[connection signal="button_up" from="Menu/Modal_config/Tutorial" to="Tutorial_mainymap" method="_on_Tutorial_button_up"]
 [connection signal="button_up" from="Profile/Modal_profile/btn_exit" to="Profile" method="_on_btn_exit_button_up"]
+[connection signal="value_changed" from="MenuMapa/Modal_config/TextureRect/VBoxContainer/vGeneral" to="MenuMapa" method="_on_vGeneral_value_changed"]
+[connection signal="value_changed" from="MenuMapa/Modal_config/TextureRect/VBoxContainer2/vEfectos" to="MenuMapa" method="_on_vEfectos_value_changed"]
+[connection signal="value_changed" from="MenuMapa/Modal_config/TextureRect/VBoxContainer3/vMusica" to="MenuMapa" method="_on_vMusica_value_changed"]
+[connection signal="button_up" from="MenuMapa/Modal_config/Tutorial" to="Tutorial_mainymap" method="_on_Tutorial_button_up"]
 [connection signal="button_up" from="Tutorial_mainymap/TutorialDialog/btn_salir" to="Tutorial_mainymap" method="_on_btn_salir_button_up"]
 
 [editable path="HUD"]
@@ -302,7 +313,7 @@ bus = "Musica"
 [editable path="mapa_star/estrellas7"]
 [editable path="mapa_star/estrellas8"]
 [editable path="mapa_star/estrellas9"]
-[editable path="Menu"]
 [editable path="Profile"]
 [editable path="Profile/edit_profile"]
+[editable path="MenuMapa"]
 [editable path="Tutorial_mainymap"]
