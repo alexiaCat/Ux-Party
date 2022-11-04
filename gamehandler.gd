@@ -40,9 +40,9 @@ const cyd = "Juego de comparar y decidir"
 
 
 #variables para saber si el nivel esta pasado o no, ej: no poder ingresar a nivel 2 sin pasar nivel 1
-var level1 = true
-var level2 = true
-var level3 = true
+var level1 = false
+var level2 = false
+var level3 = false
 var level4 = false
 var level5 = false
 var level6 = false
