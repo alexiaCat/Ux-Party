@@ -11,7 +11,7 @@
 [ext_resource path="res://Comparar y decidir/resource/vectores/right-removebg-preview (1).png" type="Texture" id=9]
 [ext_resource path="res://assets/fonts/fontTrivia.tres" type="DynamicFont" id=10]
 [ext_resource path="res://tutoriales/juegocompararydecidir/tutoCompararyDecidir.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/audio/error2.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/audio/error2.ogg" type="AudioStream" id=12]
 [ext_resource path="res://assets/audio/correct_1.mp3" type="AudioStream" id=13]
 
 [node name="level_comparar_y_decidir" type="Control"]
@@ -111,9 +111,11 @@ bus = "MUSICA"
 
 [node name="correct" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 13 )
+bus = "EFECTOS"
 
 [node name="error" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
+bus = "EFECTOS"
 
 [node name="finish_timer" type="Timer" parent="."]
 one_shot = true

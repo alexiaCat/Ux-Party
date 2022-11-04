@@ -19,7 +19,7 @@ func _ready() -> void:
 	for _button in $question_holder.get_children():
 		buttons.append(_button)
 	Gamehandler.npregunta = 1
-	Gamehandler.update_npregunta()
+	Gamehandler.time_left = 60
 	Gamehandler.puntos = 0
 	Gamehandler.update_puntos()
 	if Gamehandler.enquenivelestoy == 3:
