@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/fonts/winner_hg.tres" type="DynamicFont" id=1]
 [ext_resource path="res://win/hg/2f26222ac6b14270ad71a35c1a4d92aa (4).png" type="Texture" id=2]
 [ext_resource path="res://win/hg/btn_normal.png" type="Texture" id=3]
 [ext_resource path="res://win/hg/btn_pressed.png" type="Texture" id=4]
@@ -9,6 +8,14 @@
 [ext_resource path="res://assets/fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://lost/loser.gd" type="Script" id=8]
 [ext_resource path="res://assets/audio/loser (1).wav" type="AudioStream" id=9]
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
@@ -37,19 +44,19 @@ margin_bottom = 284.0
 texture = ExtResource( 5 )
 
 [node name="perdiste" type="Label" parent="fondo"]
-margin_left = 176.0
-margin_top = 310.0
-margin_right = 269.0
-margin_bottom = 339.0
-custom_fonts/font = ExtResource( 1 )
+margin_left = 160.0
+margin_top = 304.0
+margin_right = 288.0
+margin_bottom = 344.0
+custom_fonts/font = SubResource( 2 )
 text = "Perdiste"
 
 [node name="mensje_loser" type="Label" parent="fondo"]
-margin_left = 114.0
-margin_top = 358.0
-margin_right = 345.0
-margin_bottom = 419.0
-custom_fonts/font = ExtResource( 1 )
+margin_left = 109.0
+margin_top = 366.0
+margin_right = 340.0
+margin_bottom = 429.0
+custom_fonts/font = SubResource( 3 )
 text = "¡No te desanimes e
 inténtalo de nuevo!"
 align = 1
@@ -79,6 +86,5 @@ text = "Volver al minimapa"
 [node name="loser" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
-bus = "Musica"
 
 [connection signal="button_up" from="fondo/btn_volver" to="." method="_on_btn_volver_button_up"]

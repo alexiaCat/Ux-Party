@@ -40,15 +40,15 @@ const cyd = "Juego de comparar y decidir"
 
 
 #variables para saber si el nivel esta pasado o no, ej: no poder ingresar a nivel 2 sin pasar nivel 1
-var level1 = true
-var level2 = true
-var level3 = true
-var level4 = true
-var level5 = true
-var level6 = true
-var level7 = true
-var level8 = true
-var level9 = true
+var level1 = false
+var level2 = false
+var level3 = false
+var level4 = false
+var level5 = false
+var level6 = false
+var level7 = false
+var level8 = false
+var level9 = false
 
 
 func _ready():
@@ -82,6 +82,10 @@ func update_time():
 	
 func update_time2():
 	get_tree().get_nodes_in_group("tiempo2")[0].text = String(time_left/60) + ":" + String(time_left%60)
+
+func update_timecyd():
+	get_tree().get_nodes_in_group("time")[0].text = String(tiempo)
+
 
 func update_puntos():
 	get_tree().get_nodes_in_group("puntos")[0].text = String(puntos)

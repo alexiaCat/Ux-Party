@@ -1,8 +1,5 @@
 extends Node
 
-var sounds_bus = AudioServer.get_bus_index("Efectos")
-var sounds_bus2 = AudioServer.get_bus_index("Musica")
-
 export(Resource) var bd_quiz
 export(Resource) var bd_quiz_2
 export(Resource) var bd_quiz_3

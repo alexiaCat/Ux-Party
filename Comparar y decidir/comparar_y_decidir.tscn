@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Comparar y decidir/resource/fondo/cyd_background_final.png" type="Texture" id=1]
 [ext_resource path="res://assets/audio/lazy-village-15547.mp3" type="AudioStream" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Comparar y decidir/resource/vectores/right-removebg-preview (1).png" type="Texture" id=9]
 [ext_resource path="res://assets/fonts/fontTrivia.tres" type="DynamicFont" id=10]
 [ext_resource path="res://tutoriales/juegocompararydecidir/tutoCompararyDecidir.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/audio/error2.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/audio/correct_1.mp3" type="AudioStream" id=13]
 
 [node name="level_comparar_y_decidir" type="Control"]
 margin_top = 1.0
@@ -73,6 +75,10 @@ rect_min_size = Vector2( 300, 200 )
 
 [node name="Button_tutorial" parent="top_bar_minigames/Control/MarginContainer/HBoxContainer" index="1" groups=["cydtuto"]]
 
+[node name="Button_quit" parent="top_bar_minigames/Control/MarginContainer/HBoxContainer" index="2" groups=["salircyd"]]
+
+[node name="Timer" parent="top_bar_minigames" index="1" groups=["timercyd"]]
+
 [node name="ntexto_pregunta" type="Label" parent="."]
 margin_left = 375.0
 margin_top = 57.0
@@ -103,12 +109,37 @@ bus = "MUSICA"
 
 [node name="Tutorial_cyd" parent="." instance=ExtResource( 11 )]
 
+[node name="correct" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 13 )
+
+[node name="error" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+
+[node name="finish_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="timerR" type="Label" parent="." groups=["time"]]
+visible = false
+margin_left = 410.0
+margin_top = 111.0
+margin_right = 450.0
+margin_bottom = 125.0
+text = "0"
+
+[node name="tiempocyd" type="Timer" parent="." groups=["tiemporespuesta"]]
+autostart = true
+
+[connection signal="button_up" from="top_bar_minigames/Control/MarginContainer/HBoxContainer/Button_tutorial" to="Tutorial_cyd" method="_on_Button_tutorial_button_up"]
 [connection signal="pressed" from="top_bar_minigames/Control/MarginContainer/HBoxContainer/Button_quit" to="top_bar_minigames/Menu_cyd" method="_on_Button_quit_pressed"]
 [connection signal="button_up" from="top_bar_minigames/Menu_cyd/MenuCyd/TextureRect/btn_exit" to="top_bar_minigames/Menu_cyd" method="_on_btn_exit_button_up"]
 [connection signal="button_up" from="top_bar_minigames/Menu_cyd/MenuCyd/TextureRect/Salir" to="top_bar_minigames/Menu_cyd" method="_on_Salir_button_up"]
 [connection signal="value_changed" from="top_bar_minigames/Menu_cyd/MenuCyd/TextureRect/VBoxContainer/vGral" to="top_bar_minigames/Menu_cyd" method="_on_vGral_value_changed"]
 [connection signal="value_changed" from="top_bar_minigames/Menu_cyd/MenuCyd/TextureRect/VBoxContainer2/vMusic" to="top_bar_minigames/Menu_cyd" method="_on_vMusic_value_changed"]
 [connection signal="value_changed" from="top_bar_minigames/Menu_cyd/MenuCyd/TextureRect/VBoxContainer3/vEffects" to="top_bar_minigames/Menu_cyd" method="_on_vEffects_value_changed"]
+[connection signal="button_up" from="Tutorial_cyd/TutoriaCyd/btn_salir" to="Tutorial_cyd" method="_on_btn_salir_button_up"]
+[connection signal="timeout" from="finish_timer" to="." method="_on_finish_timer_timeout"]
+[connection signal="timeout" from="tiempocyd" to="." method="_on_tiempocyd_timeout"]
 
 [editable path="top_bar_minigames"]
 [editable path="top_bar_minigames/Menu_cyd"]
+[editable path="Tutorial_cyd"]

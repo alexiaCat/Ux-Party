@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://pantallaprevia/iniciarNivel.gd" type="Script" id=1]
 [ext_resource path="res://pantallaprevia/assets/iniciarpressed.png" type="Texture" id=2]
@@ -7,6 +7,11 @@
 [ext_resource path="res://menus/assets/btn_exit.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/nivelfont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://menus/assets/btn_exitpressed.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 19
+font_data = ExtResource( 8 )
 
 [node name="iniciarNivel" type="Control"]
 margin_right = 40.0
@@ -20,7 +25,7 @@ margin_right = 336.0
 margin_bottom = 314.0
 texture = ExtResource( 3 )
 
-[node name="btn_iniciar" type="TextureButton" parent="TextureRect"]
+[node name="btn_iniciar" type="TextureButton" parent="TextureRect" groups=["sigame"]]
 margin_left = 58.0
 margin_top = 269.0
 margin_right = 291.0
@@ -80,3 +85,15 @@ margin_bottom = 58.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 5 )
+
+[node name="nogame" type="Label" parent="." groups=["nogame"]]
+margin_left = 2.0
+margin_top = 218.0
+margin_right = 330.0
+margin_bottom = 309.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "No puedes jugar este nivel.
+Debes superar el nivel anterior o ya no te quedan vidas."
+align = 1
+autowrap = true

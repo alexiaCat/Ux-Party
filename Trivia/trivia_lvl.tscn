@@ -220,10 +220,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -25.5
-margin_top = -26.0
-margin_right = 25.5
-margin_bottom = 26.0
+margin_left = -22.0
+margin_top = -60.0
+margin_right = 27.0
+margin_bottom = -13.0
+
+[node name="TutoriaTrivia" parent="Tutorial_trivia" index="0"]
+margin_top = -532.0
+margin_right = 172.5
+margin_bottom = -46.0
 
 [connection signal="button_up" from="top_bar_minigames/Control/MarginContainer/HBoxContainer/Button_tutorial" to="Tutorial_trivia" method="_on_Button_tutorial_button_up"]
 [connection signal="button_up" from="top_bar_minigames/Control/MarginContainer/HBoxContainer/Button_quit" to="top_bar_minigames/Menu_trivia" method="_on_Button_quit_button_up"]

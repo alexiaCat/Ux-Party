@@ -16,7 +16,6 @@ func _ready():
 	Gamehandler.update_puntajeacumulado()
 	Gamehandler.update_nombrejugador()
 	change_icons()
-	Gamehandler.update_vidas()
 	
 	
 func pintarestrellasmapa():
@@ -192,15 +191,27 @@ func _on_Level1_pressed():
 	if(Gamehandler.vidas_jugador > 0):
 		Gamehandler.enquenivelestoy = 1
 		Gamehandler.update_datosdenivel()
+		get_tree().get_nodes_in_group("nogame")[0].hide()
+		get_tree().get_nodes_in_group("sigame")[0].show()
 		new_file.show()
 	else:
-		print("no tienes vidas")
+		get_tree().get_nodes_in_group("nogame")[0].show()
+		get_tree().get_nodes_in_group("sigame")[0].hide()
+		Gamehandler.enquenivelestoy = 1
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 
 
 func _on_Level2_pressed():
 	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level1 == false):
-		print("no puedes ingresar")
+		get_tree().get_nodes_in_group("nogame")[0].show()
+		get_tree().get_nodes_in_group("sigame")[0].hide()
+		Gamehandler.enquenivelestoy = 2
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 	else:
+		get_tree().get_nodes_in_group("nogame")[0].hide()
+		get_tree().get_nodes_in_group("sigame")[0].show()
 		Gamehandler.enquenivelestoy = 2
 		Gamehandler.update_datosdenivel()
 		new_file.show()
@@ -208,8 +219,14 @@ func _on_Level2_pressed():
 
 func _on_Level3_pressed():
 	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level2 == false):
-		print("no puedes ingresar")
+		get_tree().get_nodes_in_group("nogame")[0].show()
+		get_tree().get_nodes_in_group("sigame")[0].hide()
+		Gamehandler.enquenivelestoy = 3
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 	else:
+		get_tree().get_nodes_in_group("nogame")[0].hide()
+		get_tree().get_nodes_in_group("sigame")[0].show()
 		Gamehandler.enquenivelestoy = 3
 		Gamehandler.update_datosdenivel()
 		new_file.show()
@@ -217,8 +234,14 @@ func _on_Level3_pressed():
 
 func _on_Level4_pressed():
 	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level3 == false):
-		print("no puedes ingresar")
+		get_tree().get_nodes_in_group("nogame")[0].show()
+		get_tree().get_nodes_in_group("sigame")[0].hide()
+		Gamehandler.enquenivelestoy = 4
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 	else:
+		get_tree().get_nodes_in_group("nogame")[0].hide()
+		get_tree().get_nodes_in_group("sigame")[0].show()
 		Gamehandler.enquenivelestoy = 4
 		Gamehandler.update_datosdenivel()
 		new_file.show()
@@ -226,8 +249,14 @@ func _on_Level4_pressed():
 
 func _on_Level5_pressed():
 	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level4 == false):
-		print("no puedes ingresar")
+		get_tree().get_nodes_in_group("nogame")[0].show()
+		get_tree().get_nodes_in_group("sigame")[0].hide()
+		Gamehandler.enquenivelestoy = 5
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 	else:
+		get_tree().get_nodes_in_group("nogame")[0].hide()
+		get_tree().get_nodes_in_group("sigame")[0].show()
 		Gamehandler.enquenivelestoy = 5
 		Gamehandler.update_datosdenivel()
 		new_file.show()
@@ -235,8 +264,14 @@ func _on_Level5_pressed():
 
 func _on_Level6_pressed():
 	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level5 == false):
-		print("no puedes ingresar")
+		get_tree().get_nodes_in_group("nogame")[0].show()
+		get_tree().get_nodes_in_group("sigame")[0].hide()
+		Gamehandler.enquenivelestoy = 6
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 	else:
+		get_tree().get_nodes_in_group("nogame")[0].hide()
+		get_tree().get_nodes_in_group("sigame")[0].show()
 		Gamehandler.enquenivelestoy = 6
 		Gamehandler.update_datosdenivel()
 		new_file.show()
@@ -244,8 +279,14 @@ func _on_Level6_pressed():
 
 func _on_Level7_pressed():
 	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level6 == false):
-		print("no puedes ingresar")
+		get_tree().get_nodes_in_group("nogame")[0].show()
+		get_tree().get_nodes_in_group("sigame")[0].hide()
+		Gamehandler.enquenivelestoy = 7
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 	else:
+		get_tree().get_nodes_in_group("nogame")[0].hide()
+		get_tree().get_nodes_in_group("sigame")[0].show()
 		Gamehandler.enquenivelestoy = 7
 		Gamehandler.update_datosdenivel()
 		new_file.show()
@@ -253,8 +294,14 @@ func _on_Level7_pressed():
 
 func _on_Level8_pressed():
 	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level7 == false):
-		print("no puedes ingresar")
+		get_tree().get_nodes_in_group("nogame")[0].show()
+		get_tree().get_nodes_in_group("sigame")[0].hide()
+		Gamehandler.enquenivelestoy = 8
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 	else:
+		get_tree().get_nodes_in_group("nogame")[0].hide()
+		get_tree().get_nodes_in_group("sigame")[0].show()
 		Gamehandler.enquenivelestoy = 8
 		Gamehandler.update_datosdenivel()
 		new_file.show()
@@ -262,8 +309,14 @@ func _on_Level8_pressed():
 
 func _on_Level9_pressed():
 	if(Gamehandler.vidas_jugador < 1 || Gamehandler.level8 == false):
-		print("no puedes ingresar")
+		get_tree().get_nodes_in_group("nogame")[0].show()
+		get_tree().get_nodes_in_group("sigame")[0].hide()
+		Gamehandler.enquenivelestoy = 9
+		Gamehandler.update_datosdenivel()
+		new_file.show()
 	else:
+		get_tree().get_nodes_in_group("nogame")[0].hide()
+		get_tree().get_nodes_in_group("sigame")[0].show()
 		Gamehandler.enquenivelestoy = 9
 		Gamehandler.update_datosdenivel()
 		new_file.show()
