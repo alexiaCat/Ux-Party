@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Comparar y decidir/top_bar_quiz/btn_quit.png" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://Comparar y decidir/top_bar_quiz/btn_tutorial.png" type="Texture" id=4]
 [ext_resource path="res://Comparar y decidir/top_bar_quiz/btn_tutorial_press.png" type="Texture" id=5]
 [ext_resource path="res://Comparar y decidir/top_bar_quiz/top_bar_minigames.gd" type="Script" id=6]
-
+[ext_resource path="res://menus/menu_comparar/Menu_cyd.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -107,5 +107,7 @@ align = 2
 
 [node name="Timer" type="Timer" parent="." groups=["tiempo_left"]]
 autostart = true
+
+[node name="Menu_cyd" parent="." instance=ExtResource( 7 )]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

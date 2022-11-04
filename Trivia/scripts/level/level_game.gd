@@ -21,7 +21,6 @@ onready var question_texts := $question_info/txt_question
 func _ready() -> void:
 	for _button in $question_holder.get_children():
 		buttons.append(_button)
-	Gamehandler.time_left = 60
 	Gamehandler.puntos = 0
 	Gamehandler.npregunta = 1
 	Gamehandler.update_puntos()
@@ -115,7 +114,7 @@ func load_quiz() -> void:
 func buttons_answer(button) -> void:
 #aqui se valida el tiempo y se asigna el puntaje de acuerdo al t° de respuesta
 	if Gamehandler.enquenivelestoy == 2:    
-		if Gamehandler.tiempo <= 12:
+		if Gamehandler.tiempo2 <= 12:
 			if bd_quiz.bd[index].correct == button.text:
 				Gamehandler.puntos += 100
 				if (Gamehandler.npregunta < 5):
@@ -141,7 +140,7 @@ func buttons_answer(button) -> void:
 				get_tree().get_nodes_in_group("button")[2].disabled = true
 				get_tree().get_nodes_in_group("button")[3].disabled = true
 				
-		elif Gamehandler.tiempo > 12: 
+		elif Gamehandler.tiempo2 > 12: 
 			if bd_quiz.bd[index].correct == button.text:
 				Gamehandler.puntos += 40
 				if (Gamehandler.npregunta < 5):
@@ -174,7 +173,7 @@ func buttons_answer(button) -> void:
 			bt.disconnect("pressed", self, "buttons_answer")
 		
 		index += 1
-		Gamehandler.tiempo = 0
+		Gamehandler.tiempo2 = 0
 		load_quiz()
 	
 	#funcion mandar puntaje total del usuario
@@ -182,7 +181,7 @@ func buttons_answer(button) -> void:
 
 #######################SE VALIDA EL PUNTAJE Y SE PASA A LA SIGUIENTE PREGUNTA LVL 5#########################################
 	elif Gamehandler.enquenivelestoy == 5:    
-		if Gamehandler.tiempo <= 12:
+		if Gamehandler.tiempo2 <= 12:
 			if bd_quiz_2.bd[index].correct == button.text:
 				Gamehandler.puntos += 100
 				if (Gamehandler.npregunta < 5):
@@ -208,7 +207,7 @@ func buttons_answer(button) -> void:
 				get_tree().get_nodes_in_group("button")[2].disabled = true
 				get_tree().get_nodes_in_group("button")[3].disabled = true
 				
-		elif Gamehandler.tiempo > 12: 
+		elif Gamehandler.tiempo2 > 12: 
 			if bd_quiz_2.bd[index].correct == button.text:
 				Gamehandler.puntos += 40
 				if (Gamehandler.npregunta < 5):
@@ -242,7 +241,7 @@ func buttons_answer(button) -> void:
 			bt.disconnect("pressed", self, "buttons_answer")
 		
 		index += 1
-		Gamehandler.tiempo = 0
+		Gamehandler.tiempo2 = 0
 		load_quiz()
 	
 	#funcion mandar puntaje total del usuario
@@ -250,7 +249,7 @@ func buttons_answer(button) -> void:
 ##########################################################################################################
 #######################SE VALIDA EL PUNTAJE Y SE PASA A LA SIGUIENTE PREGUNTA LVL 8#########################################
 	elif Gamehandler.enquenivelestoy == 8:    
-		if Gamehandler.tiempo <= 12:
+		if Gamehandler.tiempo2 <= 12:
 			if bd_quiz_3.bd[index].correct == button.text:
 				Gamehandler.puntos += 100
 				if (Gamehandler.npregunta < 5):
@@ -276,7 +275,7 @@ func buttons_answer(button) -> void:
 				get_tree().get_nodes_in_group("button")[2].disabled = true
 				get_tree().get_nodes_in_group("button")[3].disabled = true
 				
-		elif Gamehandler.tiempo > 12: 
+		elif Gamehandler.tiempo2 > 12: 
 			if bd_quiz_3.bd[index].correct == button.text:
 				Gamehandler.puntos += 40
 				if (Gamehandler.npregunta < 5):
@@ -310,7 +309,7 @@ func buttons_answer(button) -> void:
 			bt.disconnect("pressed", self, "buttons_answer")
 		
 		index += 1
-		Gamehandler.tiempo = 0
+		Gamehandler.tiempo2 = 0
 		load_quiz()
 	
 	#funcion mandar puntaje total del usuario
@@ -327,8 +326,8 @@ func randomize_array(array: Array) -> Array:
 
 
 func _on_Timer_timeout():
-	Gamehandler.tiempo += 1
-	Gamehandler.update_time()
+	Gamehandler.tiempo2 += 1
+	Gamehandler.update_time2()
 	
 func perder_vida():
 	Gamehandler.vidas_jugador -= 1

@@ -265,10 +265,6 @@ margin_top = 27.0
 margin_bottom = 43.0
 
 [node name="Tutorial_mainymap" parent="." instance=ExtResource( 11 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 margin_right = 0.0
 margin_bottom = 0.0
 

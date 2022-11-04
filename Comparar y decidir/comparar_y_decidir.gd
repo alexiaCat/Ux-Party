@@ -17,7 +17,6 @@ onready var question_texts := $question_info/txt_question
 func _ready() -> void:
 	for _button in $question_holder.get_children():
 		buttons.append(_button)
-	Gamehandler.time_left = 60
 	Gamehandler.npregunta = 1
 	Gamehandler.update_npregunta()
 	Gamehandler.puntos = 0
@@ -106,16 +105,24 @@ func buttons_answer(button) -> void:
 			if bd_cyd.bd[index].correct == button.texture_normal:
 				Gamehandler.puntos += 100
 				button.texture_normal = color_right
+				get_tree().get_nodes_in_group("botoncyd")[0].disabled = true
+				get_tree().get_nodes_in_group("botoncyd")[1].disabled = true
 			else:
 				Gamehandler.puntos += 0
 				button.texture_normal = color_wrong
+				get_tree().get_nodes_in_group("botoncyd")[0].disabled = true
+				get_tree().get_nodes_in_group("botoncyd")[1].disabled = true
 		elif Gamehandler.tiempo > 12: 
 			if bd_cyd.bd[index].correct == button.texture_normal:
 				Gamehandler.puntos += 40
 				button.texture_normal = color_right
+				get_tree().get_nodes_in_group("botoncyd")[0].disabled = true
+				get_tree().get_nodes_in_group("botoncyd")[1].disabled = true
 			else:
 				Gamehandler.puntos += 0
 				button.texture_normal = color_wrong
+				get_tree().get_nodes_in_group("botoncyd")[0].disabled = true
+				get_tree().get_nodes_in_group("botoncyd")[1].disabled = true
 		if (Gamehandler.npregunta < 5):
 			Gamehandler.npregunta += 1
 		Gamehandler.update_npregunta()
@@ -123,6 +130,7 @@ func buttons_answer(button) -> void:
 
 		yield(get_tree().create_timer(1), "timeout")
 		for bt in buttons:
+			bt.disabled = false
 			bt.modulate = Color.white
 			bt.disconnect("pressed", self, "buttons_answer")
 		
@@ -135,17 +143,25 @@ func buttons_answer(button) -> void:
 			if bd_cyd2.bd[index].correct == button.texture_normal:
 				Gamehandler.puntos += 100
 				button.texture_normal = color_right
+				get_tree().get_nodes_in_group("botoncyd")[0].disabled = true
+				get_tree().get_nodes_in_group("botoncyd")[1].disabled = true
 			else:
 				Gamehandler.puntos += 0
 				button.texture_normal = color_wrong
+				get_tree().get_nodes_in_group("botoncyd")[0].disabled = true
+				get_tree().get_nodes_in_group("botoncyd")[1].disabled = true
 				
 		elif Gamehandler.tiempo > 12: 
 			if bd_cyd2.bd[index].correct == button.texture_normal:
 				Gamehandler.puntos += 40
 				button.texture_normal = color_right
+				get_tree().get_nodes_in_group("botoncyd")[0].disabled = true
+				get_tree().get_nodes_in_group("botoncyd")[1].disabled = true
 			else:
 				Gamehandler.puntos += 0
 				button.texture_normal = color_wrong
+				get_tree().get_nodes_in_group("botoncyd")[0].disabled = true
+				get_tree().get_nodes_in_group("botoncyd")[1].disabled = true
 		if (Gamehandler.npregunta < 5):
 			Gamehandler.npregunta += 1
 		Gamehandler.update_npregunta()
@@ -153,6 +169,7 @@ func buttons_answer(button) -> void:
 
 		yield(get_tree().create_timer(1), "timeout")
 		for bt in buttons:
+			bt.disabled = false
 			bt.modulate = Color.white
 			bt.disconnect("pressed", self, "buttons_answer")
 		
@@ -170,17 +187,25 @@ func buttons_answer(button) -> void:
 			if bd_cyd3.bd[index].correct == button.texture_normal:
 				Gamehandler.puntos += 100
 				button.texture_normal = color_right
+				get_tree().get_nodes_in_group("botoncyd")[0].disabled = true
+				get_tree().get_nodes_in_group("botoncyd")[1].disabled = true
 			else:
 				Gamehandler.puntos += 0
 				button.texture_normal = color_wrong
+				get_tree().get_nodes_in_group("botoncyd")[0].disabled = true
+				get_tree().get_nodes_in_group("botoncyd")[1].disabled = true
 				
 		elif Gamehandler.tiempo > 12: 
 			if bd_cyd3.bd[index].correct == button.texture_normal:
 				Gamehandler.puntos += 40
 				button.texture_normal = color_right
+				get_tree().get_nodes_in_group("botoncyd")[0].disabled = true
+				get_tree().get_nodes_in_group("botoncyd")[1].disabled = true
 			else:
 				Gamehandler.puntos += 0
 				button.texture_normal = color_wrong
+				get_tree().get_nodes_in_group("botoncyd")[0].disabled = true
+				get_tree().get_nodes_in_group("botoncyd")[1].disabled = true
 		if (Gamehandler.npregunta < 5):
 			Gamehandler.npregunta += 1
 		Gamehandler.update_npregunta()
@@ -189,6 +214,7 @@ func buttons_answer(button) -> void:
 
 		yield(get_tree().create_timer(1), "timeout")
 		for bt in buttons:
+			bt.disabled = false
 			bt.modulate = Color.white
 			bt.disconnect("pressed", self, "buttons_answer")
 		

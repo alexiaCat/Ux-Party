@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/audio/forest_0.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Trivia/top_bar_quiz/top_bar_minigames.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/audio/correct_1.mp3" type="AudioStream" id=9]
 [ext_resource path="res://assets/audio/incorrecto_3.wav" type="AudioStream" id=10]
 [ext_resource path="res://Trivia/pressedcolor.tres" type="StyleBox" id=11]
+[ext_resource path="res://tutoriales/juegotrivia/tutoTrivia.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CanvasItemMaterial" id=8]
 
@@ -47,9 +48,9 @@ bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -8.0
-margin_top = 6.0
+margin_top = 5.0
 margin_right = -6.0
-margin_bottom = 6.0
+margin_bottom = 5.0
 script = ExtResource( 3 )
 bd_quiz = ExtResource( 4 )
 bd_quiz_2 = ExtResource( 6 )
@@ -58,6 +59,10 @@ color_right = Color( 0.168627, 0.886275, 0.262745, 1 )
 color_wrong = Color( 0.901961, 0.0431373, 0.0431373, 1 )
 
 [node name="top_bar_minigames" parent="." instance=ExtResource( 2 )]
+
+[node name="Button_tutorial" parent="top_bar_minigames/Control/MarginContainer/HBoxContainer" index="1" groups=["triviabtn"]]
+
+[node name="Button_quit" parent="top_bar_minigames/Control/MarginContainer/HBoxContainer" index="2" groups=["triviaquit"]]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 6.0
@@ -99,7 +104,7 @@ margin_right = 256.0
 margin_bottom = 106.0
 custom_fonts/font = ExtResource( 8 )
 
-[node name="tiempo" type="Label" parent="GUI" groups=["tiempo"]]
+[node name="tiempo" type="Label" parent="GUI" groups=["tiempo2"]]
 visible = false
 margin_left = 200.0
 margin_top = 645.0
@@ -129,7 +134,7 @@ custom_fonts/font = ExtResource( 8 )
 text = "1"
 autowrap = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." groups=["tiempoquiz"]]
 autostart = true
 
 [node name="question_holder" type="VBoxContainer" parent="."]
@@ -210,8 +215,25 @@ bus = "EFECTOS"
 stream = ExtResource( 10 )
 bus = "EFECTOS"
 
+[node name="Tutorial_trivia" parent="." instance=ExtResource( 12 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.5
+margin_top = -26.0
+margin_right = 25.5
+margin_bottom = 26.0
+
+[connection signal="button_up" from="top_bar_minigames/Control/MarginContainer/HBoxContainer/Button_tutorial" to="Tutorial_trivia" method="_on_Button_tutorial_button_up"]
+[connection signal="button_up" from="top_bar_minigames/Control/MarginContainer/HBoxContainer/Button_quit" to="top_bar_minigames/Menu_trivia" method="_on_Button_quit_button_up"]
+[connection signal="value_changed" from="top_bar_minigames/Menu_trivia/MenuTrivia/TextureRect/VBoxContainer/vGral" to="top_bar_minigames/Menu_trivia" method="_on_vGral_value_changed"]
+[connection signal="value_changed" from="top_bar_minigames/Menu_trivia/MenuTrivia/TextureRect/VBoxContainer2/vMusic" to="top_bar_minigames/Menu_trivia" method="_on_vMusic_value_changed"]
+[connection signal="value_changed" from="top_bar_minigames/Menu_trivia/MenuTrivia/TextureRect/VBoxContainer3/vEffects" to="top_bar_minigames/Menu_trivia" method="_on_vEffects_value_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="finish_timer" to="." method="_on_finish_timer_timeout"]
+[connection signal="button_up" from="Tutorial_trivia/TutoriaTrivia/btn_salir" to="Tutorial_trivia" method="_on_btn_salir_button_up"]
 
 [editable path="top_bar_minigames"]
 [editable path="top_bar_minigames/Menu_trivia"]
+[editable path="Tutorial_trivia"]

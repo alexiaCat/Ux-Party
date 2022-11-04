@@ -8,7 +8,7 @@
 [ext_resource path="res://tutoriales/assets/tutorial_img.png" type="Texture" id=6]
 [ext_resource path="res://menus/assets/btn_exit.png" type="Texture" id=7]
 [ext_resource path="res://tutoriales/juegotrivia/tutoTrivia.gd" type="Script" id=8]
-[ext_resource path="res://tutoriales/assets/merge_from_ofoct_trivia.png" type="Texture" id=9]
+[ext_resource path="res://tutoriales/assets/triviaXD.png" type="Texture" id=9]
 
 [node name="Tutorial_trivia" type="Control"]
 margin_right = 40.0

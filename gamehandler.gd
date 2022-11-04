@@ -16,6 +16,7 @@ var time_left = 60
 # Luego de pasados 4 minutos desde la pérdida de una vida se repondrá la vida perdida 240.
 var life_recharge = 240
 var tiempo = 0
+var tiempo2 = 0
 var puntajeglobal = 0
 var npregunta = 1
 var nameplayer = "ingresa tu nombre"
@@ -78,6 +79,9 @@ func disminuir_tiempo():
 
 func update_time():
 	get_tree().get_nodes_in_group("tiempo")[0].text = String(time_left/60) + ":" + String(time_left%60)
+	
+func update_time2():
+	get_tree().get_nodes_in_group("tiempo2")[0].text = String(time_left/60) + ":" + String(time_left%60)
 
 func update_puntos():
 	get_tree().get_nodes_in_group("puntos")[0].text = String(puntos)

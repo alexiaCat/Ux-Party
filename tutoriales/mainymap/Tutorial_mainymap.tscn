@@ -11,8 +11,14 @@
 [ext_resource path="res://tutoriales/assets/tutognral.png" type="Texture" id=9]
 
 [node name="Tutorial_mainymap" type="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
 script = ExtResource( 8 )
 
 [node name="TutorialDialog" type="WindowDialog" parent="."]
@@ -32,7 +38,7 @@ margin_right = 353.0
 margin_bottom = 491.0
 texture = ExtResource( 6 )
 
-[node name="Sprite" type="Sprite" parent="TutorialDialog"]
+[node name="Sprite" type="Sprite" parent="TutorialDialog" groups=["imga"]]
 position = Vector2( 173.5, 209 )
 texture = ExtResource( 9 )
 hframes = 34
@@ -63,3 +69,6 @@ margin_bottom = 17.0
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 7 )
+
+[connection signal="button_up" from="TutorialDialog/flecha_izq" to="." method="_on_flecha_izq_button_up"]
+[connection signal="button_up" from="TutorialDialog/flecha_der" to="." method="_on_flecha_der_button_up"]

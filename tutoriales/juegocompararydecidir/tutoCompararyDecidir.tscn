@@ -8,7 +8,7 @@
 [ext_resource path="res://tutoriales/assets/tutorial_img.png" type="Texture" id=6]
 [ext_resource path="res://menus/assets/btn_exit.png" type="Texture" id=7]
 [ext_resource path="res://tutoriales/juegocompararydecidir/tutoCompararyDecidir.gd" type="Script" id=8]
-[ext_resource path="res://tutoriales/assets/merge_from_ofoct_tutorial_cyd.png" type="Texture" id=9]
+[ext_resource path="res://tutoriales/assets/cyd.png" type="Texture" id=9]
 
 [node name="Tutorial_cyd" type="Control"]
 margin_right = 40.0
