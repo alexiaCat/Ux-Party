@@ -32,6 +32,7 @@ func _on_Letters_notthere():
 		6: $hangman/person/pie_derecho.show()
 	if counter == 6:
 		perder_vida()
+		get_tree().get_nodes_in_group("hangedtime")[0].stop()
 		win = false;
 		$end_timer.start()
 		get_tree().get_nodes_in_group("teclado")[0].hide()
@@ -48,6 +49,7 @@ func _on_Letters_youwin():
 	get_tree().get_nodes_in_group("btnquit")[0].disabled = true
 	get_tree().get_nodes_in_group("btntuto")[0].disabled = true
 	Gamehandler.puntajevariable = Gamehandler.puntos
+	get_tree().get_nodes_in_group("hangedtime")[0].stop()
 	win = true;
 	if (Gamehandler.enquenivelestoy == 1):
 		Gamehandler.level1 = true

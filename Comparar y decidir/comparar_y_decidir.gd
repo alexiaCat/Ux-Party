@@ -20,6 +20,7 @@ func _ready() -> void:
 		buttons.append(_button)
 	Gamehandler.npregunta = 1
 	Gamehandler.time_left = 60
+	Gamehandler.update_npregunta()
 	Gamehandler.puntos = 0
 	Gamehandler.update_puntos()
 	if Gamehandler.enquenivelestoy == 3:
@@ -37,6 +38,9 @@ func load_quiz() -> void:
 
 		if Gamehandler.enquenivelestoy == 3:
 			if index >= bd_cyd.bd.size():
+				$question_holder.hide()
+				$question_info.hide()
+				get_tree().get_nodes_in_group("timercyd")[0].stop()
 				if Gamehandler.puntos <= 199:
 					_perdiste_por_puntos()	
 				else:
@@ -55,6 +59,9 @@ func load_quiz() -> void:
 #######################################################################################################	
 		elif Gamehandler.enquenivelestoy == 6:
 			if index >= bd_cyd2.bd.size():
+				$question_holder.hide()
+				$question_info.hide()
+				get_tree().get_nodes_in_group("timercyd")[0].stop()
 				if Gamehandler.puntos <= 199:
 					_perdiste_por_puntos()	
 				else:
@@ -77,6 +84,9 @@ func load_quiz() -> void:
 ######################################################################################################	
 		elif Gamehandler.enquenivelestoy == 9:
 			if index >= bd_cyd3.bd.size():
+				$question_holder.hide()
+				$question_info.hide()
+				get_tree().get_nodes_in_group("timercyd")[0].stop()
 				if Gamehandler.puntos <= 199:
 					_perdiste_por_puntos()	
 				else:

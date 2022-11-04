@@ -19,8 +19,9 @@ func _ready() -> void:
 	for _button in $question_holder.get_children():
 		buttons.append(_button)
 	Gamehandler.puntos = 0
-	Gamehandler.time_left = 60
 	Gamehandler.npregunta = 1
+	Gamehandler.update_npregunta()
+	Gamehandler.time_left = 60
 	Gamehandler.update_puntos()
 	if Gamehandler.enquenivelestoy == 2:
 		quiz_shuffle = randomize_array(bd_quiz.bd)
@@ -35,6 +36,13 @@ func load_quiz() -> void:
 #######################AQUI SE CARGAN PREGUNTAS DEL NIVEL 2#########################################
 	if Gamehandler.enquenivelestoy == 2:
 		if index >= bd_quiz.bd.size():
+			get_tree().get_nodes_in_group("tiempoquiz")[0].stop()
+			get_tree().get_nodes_in_group("timertrivia")[0].stop()
+			get_tree().get_nodes_in_group("button")[0].hide()
+			get_tree().get_nodes_in_group("button")[1].hide()
+			get_tree().get_nodes_in_group("button")[2].hide()
+			get_tree().get_nodes_in_group("button")[3].hide()
+			$question_info.hide()
 			if Gamehandler.puntos <= 199:
 				_perdiste_por_puntos()	
 			else:
@@ -57,6 +65,13 @@ func load_quiz() -> void:
 
 	elif Gamehandler.enquenivelestoy == 5:
 		if index >= bd_quiz_2.bd.size():
+			get_tree().get_nodes_in_group("tiempoquiz")[0].stop()
+			get_tree().get_nodes_in_group("timertrivia")[0].stop()
+			get_tree().get_nodes_in_group("button")[0].hide()
+			get_tree().get_nodes_in_group("button")[1].hide()
+			get_tree().get_nodes_in_group("button")[2].hide()
+			get_tree().get_nodes_in_group("button")[3].hide()
+			$question_info.hide()
 			if Gamehandler.puntos <= 199:
 				#mostrar ventana que perdio
 				_perdiste_por_puntos()	
@@ -84,6 +99,13 @@ func load_quiz() -> void:
 
 	elif Gamehandler.enquenivelestoy == 8:
 		if index >= bd_quiz_3.bd.size():
+			get_tree().get_nodes_in_group("tiempoquiz")[0].stop()
+			get_tree().get_nodes_in_group("timertrivia")[0].stop()
+			get_tree().get_nodes_in_group("button")[0].hide()
+			get_tree().get_nodes_in_group("button")[1].hide()
+			get_tree().get_nodes_in_group("button")[2].hide()
+			get_tree().get_nodes_in_group("button")[3].hide()
+			$question_info.hide()
 			if Gamehandler.puntos <= 199:
 				#mostrar ventana que perdio
 				_perdiste_por_puntos()	
