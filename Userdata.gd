@@ -19,7 +19,7 @@ var default_config: Dictionary = {
 #Default game data that will be written on a New Game;
 const default_data: Dictionary = { 
 	"name": "Player",
-	"balance": 91720
+	"max_life": 5,
 }
 
 #Game data that will be active during gameplay;

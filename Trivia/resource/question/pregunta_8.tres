@@ -6,5 +6,5 @@
 script = ExtResource( 1 )
 question_info = "¿Qué son las heurísticas Nielsen?"
 type = 0
-options = [ "Métodos de inspección de usabilidad", "Modelos predictivos", "Pruebas de usabilidad ", "Un estandar de medicion de UX" ]
-correct = "Métodos de inspección de usabilidad"
+options = [ "Métodos de inspección de usabilidad", "Modelos predictivos", "Ninguna de las anteriores", "Un estandar de medicion de UX" ]
+correct = "Ninguna de las anteriores"

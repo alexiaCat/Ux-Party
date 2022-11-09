@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-question_info = "¿Que es la Usabilidad del Usuario?"
+question_info = "¿Que es la Usabilidad?"
 type = 0
 options = [ "Interaccion del usuario con un producto", "Experiencia del usuario", "Interacción entre Usuario-Sistema", "Todas las anteriores" ]
-correct = "Interacción del usuario con un prodcuto"
+correct = "Interaccion del usuario con un producto"

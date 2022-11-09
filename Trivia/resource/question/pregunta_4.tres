@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-question_info = "¿Como se mide la usabilidad?"
+question_info = "¿Cuál(es) son métodos de evaluación de la experiencia del usuario?"
 type = 0
-options = [ "Mediante Heuristicas", "Mediante Encuestas", "Mediante Sondeo", "Todas las anteriores" ]
-correct = "Mediante Heuristicas"
+options = [ "Mediante Heuristicas", "Mediante Método de Valencia ", "Mediante Emocards", "Todas las anteriores" ]
+correct = "Todas las anteriores"

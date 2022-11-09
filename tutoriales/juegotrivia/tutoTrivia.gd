@@ -16,12 +16,16 @@ func _ready():
 
 
 func _on_flecha_izq_button_up():
-	cont -= 1
+	if (cont > 0):
+		cont -= 1
 	get_tree().get_nodes_in_group("image")[0].set_frame(cont)
 
 
 func _on_flecha_der_button_up():
-	cont += 1
+	if (cont < 22):
+		cont += 1
+	elif(cont == 22):
+		cont = 0
 	get_tree().get_nodes_in_group("image")[0].set_frame(cont)
 
 

@@ -325,3 +325,12 @@ func _on_Level9_pressed():
 
 func _on_btn_exit_button_up():
 	new_file.hide()
+
+
+func _on_new_life_timeout():
+	if(Gamehandler.life_recharge > 0):
+		Gamehandler.life_recharge -= 1
+		Gamehandler.update_timenewlife()
+	else:
+		Gamehandler.vidas_jugador += 1
+		Gamehandler.update_vidas()

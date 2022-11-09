@@ -27,10 +27,14 @@ func _on_btn_salir_button_up():
 
 
 func _on_flecha_izq_button_up():
-	cont -= 1
+	if (cont > 0):
+		cont -= 1
 	get_tree().get_nodes_in_group("imagen")[0].set_frame(cont)
 
 
 func _on_flecha_der_button_up():
-	cont += 1
+	if (cont < 24):
+		cont += 1
+	elif(cont == 24):
+		cont = 0
 	get_tree().get_nodes_in_group("imagen")[0].set_frame(cont)

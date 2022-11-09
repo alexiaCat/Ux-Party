@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource( 1 )
-question_info = "Selecciona la imagen visualmente correcta"
+question_info = "Selecciona la imagen que utiliza los colores adecuados"
 type = 1
 options = [ ExtResource( 3 ), ExtResource( 2 ) ]
 correct = ExtResource( 3 )

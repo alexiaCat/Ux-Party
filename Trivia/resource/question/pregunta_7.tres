@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-question_info = "¿Cuál corresponde a una heurística nielsen?"
+question_info = "¿Cuál corresponde a una heurística Nielsen?"
 type = 0
-options = [ "Ayuda y documentación", "Prevención de errores", "Estética y diseño minimalista", "Todas las anteriores" ]
+options = [ "Ayuda y documentación", "Prevención de errores", "Diseño estético y minimalista", "Todas las anteriores" ]
 correct = "Todas las anteriores"

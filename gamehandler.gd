@@ -40,15 +40,15 @@ const cyd = "Juego de comparar y decidir"
 
 
 #variables para saber si el nivel esta pasado o no, ej: no poder ingresar a nivel 2 sin pasar nivel 1
-var level1 = false
-var level2 = false
-var level3 = false
-var level4 = false
-var level5 = false
-var level6 = false
-var level7 = false
-var level8 = false
-var level9 = false
+var level1 = true
+var level2 = true
+var level3 = true
+var level4 = true
+var level5 = true
+var level6 = true
+var level7 = true
+var level8 = true
+var level9 = true
 
 
 func _ready():
@@ -57,9 +57,9 @@ func _ready():
 #recarga vidas cada 4 minutos
 func recargarvidas():
 	if (vidas_jugador < 5):
-		yield(get_tree().create_timer(240), "timeout")
-		vidas_jugador += 1
-	update_vidas()
+		get_tree().get_nodes_in_group("timernewlife")[0].start()
+		update_timenewlife()
+	
 
 	
 func update_puntajeacumulado():
@@ -85,6 +85,9 @@ func update_time2():
 
 func update_timecyd():
 	get_tree().get_nodes_in_group("time")[0].text = String(tiempo)
+
+func update_timenewlife():
+	get_tree().get_nodes_in_group("new_life")[0].text = String(life_recharge/60) + ":" + String(life_recharge%60)
 
 
 func update_puntos():

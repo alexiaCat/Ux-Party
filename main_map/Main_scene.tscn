@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://main_map/main_background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://main_map/barra inicio mapa/HUD.tscn" type="PackedScene" id=2]
@@ -14,6 +14,11 @@
 [ext_resource path="res://main_map/LEVEL_PASS.png" type="Texture" id=12]
 [ext_resource path="res://profile/edit_profile/edit_profile.gd" type="Script" id=13]
 [ext_resource path="res://assets/audio/Intro Theme.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 15 )
 
 [node name="Main_scene" type="Node2D"]
 script = ExtResource( 3 )
@@ -241,6 +246,9 @@ valign = 1
 visible = false
 script = ExtResource( 13 )
 
+[node name="inputName" parent="Profile/edit_profile/TextureRect" index="1"]
+placeholder_text = "Ingresa tu nombre"
+
 [node name="MenuMapa" parent="." instance=ExtResource( 8 )]
 
 [node name="gral" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer" index="0"]
@@ -302,6 +310,16 @@ margin_top = 239.0
 margin_right = 97.0
 margin_bottom = 279.0
 
+[node name="new_life" type="Timer" parent="." groups=["timernewlife"]]
+
+[node name="timer_newlife" type="Label" parent="." groups=["new_life"]]
+margin_left = 84.0
+margin_top = 45.0
+margin_right = 125.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 1 )
+text = "4:00"
+
 [connection signal="button_up" from="HUD/Control/MarginContainer/HBoxContainer/Myprofile" to="Profile" method="_on_Myprofile_button_up"]
 [connection signal="button_up" from="HUD/Control/MarginContainer/HBoxContainer/Config" to="MenuMapa" method="_on_Config_button_up"]
 [connection signal="pressed" from="Level1" to="." method="_on_Level1_pressed"]
@@ -321,6 +339,7 @@ margin_bottom = 279.0
 [connection signal="button_up" from="Tutorial_mainymap/TutorialDialog/btn_salir" to="Tutorial_mainymap" method="_on_btn_salir_button_up"]
 [connection signal="pressed" from="iniciarNivel/TextureRect/btn_iniciar" to="iniciarNivel" method="_on_btn_iniciar_pressed"]
 [connection signal="button_up" from="iniciarNivel/TextureRect/btn_exit" to="." method="_on_btn_exit_button_up"]
+[connection signal="timeout" from="new_life" to="." method="_on_new_life_timeout"]
 
 [editable path="HUD"]
 [editable path="mapa_star"]

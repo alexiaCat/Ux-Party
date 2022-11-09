@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource( 1 )
-question_info = "¿Qué imagen representa el pilar de Deseable del User Experience Honeycomb?"
+question_info = "¿Qué imagen representa la faceta de Deseable del User Experience Honeycomb?"
 type = 1
 options = [ ExtResource( 4 ), ExtResource( 2 ) ]
 correct = ExtResource( 4 )

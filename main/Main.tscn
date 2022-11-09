@@ -121,6 +121,9 @@ margin_top = 170.0
 margin_right = 100.0
 margin_bottom = 220.0
 
+[node name="inputName" parent="nombre_usuario/TextureRect" index="1"]
+placeholder_text = "Ingresa tu nombre"
+
 [node name="fondomusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 autoplay = true

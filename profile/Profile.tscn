@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://profile/profile.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://profile/Profile.gd" type="Script" id=5]
 [ext_resource path="res://profile/registrarse.png" type="Texture" id=6]
 [ext_resource path="res://profile/registrarse_pressed.png" type="Texture" id=7]
+[ext_resource path="res://addons/line_edit_+/line_edit_node.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 2 )
@@ -101,7 +102,11 @@ margin_right = 228.0
 margin_bottom = 323.0
 
 [node name="inputName" parent="edit_profile/TextureRect" index="1"]
-script = null
+script = ExtResource( 8 )
+"Use Regex" = true
+"Predefined pattern" = 3
+"Prevent typing" = true
+Pattern = "[a-zA-Z0-9]+"
 
 [connection signal="pressed" from="Modal_profile/TextureRect/editar_nombre" to="." method="_on_editar_nombre_pressed"]
 [connection signal="pressed" from="edit_profile/TextureRect/btn_acept" to="." method="_on_btn_acept_pressed"]

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-question_info = "¿Cuantas etapas definen el diseño UX?"
+question_info = "¿Cuantas etapas conforman el proceso de diseño UX? "
 type = 0
 options = [ "4", "5", "2", "Ninguna" ]
 correct = "4"

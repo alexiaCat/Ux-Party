@@ -6,5 +6,5 @@
 script = ExtResource( 1 )
 question_info = "¿Que es Affordance?"
 type = 0
-options = [ "Propiedades de como podria usarse algo", "Propiedades de accesibilidad", "Propiedades de UX", "Interaccion Humano-Sistema" ]
-correct = "Propiedades de como podria usarse algo"
+options = [ "Propiedades de UX", "Propiedades de accesibilidad", "Propiedades de como utilizar algo", "Interacción Humano-Sistema" ]
+correct = "Propiedades de como utilizar algo"

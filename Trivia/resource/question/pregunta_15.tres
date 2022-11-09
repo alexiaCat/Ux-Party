@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-question_info = "¿Cual(es) son tecnicas de validacion de modelos mentales?"
+question_info = "¿Cuál(es) técnica(s) permiten conocer el modelo mental de usuario?"
 type = 0
-options = [ "Focus Group", "Pruebas con usuarios", "Uso de heuristicas", "Analisis del diseño de interfaz" ]
+options = [ "Análisis del diseño de interfaz", "Pruebas con usuarios", "Focus Group", "Uso de Heurísticas" ]
 correct = "Focus Group"

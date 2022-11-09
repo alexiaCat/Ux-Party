@@ -4,7 +4,7 @@
 [ext_resource path="res://first_dataname/data_name.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/fonts/SourceSansPro-Regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://first_dataname/inputName.gd" type="Script" id=6]
+[ext_resource path="res://addons/line_edit_+/line_edit_node.gd" type="Script" id=5]
 [ext_resource path="res://first_dataname/btn_accept_normal.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
@@ -50,7 +50,11 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
 max_length = 15
 placeholder_text = "Ej: Rosita"
-script = ExtResource( 6 )
+script = ExtResource( 5 )
+"Use Regex" = true
+"Predefined pattern" = 3
+"Prevent typing" = true
+Pattern = "[a-zA-Z0-9]+"
 
 [node name="btn_acept" type="TextureButton" parent="TextureRect"]
 margin_left = 27.0

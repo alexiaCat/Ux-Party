@@ -6,5 +6,5 @@
 script = ExtResource( 1 )
 question_info = "¿Que es UX?"
 type = 0
-options = [ "Experiencia del Usuario con un sistema", "Interfaz de usuario", "Experiencia del consumidor", "Ninguna de las anteriores" ]
-correct = "Experiencia del Usuario con un sistema"
+options = [ "Experiencia del Usuario", "Interfaz de usuario", "Experiencia del consumidor", "Ninguna de las anteriores" ]
+correct = "Experiencia del Usuario"
