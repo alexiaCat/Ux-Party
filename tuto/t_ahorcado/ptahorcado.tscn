@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://tuto/assets/circulo.png" type="Texture" id=1]
+[ext_resource path="res://tuto/assets/prueba1.png" type="Texture" id=2]
+[ext_resource path="res://tuto/t_ahorcado/ptahorcado.gd" type="Script" id=3]
+[ext_resource path="res://tuto/perro.png" type="Texture" id=4]
+
+[node name="ptahorcado" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -174.5
+margin_top = -255.0
+margin_right = 174.5
+margin_bottom = 255.0
+script = ExtResource( 3 )
+
+[node name="ahorcadopt" type="Sprite" parent="." groups=["primerahorcado"]]
+texture = ExtResource( 2 )
+centered = false
+hframes = 4
+
+[node name="btn1" type="TextureButton" parent="ahorcadopt"]
+margin_left = 38.0
+margin_top = 447.0
+margin_right = 62.0
+margin_bottom = 471.0
+texture_normal = ExtResource( 1 )
+
+[node name="btn2" type="TextureButton" parent="ahorcadopt"]
+margin_left = 91.0
+margin_top = 447.0
+margin_right = 115.0
+margin_bottom = 471.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 1 )
+
+[node name="btn3" type="TextureButton" parent="ahorcadopt"]
+margin_left = 177.0
+margin_top = 447.0
+margin_right = 202.0
+margin_bottom = 471.0
+texture_normal = ExtResource( 1 )
+
+[node name="btn4" type="TextureButton" parent="ahorcadopt"]
+margin_left = 265.0
+margin_top = 447.0
+margin_right = 289.0
+margin_bottom = 471.0
+texture_normal = ExtResource( 1 )
+
+[node name="acceptbtn" type="TextureButton" parent="ahorcadopt"]
+visible = false
+margin_left = 151.0
+margin_top = 337.0
+margin_right = 215.0
+margin_bottom = 401.0
+texture_normal = ExtResource( 4 )
+
+[node name="izquierda" type="TextureButton" parent="ahorcadopt"]
+margin_top = 104.0
+margin_right = 96.0
+margin_bottom = 400.0
+rect_pivot_offset = Vector2( 41, 137 )
+
+[node name="derecha" type="TextureButton" parent="ahorcadopt"]
+margin_left = 250.0
+margin_top = 104.0
+margin_right = 349.0
+margin_bottom = 400.0
+rect_pivot_offset = Vector2( 41, 137 )
+
+[connection signal="pressed" from="ahorcadopt/btn1" to="." method="_on_btn1_pressed"]
+[connection signal="pressed" from="ahorcadopt/btn2" to="." method="_on_btn2_pressed"]
+[connection signal="pressed" from="ahorcadopt/btn3" to="." method="_on_btn3_pressed"]
+[connection signal="pressed" from="ahorcadopt/btn4" to="." method="_on_btn4_pressed"]
+[connection signal="pressed" from="ahorcadopt/izquierda" to="." method="_on_izquierda_pressed"]
+[connection signal="pressed" from="ahorcadopt/derecha" to="." method="_on_derecha_pressed"]

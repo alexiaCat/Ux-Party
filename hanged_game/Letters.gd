@@ -1,6 +1,8 @@
 extends Node2D
 
 export (String) var input
+export(Color) var color_right
+export(Color) var color_wrong
 var line = preload("res://hanged_game/Letters.tscn")
 
 

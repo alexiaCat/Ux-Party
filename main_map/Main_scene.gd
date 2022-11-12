@@ -16,7 +16,11 @@ func _ready():
 	Gamehandler.update_puntajeacumulado()
 	Gamehandler.update_nombrejugador()
 	change_icons()
+	mostrarprimertutorial()
 	
+func mostrarprimertutorial():
+	if(Gamehandler.primertutorial == 0):
+		$primertutorial.show()
 	
 func pintarestrellasmapa():
 	paint_starslvl1()
@@ -327,10 +331,8 @@ func _on_btn_exit_button_up():
 	new_file.hide()
 
 
-func _on_new_life_timeout():
-	if(Gamehandler.life_recharge > 0):
-		Gamehandler.life_recharge -= 1
-		Gamehandler.update_timenewlife()
-	else:
-		Gamehandler.vidas_jugador += 1
-		Gamehandler.update_vidas()
+
+
+func _on_acceptbtn_pressed():
+	Gamehandler.primertutorial = 100
+	$primertutorial.hide()

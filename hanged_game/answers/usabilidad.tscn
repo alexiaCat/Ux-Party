@@ -14,10 +14,10 @@ anchor_bottom = 1.0
 texture = ExtResource( 1 )
 
 [node name="entendido" type="TextureButton" parent="."]
-margin_left = 39.0
-margin_top = 556.0
-margin_right = 396.0
-margin_bottom = 598.0
+margin_left = 49.0
+margin_top = 533.0
+margin_right = 406.0
+margin_bottom = 575.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 3 )

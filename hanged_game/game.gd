@@ -1,6 +1,5 @@
 extends Node2D
 var counter
-export(Texture) var press_sound
 #variable para detectar a que escena debe enviar si gana o pierde
 var win = false
 

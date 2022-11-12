@@ -14,7 +14,7 @@ var vidas_jugador = 5
 #timer barra superior
 var time_left = 60
 # Luego de pasados 4 minutos desde la pérdida de una vida se repondrá la vida perdida 240.
-var life_recharge = 240
+var life_recharge = 40
 var tiempo = 0
 var tiempo2 = 0
 var puntajeglobal = 0
@@ -37,6 +37,7 @@ var puntos = 0
 const ahorcado = "Ahorcado"
 const trivia = "Trivia de preguntas"
 const cyd = "Juego de comparar y decidir"
+var primertutorial = 0
 
 
 #variables para saber si el nivel esta pasado o no, ej: no poder ingresar a nivel 2 sin pasar nivel 1
@@ -59,6 +60,8 @@ func recargarvidas():
 	if (vidas_jugador < 5):
 		get_tree().get_nodes_in_group("timernewlife")[0].start()
 		update_timenewlife()
+	elif(vidas_jugador == 5):
+		get_tree().get_nodes_in_group("timernewlife")[0].stop()
 	
 
 	
@@ -101,3 +104,18 @@ func update_datosdenivel():
 	else:
 		get_tree().get_nodes_in_group("msgnivel")[0].text = String(cyd)
 	get_tree().get_nodes_in_group("numnivel")[0].text = String(enquenivelestoy)
+
+
+func _on_new_life_timeout():
+	if(life_recharge > 0):
+		life_recharge -= 1
+		update_timenewlife()
+	else:
+		if(vidas_jugador < 6):
+			vidas_jugador += 1
+		if(vidas_jugador == 6):
+			vidas_jugador = 5
+		update_vidas()
+		life_recharge = 40
+		recargarvidas()
+		return

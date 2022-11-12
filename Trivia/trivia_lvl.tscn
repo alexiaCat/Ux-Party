@@ -16,33 +16,34 @@
 [sub_resource type="CanvasItemMaterial" id=8]
 
 [sub_resource type="Theme" id=9]
+/styles/4864FF = null
 
 [sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+bg_color = Color( 0.282353, 0.392157, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=12]
-bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+bg_color = Color( 0.282353, 0.392157, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=13]
-bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+bg_color = Color( 0.282353, 0.392157, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+bg_color = Color( 0.282353, 0.392157, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+bg_color = Color( 0.282353, 0.392157, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=14]
-bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+bg_color = Color( 0.282353, 0.392157, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+bg_color = Color( 0.282353, 0.392157, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=15]
-bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+bg_color = Color( 0.282353, 0.392157, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=16]
-bg_color = Color( 0.443137, 0.74902, 0.396078, 1 )
+bg_color = Color( 0.282353, 0.392157, 1, 1 )
 
 [node name="trivia_lvl" type="Control"]
 anchor_right = 1.0
