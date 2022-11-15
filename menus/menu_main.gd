@@ -29,12 +29,15 @@ func _on_btn_exit_button_up():
 
 
 func _on_vGeneral_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),value)
 	Userdata.save_config("volume_master", value/VOLUME_FRACTIONS)
 
 
 func _on_vEfectos_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("EFECTOS"),value)
 	Userdata.save_config("volume_efects", value/VOLUME_FRACTIONS)
 
 
 func _on_vMusica_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("MUSICA"),value)
 	Userdata.save_config("volume_music", value/VOLUME_FRACTIONS)

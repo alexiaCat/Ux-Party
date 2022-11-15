@@ -29,8 +29,15 @@ func _on_btn_exit_pressed():
 
 
 func _on_btn_acept_pressed():
-	Gamehandler.nameplayer = $edit_profile/TextureRect/inputName.text
-	popup.visible = true
-	new_file.hide()
-	Gamehandler.update_nombrejugador()
-	$edit_profile/TextureRect/inputName.clear()
+	if $edit_profile/TextureRect/inputName.text.length() > 1:
+		popup.visible = true
+		new_file.hide()
+		Gamehandler.nameplayer = $edit_profile/TextureRect/inputName.text
+		$edit_profile/TextureRect/error.hide()
+		Gamehandler.guardar_partida()
+		Gamehandler.update_nombrejugador()
+		$edit_profile/TextureRect/inputName.clear()
+	else:
+		$edit_profile/TextureRect/error.show()
+		print("debe ingresar minimo dos caracteres")
+	

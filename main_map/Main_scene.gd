@@ -10,6 +10,7 @@ var label_node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Gamehandler.cargar_partida()
 	Gamehandler.recargarvidas()
 	Gamehandler.update_vidas()
 	pintarestrellasmapa()
@@ -18,9 +19,6 @@ func _ready():
 	change_icons()
 	mostrarprimertutorial()
 	
-func mostrarprimertutorial():
-	if(Gamehandler.primertutorial == 0):
-		$primertutorial.show()
 	
 func pintarestrellasmapa():
 	paint_starslvl1()
@@ -331,8 +329,16 @@ func _on_btn_exit_button_up():
 	new_file.hide()
 
 
+func mostrarprimertutorial():
+	if(Gamehandler.primertutorial == 0):
+		$HUD/Control/MarginContainer/HBoxContainer.hide()
+		$primertutorial.show()
 
 
 func _on_acceptbtn_pressed():
 	Gamehandler.primertutorial = 100
+	Gamehandler.first_time = 100
 	$primertutorial.hide()
+	$HUD/Control/MarginContainer/HBoxContainer.show()
+	Gamehandler.guardar_datos()
+	

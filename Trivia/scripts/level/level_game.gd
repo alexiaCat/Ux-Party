@@ -385,6 +385,7 @@ func _perdiste_por_puntos():
 	perder_vida()
 
 func _on_finish_timer_timeout():
+	Gamehandler.guardar_partida()
 	if (win == true):
 		get_tree().change_scene("res://win/hg/winner_hg.tscn")
 	else:

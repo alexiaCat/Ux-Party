@@ -13,6 +13,7 @@ func _ready():
 
 func perder_vida():
 	Gamehandler.vidas_jugador -= 1
+	Gamehandler.update_vidas()
 
 func perder_puntos():
 	Gamehandler.puntos -= 55
@@ -70,6 +71,7 @@ func _on_Letters_youwin():
 
 
 func _on_end_timer_timeout():
+	Gamehandler.guardar_partida()
 	if (win == true):
 		get_tree().change_scene("res://win/hg/winner_hg.tscn")
 	else:

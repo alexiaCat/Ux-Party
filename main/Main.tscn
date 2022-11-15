@@ -108,6 +108,20 @@ texture_hover = ExtResource( 6 )
 
 [node name="MenuMain" parent="." instance=ExtResource( 8 )]
 
+[node name="vGeneral" parent="MenuMain/Modal_config/TextureRect/VBoxContainer" index="1"]
+min_value = -80.0
+max_value = -20.0
+value = -60.0
+
+[node name="vEfectos" parent="MenuMain/Modal_config/TextureRect/VBoxContainer2" index="1"]
+min_value = -80.0
+max_value = 0.0
+
+[node name="vMusica" parent="MenuMain/Modal_config/TextureRect/VBoxContainer3" index="1"]
+min_value = -80.0
+max_value = -20.0
+value = -20.0
+
 [node name="Label" parent="MenuMain/Modal_config/Tutorial" index="0"]
 margin_left = -51.0
 margin_top = -11.0
@@ -120,9 +134,6 @@ margin_left = 52.0
 margin_top = 170.0
 margin_right = 100.0
 margin_bottom = 220.0
-
-[node name="inputName" parent="nombre_usuario/TextureRect" index="1"]
-placeholder_text = "Ingresa tu nombre"
 
 [node name="fondomusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )

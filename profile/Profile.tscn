@@ -102,6 +102,7 @@ margin_right = 228.0
 margin_bottom = 323.0
 
 [node name="inputName" parent="edit_profile/TextureRect" index="1"]
+placeholder_text = "Ingresa tu nombre"
 script = ExtResource( 8 )
 "Use Regex" = true
 "Predefined pattern" = 3

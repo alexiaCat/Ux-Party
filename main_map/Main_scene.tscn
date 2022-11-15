@@ -247,31 +247,7 @@ valign = 1
 visible = false
 script = ExtResource( 13 )
 
-[node name="inputName" parent="Profile/edit_profile/TextureRect" index="1"]
-placeholder_text = "Ingresa tu nombre"
-
 [node name="MenuMapa" parent="." instance=ExtResource( 8 )]
-
-[node name="gral" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer" index="0"]
-margin_bottom = 23.0
-
-[node name="vGeneral" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer" index="1"]
-margin_top = 27.0
-margin_bottom = 43.0
-
-[node name="efts" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer2" index="0"]
-margin_bottom = 23.0
-
-[node name="vEfectos" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer2" index="1"]
-margin_top = 27.0
-margin_bottom = 43.0
-
-[node name="msc2" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer3" index="0"]
-margin_bottom = 23.0
-
-[node name="vMusica" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer3" index="1"]
-margin_top = 27.0
-margin_bottom = 43.0
 
 [node name="Tutorial_mainymap" parent="." instance=ExtResource( 11 )]
 margin_right = 0.0
@@ -323,10 +299,10 @@ text = "4:00"
 
 [node name="primertutorial" parent="." groups=["primertutorial"] instance=ExtResource( 16 )]
 visible = false
-margin_left = 45.0
-margin_top = 114.0
-margin_right = 394.0
-margin_bottom = 624.0
+margin_left = -1.0
+margin_top = 0.0
+margin_right = 447.0
+margin_bottom = 702.0
 
 [connection signal="button_up" from="HUD/Control/MarginContainer/HBoxContainer/Myprofile" to="Profile" method="_on_Myprofile_button_up"]
 [connection signal="button_up" from="HUD/Control/MarginContainer/HBoxContainer/Config" to="MenuMapa" method="_on_Config_button_up"]

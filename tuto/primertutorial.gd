@@ -30,7 +30,7 @@ func _on_btn3_pressed():
 
 
 func _on_btn4_pressed():
-	$first_tuto/acceptbtn.show()
+	$first_tuto/acceptbtn.hide()
 	cont = 3
 	get_tree().get_nodes_in_group("primert")[0].set_frame(3)
 
@@ -44,9 +44,32 @@ func _on_izquierda_pressed():
 	get_tree().get_nodes_in_group("primert")[0].set_frame(cont)
 
 func _on_derecha_pressed():
-	if (cont < 3):
+	if (cont < 7):
 		cont += 1
-		if(cont == 3):
+		if(cont == 7):
 			$first_tuto/acceptbtn.show()
-	print(cont)
 	get_tree().get_nodes_in_group("primert")[0].set_frame(cont)
+
+
+func _on_btn5_pressed():
+	$first_tuto/acceptbtn.hide()
+	cont = 4
+	get_tree().get_nodes_in_group("primert")[0].set_frame(4)
+
+
+func _on_btn6_pressed():
+	$first_tuto/acceptbtn.hide()
+	cont = 5
+	get_tree().get_nodes_in_group("primert")[0].set_frame(5)
+
+
+func _on_btn7_pressed():
+	$first_tuto/acceptbtn.hide()
+	cont = 6
+	get_tree().get_nodes_in_group("primert")[0].set_frame(6)
+
+
+func _on_btn8_pressed():
+	$first_tuto/acceptbtn.show()
+	cont = 7
+	get_tree().get_nodes_in_group("primert")[0].set_frame(7)

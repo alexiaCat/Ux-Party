@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://tuto/assets/prueba1.png" type="Texture" id=1]
+[ext_resource path="res://tuto/assets/primertrivia.png" type="Texture" id=1]
 [ext_resource path="res://tuto/perro.png" type="Texture" id=2]
 [ext_resource path="res://tuto/assets/circulo.png" type="Texture" id=3]
 [ext_resource path="res://tuto/t_trivia/pttrivia.gd" type="Script" id=4]
@@ -19,7 +19,7 @@ script = ExtResource( 4 )
 [node name="triviapt" type="Sprite" parent="." groups=["primertrivia"]]
 texture = ExtResource( 1 )
 centered = false
-hframes = 4
+hframes = 8
 
 [node name="btn1" type="TextureButton" parent="triviapt"]
 margin_left = 38.0

@@ -54,3 +54,19 @@ func _on_derecha_pressed():
 			$cydpt/acceptbtn.show()
 	print(cont)
 	get_tree().get_nodes_in_group("cydprimero")[0].set_frame(cont)
+
+
+func _on_btn5_pressed():
+	pass # Replace with function body.
+
+
+func _on_btn6_pressed():
+	pass # Replace with function body.
+
+
+func _on_btn7_pressed():
+	pass # Replace with function body.
+
+
+func _on_btn8_pressed():
+	pass # Replace with function body.

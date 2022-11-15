@@ -46,15 +46,15 @@ size_flags_vertical = 2
 
 [node name="gral" type="Label" parent="Modal_config/TextureRect/VBoxContainer"]
 margin_right = 221.0
-margin_bottom = 29.0
+margin_bottom = 23.0
 custom_fonts/font = ExtResource( 8 )
 text = "Volumen general"
 align = 1
 
 [node name="vGeneral" type="HSlider" parent="Modal_config/TextureRect/VBoxContainer"]
-margin_top = 33.0
+margin_top = 27.0
 margin_right = 221.0
-margin_bottom = 49.0
+margin_bottom = 43.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Modal_config/TextureRect"]
 margin_left = 30.0
@@ -64,14 +64,14 @@ margin_bottom = 195.0
 
 [node name="efts" type="Label" parent="Modal_config/TextureRect/VBoxContainer2"]
 margin_right = 223.0
-margin_bottom = 29.0
+margin_bottom = 23.0
 custom_fonts/font = ExtResource( 8 )
 text = "Volumen de efectos"
 
 [node name="vEfectos" type="HSlider" parent="Modal_config/TextureRect/VBoxContainer2"]
-margin_top = 33.0
+margin_top = 27.0
 margin_right = 223.0
-margin_bottom = 49.0
+margin_bottom = 43.0
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="Modal_config/TextureRect"]
 margin_left = 32.0
@@ -81,14 +81,14 @@ margin_bottom = 249.0
 
 [node name="msc2" type="Label" parent="Modal_config/TextureRect/VBoxContainer3"]
 margin_right = 223.0
-margin_bottom = 29.0
+margin_bottom = 23.0
 custom_fonts/font = ExtResource( 8 )
 text = "Volumen de música"
 
 [node name="vMusica" type="HSlider" parent="Modal_config/TextureRect/VBoxContainer3"]
-margin_top = 33.0
+margin_top = 27.0
 margin_right = 223.0
-margin_bottom = 49.0
+margin_bottom = 43.0
 
 [node name="Tutorial" type="TextureButton" parent="Modal_config"]
 margin_left = 34.0
