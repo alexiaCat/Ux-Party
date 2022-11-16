@@ -82,3 +82,9 @@ func _on_btn7_pressed():
 	cont = 6
 	get_tree().get_nodes_in_group("primerahorcado")[0].set_frame(6)
 
+
+
+func _on_acceptbtn_pressed():
+	Gamehandler.primertutorialhg = 100
+	Gamehandler.guardar_datos()
+	get_tree().change_scene("res://hanged_game/Main_hanged_game.tscn")

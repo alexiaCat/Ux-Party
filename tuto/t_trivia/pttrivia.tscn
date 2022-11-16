@@ -1,79 +1,120 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://tuto/assets/primertrivia.png" type="Texture" id=1]
-[ext_resource path="res://tuto/perro.png" type="Texture" id=2]
+[ext_resource path="res://tuto/assets/entendido_pressed.png" type="Texture" id=2]
 [ext_resource path="res://tuto/assets/circulo.png" type="Texture" id=3]
 [ext_resource path="res://tuto/t_trivia/pttrivia.gd" type="Script" id=4]
+[ext_resource path="res://tuto/assets/entendido.png" type="Texture" id=5]
 
 [node name="pttrivia" type="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -174.5
-margin_top = -255.0
-margin_right = 174.5
-margin_bottom = 255.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 4 )
 
 [node name="triviapt" type="Sprite" parent="." groups=["primertrivia"]]
 texture = ExtResource( 1 )
 centered = false
-hframes = 8
+hframes = 7
 
-[node name="btn1" type="TextureButton" parent="triviapt"]
-margin_left = 38.0
-margin_top = 447.0
-margin_right = 62.0
-margin_bottom = 471.0
-texture_normal = ExtResource( 3 )
+[node name="ColorRect" type="ColorRect" parent="triviapt"]
+margin_left = 17.0
+margin_top = 645.0
+margin_right = 429.0
+margin_bottom = 680.0
+color = Color( 0.835294, 1, 0.796078, 1 )
 
-[node name="btn2" type="TextureButton" parent="triviapt"]
-margin_left = 91.0
-margin_top = 447.0
-margin_right = 115.0
-margin_bottom = 471.0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 3 )
-
-[node name="btn3" type="TextureButton" parent="triviapt"]
-margin_left = 177.0
-margin_top = 447.0
-margin_right = 202.0
-margin_bottom = 471.0
-texture_normal = ExtResource( 3 )
-
-[node name="btn4" type="TextureButton" parent="triviapt"]
-margin_left = 265.0
-margin_top = 447.0
-margin_right = 289.0
-margin_bottom = 471.0
-texture_normal = ExtResource( 3 )
+[node name="Cl" type="ColorRect" parent="triviapt"]
+visible = false
+margin_left = 87.0
+margin_top = 390.0
+margin_right = 353.0
+margin_bottom = 439.0
+color = Color( 0.956863, 0.815686, 0.984314, 1 )
 
 [node name="acceptbtn" type="TextureButton" parent="triviapt"]
 visible = false
-margin_left = 151.0
-margin_top = 337.0
-margin_right = 215.0
-margin_bottom = 401.0
-texture_normal = ExtResource( 2 )
+margin_left = 92.0
+margin_top = 394.0
+margin_right = 351.0
+margin_bottom = 436.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 5 )
 
 [node name="izquierda" type="TextureButton" parent="triviapt"]
 margin_top = 104.0
-margin_right = 96.0
-margin_bottom = 400.0
+margin_right = 108.0
+margin_bottom = 611.0
 rect_pivot_offset = Vector2( 41, 137 )
 
 [node name="derecha" type="TextureButton" parent="triviapt"]
-margin_left = 250.0
-margin_top = 104.0
-margin_right = 349.0
-margin_bottom = 400.0
+margin_left = 335.0
+margin_top = 130.0
+margin_right = 447.0
+margin_bottom = 607.0
 rect_pivot_offset = Vector2( 41, 137 )
 
-[connection signal="pressed" from="triviapt/btn1" to="." method="_on_btn1_pressed"]
-[connection signal="pressed" from="triviapt/btn2" to="." method="_on_btn2_pressed"]
-[connection signal="pressed" from="triviapt/btn3" to="." method="_on_btn3_pressed"]
-[connection signal="pressed" from="triviapt/btn4" to="." method="_on_btn4_pressed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="triviapt"]
+margin_left = 21.0
+margin_top = 651.0
+margin_right = 424.0
+margin_bottom = 675.0
+
+[node name="btn1" type="TextureButton" parent="triviapt/HBoxContainer"]
+margin_right = 24.0
+margin_bottom = 24.0
+size_flags_horizontal = 2
+texture_normal = ExtResource( 3 )
+
+[node name="btn2" type="TextureButton" parent="triviapt/HBoxContainer"]
+margin_left = 63.0
+margin_right = 87.0
+margin_bottom = 24.0
+size_flags_horizontal = 2
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+
+[node name="btn3" type="TextureButton" parent="triviapt/HBoxContainer"]
+margin_left = 126.0
+margin_right = 150.0
+margin_bottom = 24.0
+size_flags_horizontal = 2
+texture_normal = ExtResource( 3 )
+
+[node name="btn4" type="TextureButton" parent="triviapt/HBoxContainer"]
+margin_left = 189.0
+margin_right = 213.0
+margin_bottom = 24.0
+size_flags_horizontal = 2
+texture_normal = ExtResource( 3 )
+
+[node name="btn5" type="TextureButton" parent="triviapt/HBoxContainer"]
+margin_left = 252.0
+margin_right = 276.0
+margin_bottom = 24.0
+size_flags_horizontal = 2
+texture_normal = ExtResource( 3 )
+
+[node name="btn6" type="TextureButton" parent="triviapt/HBoxContainer"]
+margin_left = 315.0
+margin_right = 339.0
+margin_bottom = 24.0
+size_flags_horizontal = 2
+texture_normal = ExtResource( 3 )
+
+[node name="btn7" type="TextureButton" parent="triviapt/HBoxContainer"]
+margin_left = 379.0
+margin_right = 403.0
+margin_bottom = 24.0
+texture_normal = ExtResource( 3 )
+
+[connection signal="pressed" from="triviapt/acceptbtn" to="." method="_on_acceptbtn_pressed"]
 [connection signal="pressed" from="triviapt/izquierda" to="." method="_on_izquierda_pressed"]
 [connection signal="pressed" from="triviapt/derecha" to="." method="_on_derecha_pressed"]
+[connection signal="pressed" from="triviapt/HBoxContainer/btn1" to="." method="_on_btn1_pressed"]
+[connection signal="pressed" from="triviapt/HBoxContainer/btn2" to="." method="_on_btn2_pressed"]
+[connection signal="pressed" from="triviapt/HBoxContainer/btn3" to="." method="_on_btn3_pressed"]
+[connection signal="pressed" from="triviapt/HBoxContainer/btn4" to="." method="_on_btn4_pressed"]
+[connection signal="pressed" from="triviapt/HBoxContainer/btn5" to="." method="_on_btn5_pressed"]
+[connection signal="pressed" from="triviapt/HBoxContainer/btn6" to="." method="_on_btn6_pressed"]
+[connection signal="pressed" from="triviapt/HBoxContainer/btn7" to="." method="_on_btn7_pressed"]

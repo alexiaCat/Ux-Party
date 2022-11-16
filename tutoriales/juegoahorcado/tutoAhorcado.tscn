@@ -39,7 +39,7 @@ margin_bottom = 491.0
 texture = ExtResource( 6 )
 
 [node name="TutoAhorcado" type="Sprite" parent="TutoriaAhorcado" groups=["imagen"]]
-position = Vector2( 176.5, 204 )
+position = Vector2( 170.5, 204 )
 texture = ExtResource( 9 )
 hframes = 24
 

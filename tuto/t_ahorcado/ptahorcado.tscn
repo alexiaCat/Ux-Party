@@ -109,6 +109,7 @@ margin_right = 394.0
 margin_bottom = 24.0
 texture_normal = ExtResource( 1 )
 
+[connection signal="pressed" from="ahorcadopt/acceptbtn" to="." method="_on_acceptbtn_pressed"]
 [connection signal="pressed" from="ahorcadopt/izquierda" to="." method="_on_izquierda_pressed"]
 [connection signal="pressed" from="ahorcadopt/derecha" to="." method="_on_derecha_pressed"]
 [connection signal="pressed" from="ahorcadopt/HBoxContainer/btn1" to="." method="_on_btn1_pressed"]

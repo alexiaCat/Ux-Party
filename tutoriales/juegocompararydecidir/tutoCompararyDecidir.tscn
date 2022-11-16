@@ -40,15 +40,15 @@ margin_bottom = 491.0
 texture = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="TutoriaCyd" groups=["tutorial"]]
-position = Vector2( 175.5, 211 )
+position = Vector2( 174, 208 )
 texture = ExtResource( 9 )
 hframes = 21
 
 [node name="flecha_izq" type="TextureButton" parent="TutoriaCyd"]
-margin_left = 31.5
-margin_top = 410.0
-margin_right = 95.5
-margin_bottom = 474.0
+margin_left = 32.0
+margin_top = 407.0
+margin_right = 96.0
+margin_bottom = 471.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 2 )
