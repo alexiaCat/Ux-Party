@@ -7,7 +7,7 @@ Godot V3.5.1
 Codificado en GDScript lenguaje nativo de Godot
 
 
-##Despliegue 📦
+## Despliegue 📦
 Descargar APK "Ux Party.apk" disponible en este repositorio y instalar en su dispositivo Android.
 
 ## Autores ✒️
