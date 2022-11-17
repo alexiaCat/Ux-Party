@@ -351,6 +351,7 @@ func _on_Timer_timeout():
 	
 func perder_vida():
 	Gamehandler.vidas_jugador -= 1
+	Gamehandler.guardar_partida()
 
 func _on_Letters_youwin_quiz():
 	Gamehandler.puntajevariable = Gamehandler.puntos

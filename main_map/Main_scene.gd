@@ -1,6 +1,4 @@
 extends Node2D
-var sounds_bus = AudioServer.get_bus_index("Efectos")
-var sounds_bus2 = AudioServer.get_bus_index("Musica")
 export(Texture) var past_level
 export(AudioStream) var music
 onready var new_file = $iniciarNivel
@@ -11,14 +9,19 @@ var label_node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Gamehandler.cargar_partida()
-	Gamehandler.recargarvidas()
-	Gamehandler.update_vidas()
+	hay_vidas()
 	pintarestrellasmapa()
 	Gamehandler.update_puntajeacumulado()
 	Gamehandler.update_nombrejugador()
 	change_icons()
 	mostrarprimertutorial()
 	
+func hay_vidas():
+	if(Gamehandler.vidas_jugador < 5):
+		Gamehandler.recargarvidas()
+		get_tree().get_nodes_in_group("timernewlife")[0].start()
+	else:
+		print("no hacer nada")
 	
 func pintarestrellasmapa():
 	paint_starslvl1()
@@ -324,7 +327,6 @@ func _on_Level9_pressed():
 		new_file.show()
 
 
-
 func _on_btn_exit_button_up():
 	new_file.hide()
 
@@ -342,3 +344,14 @@ func _on_acceptbtn_pressed():
 	$HUD/Control/MarginContainer/HBoxContainer.show()
 	Gamehandler.guardar_datos()
 	
+
+
+func _on_new_life_timeout():
+	if(Gamehandler.life_recharge > 0):
+		Gamehandler.life_recharge -= 1
+		Gamehandler.update_timenewlife()
+	else:
+		Gamehandler.life_recharge = 120
+		if(Gamehandler.vidas_jugador == 5):
+			get_tree().get_nodes_in_group("timernewlife")[0].stop()
+		return

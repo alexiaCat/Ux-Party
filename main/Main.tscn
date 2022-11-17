@@ -110,8 +110,8 @@ texture_hover = ExtResource( 6 )
 
 [node name="vGeneral" parent="MenuMain/Modal_config/TextureRect/VBoxContainer" index="1"]
 min_value = -80.0
-max_value = -20.0
-value = -60.0
+max_value = 0.0
+value = -24.0
 
 [node name="vEfectos" parent="MenuMain/Modal_config/TextureRect/VBoxContainer2" index="1"]
 min_value = -80.0
@@ -119,7 +119,7 @@ max_value = 0.0
 
 [node name="vMusica" parent="MenuMain/Modal_config/TextureRect/VBoxContainer3" index="1"]
 min_value = -80.0
-max_value = -20.0
+max_value = 0.0
 value = -20.0
 
 [node name="Label" parent="MenuMain/Modal_config/Tutorial" index="0"]
@@ -141,12 +141,16 @@ autoplay = true
 bus = "MUSICA"
 
 [node name="Tutorial_mainymap" parent="." instance=ExtResource( 10 )]
-anchor_top = 0.0
-anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 250.0
-margin_right = 30.0
-margin_bottom = 288.0
+margin_left = -9.0
+margin_top = -114.0
+margin_right = 21.0
+margin_bottom = -76.0
+
+[node name="TutorialDialog" parent="Tutorial_mainymap" index="0"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -244.5
+margin_bottom = 244.5
 
 [connection signal="pressed" from="HUD/Escena/Play_button" to="." method="_on_Play_button_pressed"]
 [connection signal="button_up" from="HUD/Escena/Config_button" to="MenuMain" method="_on_Config_button_button_up"]

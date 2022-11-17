@@ -65,6 +65,18 @@ color_wrong = Color( 0.901961, 0.0431373, 0.0431373, 1 )
 
 [node name="Button_quit" parent="top_bar_minigames/Control/MarginContainer/HBoxContainer" index="2" groups=["triviaquit"]]
 
+[node name="vGral" parent="top_bar_minigames/Menu_trivia/MenuTrivia/TextureRect/VBoxContainer" index="1"]
+min_value = -80.0
+max_value = 0.0
+
+[node name="vMusic" parent="top_bar_minigames/Menu_trivia/MenuTrivia/TextureRect/VBoxContainer2" index="1"]
+min_value = -80.0
+max_value = 0.0
+
+[node name="vEffects" parent="top_bar_minigames/Menu_trivia/MenuTrivia/TextureRect/VBoxContainer3" index="1"]
+min_value = -80.0
+max_value = 0.0
+
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 6.0
 margin_top = -5.0

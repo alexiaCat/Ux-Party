@@ -22,12 +22,20 @@ texture = ExtResource( 2 )
 centered = false
 hframes = 8
 
+[node name="Cl" type="ColorRect" parent="first_tuto"]
+visible = false
+margin_left = 98.0
+margin_top = 442.0
+margin_right = 363.0
+margin_bottom = 490.0
+color = Color( 0.992157, 0.741176, 0.262745, 1 )
+
 [node name="acceptbtn" type="TextureButton" parent="first_tuto"]
 visible = false
-margin_left = 48.0
-margin_top = 560.0
-margin_right = 307.0
-margin_bottom = 602.0
+margin_left = 101.0
+margin_top = 445.0
+margin_right = 360.0
+margin_bottom = 487.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 4 )

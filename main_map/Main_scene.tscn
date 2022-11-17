@@ -249,6 +249,18 @@ script = ExtResource( 13 )
 
 [node name="MenuMapa" parent="." instance=ExtResource( 8 )]
 
+[node name="vGeneral" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer" index="1"]
+min_value = -80.0
+max_value = 0.0
+
+[node name="vEfectos" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer2" index="1"]
+min_value = -80.0
+max_value = 0.0
+
+[node name="vMusica" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer3" index="1"]
+min_value = -80.0
+max_value = 0.0
+
 [node name="Tutorial_mainymap" parent="." instance=ExtResource( 11 )]
 margin_right = 0.0
 margin_bottom = 0.0
@@ -290,12 +302,12 @@ margin_bottom = 279.0
 [node name="new_life" type="Timer" parent="." groups=["timernewlife"]]
 
 [node name="timer_newlife" type="Label" parent="." groups=["new_life"]]
+visible = false
 margin_left = 84.0
 margin_top = 45.0
 margin_right = 125.0
 margin_bottom = 70.0
 custom_fonts/font = SubResource( 1 )
-text = "4:00"
 
 [node name="primertutorial" parent="." groups=["primertutorial"] instance=ExtResource( 16 )]
 visible = false

@@ -11,9 +11,9 @@ var default_config: Dictionary = {
 	#Volumes are declared in linear energy so we can use a 0-100% slider;
 	#0 linear is -inf db, which doesn't support being stored as float
 	#so we store an unconverted value
-	"volume_master": 1.0,
-	"volume_music": 1.0,
-	"volume_efects": 1.0,
+	"volume_master": 0,
+	"volume_music": 0,
+	"volume_efects": 0,
 }
 
 

@@ -13,7 +13,8 @@ func _ready():
 
 func perder_vida():
 	Gamehandler.vidas_jugador -= 1
-	Gamehandler.update_vidas()
+	Gamehandler.guardar_partida()
+
 
 func perder_puntos():
 	Gamehandler.puntos -= 55

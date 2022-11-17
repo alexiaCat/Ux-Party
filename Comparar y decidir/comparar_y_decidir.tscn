@@ -79,6 +79,18 @@ rect_min_size = Vector2( 300, 200 )
 
 [node name="Timer" parent="top_bar_minigames" index="1" groups=["timercyd"]]
 
+[node name="vGral" parent="top_bar_minigames/Menu_cyd/MenuCyd/TextureRect/VBoxContainer" index="1"]
+min_value = -80.0
+max_value = 0.0
+
+[node name="vMusic" parent="top_bar_minigames/Menu_cyd/MenuCyd/TextureRect/VBoxContainer2" index="1"]
+min_value = -80.0
+max_value = 0.0
+
+[node name="vEffects" parent="top_bar_minigames/Menu_cyd/MenuCyd/TextureRect/VBoxContainer3" index="1"]
+min_value = -80.0
+max_value = 0.0
+
 [node name="ntexto_pregunta" type="Label" parent="."]
 margin_left = 375.0
 margin_top = 57.0

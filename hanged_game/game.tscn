@@ -135,6 +135,18 @@ position = Vector2( 1, 21 )
 
 [node name="top_bar_minigames" parent="." instance=ExtResource( 7 )]
 
+[node name="vGral" parent="top_bar_minigames/Menu_ahorcado/MenuAhorcado/TextureRect/VBoxContainer" index="1"]
+min_value = -80.0
+max_value = 0.0
+
+[node name="vMusic" parent="top_bar_minigames/Menu_ahorcado/MenuAhorcado/TextureRect/VBoxContainer2" index="1"]
+min_value = -80.0
+max_value = 0.0
+
+[node name="vEffects" parent="top_bar_minigames/Menu_ahorcado/MenuAhorcado/TextureRect/VBoxContainer3" index="1"]
+min_value = -80.0
+max_value = 0.0
+
 [node name="btn_hint" type="TextureButton" parent="." groups=["hint"]]
 margin_left = 185.0
 margin_top = 99.0

@@ -15,8 +15,8 @@ var enquenivelestoy
 var vidas_jugador = 5
 #timer barra superior
 var time_left = 60
-# Luego de pasados 4 minutos desde la pérdida de una vida se repondrá la vida perdida 240.
-var life_recharge = 40
+# Luego de pasados 4 minutos desde la pérdida de una vida se repondrá la vida perdida 120 segundos.
+var life_recharge = 120
 var tiempo = 0
 var tiempo2 = 0
 var puntajeglobal = 0
@@ -201,9 +201,14 @@ func cargar_partida():
 
 
 
-#recarga vidas cada 4 minutos
+#recarga vidas cada 2 minutos
 func recargarvidas():
+	yield(get_tree().create_timer(120),"timeout")
+	vidas_jugador = vidas_jugador + 1
+	guardar_partida()
+	update_vidas()
 	print(vidas_jugador)
+	return
 	
 
 	
@@ -247,17 +252,3 @@ func update_datosdenivel():
 		get_tree().get_nodes_in_group("msgnivel")[0].text = String(cyd)
 	get_tree().get_nodes_in_group("numnivel")[0].text = String(enquenivelestoy)
 
-
-func _on_new_life_timeout():
-	if(life_recharge > 0):
-		life_recharge -= 1
-		update_timenewlife()
-	else:
-		if(vidas_jugador < 6):
-			vidas_jugador += 1
-		if(vidas_jugador == 6):
-			vidas_jugador = 5
-		update_vidas()
-		life_recharge = 40
-		recargarvidas()
-		return
