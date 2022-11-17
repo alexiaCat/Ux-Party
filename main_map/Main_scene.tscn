@@ -250,15 +250,15 @@ script = ExtResource( 13 )
 [node name="MenuMapa" parent="." instance=ExtResource( 8 )]
 
 [node name="vGeneral" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer" index="1"]
-min_value = -80.0
+min_value = -70.0
 max_value = 0.0
 
 [node name="vEfectos" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer2" index="1"]
-min_value = -80.0
+min_value = -70.0
 max_value = 0.0
 
 [node name="vMusica" parent="MenuMapa/Modal_config/TextureRect/VBoxContainer3" index="1"]
-min_value = -80.0
+min_value = -70.0
 max_value = 0.0
 
 [node name="Tutorial_mainymap" parent="." instance=ExtResource( 11 )]

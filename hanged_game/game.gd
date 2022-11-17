@@ -68,6 +68,7 @@ func _on_Letters_youwin():
 			Gamehandler.pnivel7 = Gamehandler.puntos
 			Gamehandler.puntajeglobal += Gamehandler.puntos
 	Gamehandler.time_left = 60
+	Gamehandler.guardar_partida()
 		
 
 

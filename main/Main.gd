@@ -4,7 +4,9 @@ extends Node2D
 onready var new_file = $nombre_usuario
 
 func _ready():
+	Gamehandler.cargar_volumen()
 	Gamehandler.cargar_datos()
+	Gamehandler.guardar_volumen()
 
 func _on_Play_button_pressed():
 	if(Gamehandler.first_time == 0):

@@ -45,7 +45,6 @@ config/icon="res://icon.png"
 [autoload]
 
 Gamehandler="*res://gamehandler.gd"
-Userdata="*res://Userdata.gd"
 
 [display]
 

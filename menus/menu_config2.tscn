@@ -55,6 +55,8 @@ align = 1
 margin_top = 27.0
 margin_right = 221.0
 margin_bottom = 43.0
+min_value = -70.0
+max_value = 0.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Modal_config/TextureRect"]
 margin_left = 30.0
@@ -72,6 +74,8 @@ text = "Volumen de efectos"
 margin_top = 27.0
 margin_right = 223.0
 margin_bottom = 43.0
+min_value = -70.0
+max_value = 0.0
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="Modal_config/TextureRect"]
 margin_left = 32.0
@@ -89,6 +93,8 @@ text = "Volumen de música"
 margin_top = 27.0
 margin_right = 223.0
 margin_bottom = 43.0
+min_value = -70.0
+max_value = 0.0
 
 [node name="Tutorial" type="TextureButton" parent="Modal_config"]
 margin_left = 34.0

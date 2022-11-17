@@ -19,7 +19,6 @@ func _ready():
 func hay_vidas():
 	if(Gamehandler.vidas_jugador < 5):
 		Gamehandler.recargarvidas()
-		get_tree().get_nodes_in_group("timernewlife")[0].start()
 	else:
 		print("no hacer nada")
 	

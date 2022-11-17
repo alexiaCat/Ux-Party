@@ -22,9 +22,9 @@ var tiempo2 = 0
 var puntajeglobal = 0
 var npregunta = 1
 var nameplayer = "nombre"
-var msg1 = "Sabes mucho"
-var msg2 = "Eres genial"
-var msg3 = "Eres el mejor\n del mundo"
+var msg1 = "¡Eres una miniestrella!"
+var msg2 = "¡Eres una estrella!"
+var msg3 = "¡Eres una superestrella!"
 # para probar que funcionan las estrellas
 var pnivel1 = 0
 var pnivel2 = 0
@@ -40,18 +40,22 @@ const ahorcado = "Ahorcado"
 const trivia = "Trivia de preguntas"
 const cyd = "Juego de comparar y decidir"
 
+#variables sonidos
+var music = 0
+var effects = 0
+var masterxd = 0
 
 
 #variables para saber si el nivel esta pasado o no, ej: no poder ingresar a nivel 2 sin pasar nivel 1
-var level1 = true
-var level2 = true
-var level3 = true
-var level4 = true
-var level5 = true
-var level6 = true
-var level7 = true
-var level8 = true
-var level9 = true
+var level1 = false
+var level2 = false
+var level3 = false
+var level4 = false
+var level5 = false
+var level6 = false
+var level7 = false
+var level8 = false
+var level9 = false
 
 
 var datos_partida = {
@@ -86,6 +90,11 @@ var otrosdatos = {
 	primertutocyd = 0,
 }
 
+var volumen = {
+	main = 0,
+	musica = 0,
+	efectos = 0,
+}
 
 func _ready():
 	var path = Directory.new()
@@ -97,6 +106,43 @@ func _ready():
 	if(!path.dir_exists("user://data")):
 		path.open("user://")
 		path.make_dir("user://data")
+	#guardar volumen
+	if(!path.dir_exists("user://dataVol")):
+		path.open("user://")
+		path.make_dir("user://dataVol")
+		
+func guardar_volumen():
+	var guardarv = File.new()
+	guardarv.open("user://dataVol.sav", File.WRITE)
+	
+	var datos_vol = volumen
+	datos_vol.main = masterxd
+	datos_vol.musica = music
+	datos_vol.efectos = effects
+	
+	guardarv.store_line(to_json(datos_vol))
+	guardarv.close()
+	
+func cargar_volumen():
+	var cargarv = File.new()
+	if(!cargarv.file_exists("user://dataVol.sav")):
+		print("no hay partidas guardadas")
+		return
+	cargarv.open("user://dataVol.sav", File.READ)
+	
+	var datosvolumen = volumen
+	
+	if(!cargarv.eof_reached()):
+		var dato_provis = parse_json(cargarv.get_line())
+		if(dato_provis != null):
+			datosvolumen = dato_provis
+			
+	cargarv.close()
+	
+	masterxd = datosvolumen.main
+	music = datosvolumen.musica
+	effects = datosvolumen.efectos
+
 
 func guardar_datos():
 	var guardar = File.new()

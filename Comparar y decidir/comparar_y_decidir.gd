@@ -281,6 +281,7 @@ func _on_Letters_youwin_quiz_3():
 	if(Gamehandler.puntos > Gamehandler.pnivel3):
 		Gamehandler.pnivel3 = Gamehandler.puntos
 		Gamehandler.puntajeglobal += Gamehandler.puntos
+	Gamehandler.guardar_partida()
 		
 func _on_Letters_youwin_quiz_6():
 	Gamehandler.puntajevariable = Gamehandler.puntos
@@ -290,6 +291,7 @@ func _on_Letters_youwin_quiz_6():
 	if(Gamehandler.puntos > Gamehandler.pnivel6):
 		Gamehandler.pnivel6 = Gamehandler.puntos
 		Gamehandler.puntajeglobal += Gamehandler.puntos
+	Gamehandler.guardar_partida()
 
 func _on_Letters_youwin_quiz_9():
 	Gamehandler.puntajevariable = Gamehandler.puntos
@@ -299,6 +301,7 @@ func _on_Letters_youwin_quiz_9():
 	if(Gamehandler.puntos > Gamehandler.pnivel9):
 		Gamehandler.pnivel9 = Gamehandler.puntos
 		Gamehandler.puntajeglobal += Gamehandler.puntos
+	Gamehandler.guardar_partida()
 		
 		
 func _perdiste_por_puntos():
