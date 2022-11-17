@@ -30,7 +30,7 @@ func _on_Button_quit_button_up():
 
 
 func _on_btn_exit_button_up():
-	Userdata.load_config()
+	Gamehandler.guardar_volumen()
 	popup.visible = false
 	get_tree().get_nodes_in_group("teclado")[0].show()
 	get_tree().get_nodes_in_group("hangedtime")[0].start()

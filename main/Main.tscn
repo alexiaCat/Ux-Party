@@ -109,17 +109,9 @@ texture_hover = ExtResource( 6 )
 [node name="MenuMain" parent="." instance=ExtResource( 8 )]
 
 [node name="vGeneral" parent="MenuMain/Modal_config/TextureRect/VBoxContainer" index="1"]
-min_value = -70.0
-max_value = 0.0
 value = -24.0
 
-[node name="vEfectos" parent="MenuMain/Modal_config/TextureRect/VBoxContainer2" index="1"]
-min_value = -70.0
-max_value = 0.0
-
 [node name="vMusica" parent="MenuMain/Modal_config/TextureRect/VBoxContainer3" index="1"]
-min_value = -70.0
-max_value = 0.0
 value = -20.0
 
 [node name="Label" parent="MenuMain/Modal_config/Tutorial" index="0"]
