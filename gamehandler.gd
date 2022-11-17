@@ -240,6 +240,15 @@ func cargar_partida():
 	pnivel7 = datos_cargar.p7
 	pnivel8 = datos_cargar.p8
 	pnivel9 = datos_cargar.p9
+	level1 = datos_cargar.nivel1
+	level2 = datos_cargar.nivel2
+	level3 = datos_cargar.nivel3
+	level4 = datos_cargar.nivel4
+	level5 = datos_cargar.nivel5
+	level6 = datos_cargar.nivel6
+	level7 = datos_cargar.nivel7
+	level8 = datos_cargar.nivel8
+	level9 = datos_cargar.nivel9
 
 	update_nombrejugador()
 	update_vidas()
