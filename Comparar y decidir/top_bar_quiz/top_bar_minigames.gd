@@ -26,4 +26,5 @@ func _on_Timer_timeout():
 			get_tree().change_scene("res://win/hg/winner_hg.tscn")
 		else:
 			Gamehandler.vidas_jugador -= 1
+			Gamehandler.guardar_partida()
 			get_tree().change_scene("res://lost/loser.tscn")

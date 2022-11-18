@@ -92,26 +92,31 @@ min_value = -80.0
 max_value = 0.0
 
 [node name="ntexto_pregunta" type="Label" parent="."]
-margin_left = 375.0
-margin_top = 57.0
-margin_right = 415.0
-margin_bottom = 85.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+margin_left = 386.0
+margin_top = 60.0
+margin_right = 400.0
+margin_bottom = 82.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 10 )
-text = "- 5"
+text = "5"
 
 [node name="numero_pregunta" type="Label" parent="." groups=["npregunta"]]
-margin_left = 360.0
-margin_top = 57.0
-margin_right = 378.0
+margin_left = 361.0
+margin_top = 60.0
+margin_right = 373.0
 margin_bottom = 82.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 10 )
 autowrap = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 373.0
+margin_top = 58.0
+margin_right = 382.0
+margin_bottom = 80.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "-"
 
 [node name="fondo" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 0, -1 )
