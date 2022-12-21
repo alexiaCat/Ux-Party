@@ -84,6 +84,7 @@ func not_there():
 
 
 func handle_string(s):
+	print(s)
 	$click.play()
 	var pos = temp.find(s)
 	if pos != -1:
@@ -106,4 +107,7 @@ func win():
 			slash_counter = slash_counter + 1	
 	if slash_counter == length:
 		emit_signal("youwin")
+
+
+
 

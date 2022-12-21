@@ -41,7 +41,7 @@ texture = ExtResource( 6 )
 [node name="Sprite" type="Sprite" parent="TutorialDialog" groups=["imga"]]
 position = Vector2( 173.5, 209 )
 texture = ExtResource( 9 )
-hframes = 34
+hframes = 35
 
 [node name="flecha_izq" type="TextureButton" parent="TutorialDialog"]
 margin_left = 29.5

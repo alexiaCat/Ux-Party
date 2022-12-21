@@ -1,12 +1,12 @@
 extends Control
 
-
 onready var popup = get_node("MenuAhorcado")
 
 
 onready var master_volume := $MenuAhorcado/TextureRect/VBoxContainer/vGral
 onready var effects_volume := $MenuAhorcado/TextureRect/VBoxContainer3/vEffects
 onready var music_volume := $MenuAhorcado/TextureRect/VBoxContainer2/vMusic
+
 
 func _ready():
 	Gamehandler.cargar_volumen()
@@ -40,9 +40,7 @@ func _on_btn_exit_button_up():
 
 
 func _on_Salir_button_up():
-	Gamehandler.guardar_volumen()
-	Gamehandler.vidas_jugador -= 1
-	Gamehandler.guardar_partida()
+	Gamehandler.perdiunavida = 1
 	get_tree().change_scene("res://main_map/Main_scene.tscn")
 
 

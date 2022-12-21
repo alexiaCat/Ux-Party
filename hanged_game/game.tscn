@@ -34,101 +34,155 @@ margin_top = 605.0
 margin_right = 427.0
 margin_bottom = 694.0
 
-[node name="Columna1" parent="Teclado" index="0"]
-margin_bottom = 89.0
-
-[node name="Columna2" parent="Teclado" index="1"]
-margin_right = 86.0
-margin_bottom = 89.0
-
-[node name="Letra_b" parent="Teclado/Columna2" index="0"]
-margin_right = 41.0
-
-[node name="Letra_k" parent="Teclado/Columna2" index="1"]
-margin_right = 41.0
-
-[node name="Letra_s" parent="Teclado/Columna2" index="2"]
-margin_right = 41.0
-
-[node name="Columna3" parent="Teclado" index="2"]
-margin_left = 90.0
-margin_right = 131.0
-margin_bottom = 89.0
-
-[node name="Letra_c" parent="Teclado/Columna3" index="0"]
-margin_right = 41.0
-
-[node name="Letra_l" parent="Teclado/Columna3" index="1"]
-margin_right = 41.0
-
-[node name="Letra_t" parent="Teclado/Columna3" index="2"]
-margin_right = 41.0
-
-[node name="Columna4" parent="Teclado" index="3"]
-margin_left = 135.0
-margin_right = 176.0
-margin_bottom = 89.0
-
-[node name="Columna5" parent="Teclado" index="4"]
-margin_left = 180.0
-margin_right = 221.0
-margin_bottom = 89.0
-
-[node name="Letra_e" parent="Teclado/Columna5" index="0"]
-margin_right = 41.0
-
-[node name="Letra_n" parent="Teclado/Columna5" index="1"]
-margin_right = 41.0
-
-[node name="Letra_v" parent="Teclado/Columna5" index="2"]
-margin_right = 41.0
-
-[node name="Columna6" parent="Teclado" index="5"]
-margin_left = 225.0
-margin_right = 266.0
-margin_bottom = 89.0
-
-[node name="Letra_f" parent="Teclado/Columna6" index="0"]
-margin_right = 41.0
-
-[node name="Letra_ñ" parent="Teclado/Columna6" index="1"]
-margin_right = 41.0
-
-[node name="Letra_w" parent="Teclado/Columna6" index="2"]
-margin_right = 41.0
-
-[node name="Columna7" parent="Teclado" index="6"]
-margin_left = 270.0
-margin_right = 311.0
-margin_bottom = 89.0
-
-[node name="Columna8" parent="Teclado" index="7"]
-margin_left = 315.0
-margin_right = 356.0
-margin_bottom = 89.0
-
-[node name="Letra_h" parent="Teclado/Columna8" index="0"]
-margin_right = 41.0
-
-[node name="Letra_p" parent="Teclado/Columna8" index="1"]
-margin_right = 41.0
-
-[node name="Letra_y" parent="Teclado/Columna8" index="2"]
-margin_right = 41.0
-
-[node name="Columna9" parent="Teclado" index="8"]
-margin_left = 360.0
+[node name="VBoxContainer" parent="Teclado" index="0"]
 margin_right = 401.0
 margin_bottom = 89.0
 
-[node name="Letra_i" parent="Teclado/Columna9" index="0"]
-margin_right = 41.0
+[node name="linea1" parent="Teclado/VBoxContainer" index="0"]
+margin_right = 401.0
+margin_bottom = 27.0
 
-[node name="Letra_q" parent="Teclado/Columna9" index="1"]
-margin_right = 41.0
+[node name="Q" parent="Teclado/VBoxContainer/linea1" index="0"]
+margin_right = 36.0
+margin_bottom = 27.0
 
-[node name="Letra_z" parent="Teclado/Columna9" index="2"]
-margin_right = 41.0
+[node name="W" parent="Teclado/VBoxContainer/linea1" index="1"]
+margin_left = 40.0
+margin_right = 77.0
+margin_bottom = 27.0
+
+[node name="E" parent="Teclado/VBoxContainer/linea1" index="2"]
+margin_left = 81.0
+margin_right = 117.0
+margin_bottom = 27.0
+
+[node name="R" parent="Teclado/VBoxContainer/linea1" index="3"]
+margin_left = 121.0
+margin_right = 158.0
+margin_bottom = 27.0
+
+[node name="T" parent="Teclado/VBoxContainer/linea1" index="4"]
+margin_left = 162.0
+margin_right = 198.0
+margin_bottom = 27.0
+
+[node name="Y" parent="Teclado/VBoxContainer/linea1" index="5"]
+margin_left = 202.0
+margin_right = 239.0
+margin_bottom = 27.0
+
+[node name="U" parent="Teclado/VBoxContainer/linea1" index="6"]
+margin_left = 243.0
+margin_right = 279.0
+margin_bottom = 27.0
+
+[node name="I" parent="Teclado/VBoxContainer/linea1" index="7"]
+margin_left = 283.0
+margin_right = 320.0
+margin_bottom = 27.0
+
+[node name="O" parent="Teclado/VBoxContainer/linea1" index="8"]
+margin_left = 324.0
+margin_right = 360.0
+margin_bottom = 27.0
+
+[node name="P" parent="Teclado/VBoxContainer/linea1" index="9"]
+margin_left = 364.0
+margin_right = 401.0
+margin_bottom = 27.0
+
+[node name="linea2" parent="Teclado/VBoxContainer" index="1"]
+margin_top = 31.0
+margin_right = 401.0
+margin_bottom = 58.0
+
+[node name="A" parent="Teclado/VBoxContainer/linea2" index="0"]
+margin_right = 36.0
+margin_bottom = 27.0
+
+[node name="S" parent="Teclado/VBoxContainer/linea2" index="1"]
+margin_left = 40.0
+margin_right = 77.0
+margin_bottom = 27.0
+
+[node name="D" parent="Teclado/VBoxContainer/linea2" index="2"]
+margin_left = 81.0
+margin_right = 117.0
+margin_bottom = 27.0
+
+[node name="F" parent="Teclado/VBoxContainer/linea2" index="3"]
+margin_left = 121.0
+margin_right = 158.0
+margin_bottom = 27.0
+
+[node name="G" parent="Teclado/VBoxContainer/linea2" index="4"]
+margin_left = 162.0
+margin_right = 198.0
+margin_bottom = 27.0
+
+[node name="H" parent="Teclado/VBoxContainer/linea2" index="5"]
+margin_left = 202.0
+margin_right = 239.0
+margin_bottom = 27.0
+
+[node name="J" parent="Teclado/VBoxContainer/linea2" index="6"]
+margin_left = 243.0
+margin_right = 279.0
+margin_bottom = 27.0
+
+[node name="K" parent="Teclado/VBoxContainer/linea2" index="7"]
+margin_left = 283.0
+margin_right = 320.0
+margin_bottom = 27.0
+
+[node name="L" parent="Teclado/VBoxContainer/linea2" index="8"]
+margin_left = 324.0
+margin_right = 360.0
+margin_bottom = 27.0
+
+[node name="Ñ" parent="Teclado/VBoxContainer/linea2" index="9"]
+margin_left = 364.0
+margin_right = 401.0
+margin_bottom = 27.0
+
+[node name="linea3" parent="Teclado/VBoxContainer" index="2"]
+margin_top = 62.0
+margin_right = 401.0
+margin_bottom = 89.0
+
+[node name="Z" parent="Teclado/VBoxContainer/linea3" index="0"]
+margin_right = 53.0
+margin_bottom = 27.0
+
+[node name="X" parent="Teclado/VBoxContainer/linea3" index="1"]
+margin_left = 57.0
+margin_right = 111.0
+margin_bottom = 27.0
+
+[node name="C" parent="Teclado/VBoxContainer/linea3" index="2"]
+margin_left = 115.0
+margin_right = 169.0
+margin_bottom = 27.0
+
+[node name="V" parent="Teclado/VBoxContainer/linea3" index="3"]
+margin_left = 173.0
+margin_right = 227.0
+margin_bottom = 27.0
+
+[node name="B" parent="Teclado/VBoxContainer/linea3" index="4"]
+margin_left = 231.0
+margin_right = 285.0
+margin_bottom = 27.0
+
+[node name="N" parent="Teclado/VBoxContainer/linea3" index="5"]
+margin_left = 289.0
+margin_right = 343.0
+margin_bottom = 27.0
+
+[node name="M" parent="Teclado/VBoxContainer/linea3" index="6"]
+margin_left = 347.0
+margin_right = 401.0
+margin_bottom = 27.0
 
 [node name="hangman" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1, 21 )
@@ -174,33 +228,33 @@ bus = "MUSICA"
 
 [connection signal="notthere" from="Letters" to="." method="_on_Letters_notthere"]
 [connection signal="youwin" from="Letters" to="." method="_on_Letters_youwin"]
-[connection signal="pressed" from="Teclado/Columna1/Letra_a" to="Letters" method="handle_string" binds= [ "A" ]]
-[connection signal="pressed" from="Teclado/Columna1/Letra_j" to="Letters" method="handle_string" binds= [ "J" ]]
-[connection signal="pressed" from="Teclado/Columna1/Letra_r" to="Letters" method="handle_string" binds= [ "R" ]]
-[connection signal="pressed" from="Teclado/Columna2/Letra_b" to="Letters" method="handle_string" binds= [ "B" ]]
-[connection signal="pressed" from="Teclado/Columna2/Letra_k" to="Letters" method="handle_string" binds= [ "K" ]]
-[connection signal="pressed" from="Teclado/Columna2/Letra_s" to="Letters" method="handle_string" binds= [ "S" ]]
-[connection signal="pressed" from="Teclado/Columna3/Letra_c" to="Letters" method="handle_string" binds= [ "C" ]]
-[connection signal="pressed" from="Teclado/Columna3/Letra_l" to="Letters" method="handle_string" binds= [ "L" ]]
-[connection signal="pressed" from="Teclado/Columna3/Letra_t" to="Letters" method="handle_string" binds= [ "T" ]]
-[connection signal="pressed" from="Teclado/Columna4/Letra_d" to="Letters" method="handle_string" binds= [ "D" ]]
-[connection signal="pressed" from="Teclado/Columna4/Letra_m" to="Letters" method="handle_string" binds= [ "M" ]]
-[connection signal="pressed" from="Teclado/Columna4/Letra u" to="Letters" method="handle_string" binds= [ "U" ]]
-[connection signal="pressed" from="Teclado/Columna5/Letra_e" to="Letters" method="handle_string" binds= [ "E" ]]
-[connection signal="pressed" from="Teclado/Columna5/Letra_n" to="Letters" method="handle_string" binds= [ "N" ]]
-[connection signal="pressed" from="Teclado/Columna5/Letra_v" to="Letters" method="handle_string" binds= [ "V" ]]
-[connection signal="pressed" from="Teclado/Columna6/Letra_f" to="Letters" method="handle_string" binds= [ "F" ]]
-[connection signal="pressed" from="Teclado/Columna6/Letra_ñ" to="Letters" method="handle_string" binds= [ "Ñ" ]]
-[connection signal="pressed" from="Teclado/Columna6/Letra_w" to="Letters" method="handle_string" binds= [ "W" ]]
-[connection signal="pressed" from="Teclado/Columna7/Letra_g" to="Letters" method="handle_string" binds= [ "G" ]]
-[connection signal="pressed" from="Teclado/Columna7/Letra_o" to="Letters" method="handle_string" binds= [ "O" ]]
-[connection signal="pressed" from="Teclado/Columna7/Letra_x" to="Letters" method="handle_string" binds= [ "X" ]]
-[connection signal="pressed" from="Teclado/Columna8/Letra_h" to="Letters" method="handle_string" binds= [ "H" ]]
-[connection signal="pressed" from="Teclado/Columna8/Letra_p" to="Letters" method="handle_string" binds= [ "P" ]]
-[connection signal="pressed" from="Teclado/Columna8/Letra_y" to="Letters" method="handle_string" binds= [ "Y" ]]
-[connection signal="pressed" from="Teclado/Columna9/Letra_i" to="Letters" method="handle_string" binds= [ "I" ]]
-[connection signal="pressed" from="Teclado/Columna9/Letra_q" to="Letters" method="handle_string" binds= [ "Q" ]]
-[connection signal="pressed" from="Teclado/Columna9/Letra_z" to="Letters" method="handle_string" binds= [ "Z" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea1/Q" to="Letters" method="handle_string" binds= [ "Q" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea1/W" to="Letters" method="handle_string" binds= [ "W" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea1/E" to="Letters" method="handle_string" binds= [ "E" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea1/R" to="Letters" method="handle_string" binds= [ "R" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea1/T" to="Letters" method="handle_string" binds= [ "T" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea1/Y" to="Letters" method="handle_string" binds= [ "Y" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea1/U" to="Letters" method="handle_string" binds= [ "U" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea1/I" to="Letters" method="handle_string" binds= [ "I" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea1/O" to="Letters" method="handle_string" binds= [ "O" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea1/P" to="Letters" method="handle_string" binds= [ "P" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea2/A" to="Letters" method="handle_string" binds= [ "A" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea2/S" to="Letters" method="handle_string" binds= [ "S" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea2/D" to="Letters" method="handle_string" binds= [ "D" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea2/F" to="Letters" method="handle_string" binds= [ "F" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea2/G" to="Letters" method="handle_string" binds= [ "G" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea2/H" to="Letters" method="handle_string" binds= [ "H" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea2/J" to="Letters" method="handle_string" binds= [ "J" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea2/K" to="Letters" method="handle_string" binds= [ "K" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea2/L" to="Letters" method="handle_string" binds= [ "L" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea2/Ñ" to="Letters" method="handle_string" binds= [ "Ñ" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea3/Z" to="Letters" method="handle_string" binds= [ "Z" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea3/X" to="Letters" method="handle_string" binds= [ "X" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea3/C" to="Letters" method="handle_string" binds= [ "C" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea3/V" to="Letters" method="handle_string" binds= [ "V" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea3/B" to="Letters" method="handle_string" binds= [ "B" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea3/N" to="Letters" method="handle_string" binds= [ "N" ]]
+[connection signal="pressed" from="Teclado/VBoxContainer/linea3/M" to="Letters" method="handle_string" binds= [ "M" ]]
 [connection signal="value_changed" from="top_bar_minigames/Menu_ahorcado/MenuAhorcado/TextureRect/VBoxContainer/vGral" to="top_bar_minigames/Menu_ahorcado" method="_on_vGral_value_changed"]
 [connection signal="value_changed" from="top_bar_minigames/Menu_ahorcado/MenuAhorcado/TextureRect/VBoxContainer2/vMusic" to="top_bar_minigames/Menu_ahorcado" method="_on_vMusic_value_changed"]
 [connection signal="value_changed" from="top_bar_minigames/Menu_ahorcado/MenuAhorcado/TextureRect/VBoxContainer3/vEffects" to="top_bar_minigames/Menu_ahorcado" method="_on_vEffects_value_changed"]

@@ -5,9 +5,9 @@ onready var new_file = $iniciarNivel
 
 var label_node
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	perder_vida()
 	Gamehandler.cargar_partida()
 	hay_vidas()
 	pintarestrellasmapa()
@@ -17,10 +17,8 @@ func _ready():
 	mostrarprimertutorial()
 	
 func hay_vidas():
-	if(Gamehandler.vidas_jugador < 5):
+	if Gamehandler.vidas_jugador < Gamehandler.maxvidas:
 		Gamehandler.recargarvidas()
-	else:
-		print("no hacer nada")
 	
 func pintarestrellasmapa():
 	paint_starslvl1()
@@ -32,6 +30,15 @@ func pintarestrellasmapa():
 	paint_starslvl7()
 	paint_starslvl8()
 	paint_starslvl9()
+	
+func perder_vida():
+	if(Gamehandler.perdiunavida == 1):
+		Gamehandler.vidas_jugador = Gamehandler.vidas_jugador - 1
+		Gamehandler.guardar_partida()
+		Gamehandler.cargar_partida()
+		Gamehandler.perdiunavida = 0
+	else:
+		print("no hace nada")
 
 #1, 4 y 7 ahorcado
 func paint_starslvl1():
@@ -334,7 +341,8 @@ func mostrarprimertutorial():
 	if(Gamehandler.primertutorial == 0):
 		$HUD/Control/MarginContainer/HBoxContainer.hide()
 		$primertutorial.show()
-
+	else:
+		return
 
 func _on_acceptbtn_pressed():
 	Gamehandler.primertutorial = 100
